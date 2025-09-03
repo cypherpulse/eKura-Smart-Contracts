@@ -75,5 +75,9 @@ mapping(uint256 => uint256[]) public orgElections;
 
 uint256 public nextElectionID;
 
+/**
+ * @notice Address of the platform admin (eKura team)
+ * @dev This address can add/remove org admins and pause contracts
+ */
 
 }
