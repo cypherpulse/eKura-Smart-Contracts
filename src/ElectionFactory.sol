@@ -52,6 +52,9 @@ contract ElectionFactory {
 
 mapping(uint256 => Election) public elections;
 
-
-
+/***
+ * @notice Mapping to track organization admins
+ * @dev orgId => adminAddress => isAdmin
+ */
+                                                                                                                                                                                        
 }
