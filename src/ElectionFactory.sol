@@ -30,5 +30,16 @@ contract ElectionFactory {
      /// @notice Struct to store election metadata
      /// @dev This struct contains all the essential information for an election
 
-     
+     struct Election{
+        uint256 orgId;
+        uint256 electionId;
+        string electionName;
+        string description;
+        uint256 startTime;
+        uint256 endTime;
+        bool isActive;
+        string[] candidates;
+        address cretaor;
+        uint256 createdAt;
+     }
 }
