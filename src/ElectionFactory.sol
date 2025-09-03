@@ -42,7 +42,7 @@ contract ElectionFactory {
         address cretaor;
         uint256 createdAt;
      }
-}
+
 
 /**
  * @notice mapping to all elections by their ID
@@ -50,4 +50,8 @@ contract ElectionFactory {
  * @dev electionID => Election
  */
 
-mapping
+mapping(uint256 => Election) public elections;
+
+
+
+}
