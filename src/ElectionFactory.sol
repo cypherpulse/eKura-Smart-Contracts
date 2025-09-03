@@ -26,9 +26,11 @@
 
 
 contract ElectionFactory {
-     // ============ TYPE DECLARATIONS ============
-     /// @notice Struct to store election metadata
-     /// @dev This struct contains all the essential information for an election
+     // <============ TYPE DECLARATIONS ============>
+
+     /** @notice Struct to store election metadata
+      * @dev This struct contains all the essential information for an election
+      */
 
      struct Election{
         uint256 orgId;
@@ -57,5 +59,19 @@ mapping(uint256 => Election) public elections;
  * @dev orgId => adminAddress => isAdmin
  */
 
-mapping(uint256 =)
+mapping(uint256 => mapping(address => bool)) public orgAdmins;
+
+/**
+ * @notice Mapping to store election IDs for each organization
+ * @dev orgID => electionIDs
+ */
+
+mapping(uint256 => uint256[]) public orgElections;
+
+/***
+ * @notice Counter for generating unique election IDs
+ * @dev starts at 1,increments for each new election
+ */
+
+
 }
