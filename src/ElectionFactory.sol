@@ -73,6 +73,7 @@ mapping(uint256 => uint256[]) public orgElections;
  * @dev starts at 1,increments for each new election
  */
 
+uint256 public nextElectionID;
 
 
 }
