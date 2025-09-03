@@ -43,3 +43,11 @@ contract ElectionFactory {
         uint256 createdAt;
      }
 }
+
+/**
+ * @notice mapping to all elections by their ID
+ * @dev This mapping allows for quick access to election details
+ * @dev electionID => Election
+ */
+
+mapping
