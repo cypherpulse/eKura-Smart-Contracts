@@ -26,5 +26,9 @@
 
 
 contract ElectionFactory {
-    // Election creation logic
+     // ============ TYPE DECLARATIONS ============
+     /// @notice Struct to store election metadata
+     /// @dev This struct contains all the essential information for an election
+
+     
 }
