@@ -155,5 +155,11 @@ contract ElectionFactory {
    /***
     * @notice Ensures only organization admins can call a function
     * @param orgId The organization ID to check admin status against
+    * @dev  Reverts if msg.sender is not an admin for the specified organization
     */
+   modifier onlyOrgAdmin(uint256 orgId) {
+       require(orgAdmins[orgId][msg.sender], "Not organization admin");
+       _;
+   }
+
 }
