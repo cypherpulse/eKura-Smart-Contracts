@@ -81,4 +81,9 @@ uint256 public nextElectionID;
  */
 
 address public platformAdmin;
+
+
+//<============= EVENTS ============>
+
+   
 }
