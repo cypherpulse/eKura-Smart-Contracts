@@ -99,6 +99,7 @@ event ElectionCreated(
    string title,
    address indexed creator,
    uint256 startTime,
+   uint256 endTime
 )
 
 
