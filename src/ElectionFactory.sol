@@ -151,4 +151,6 @@ contract ElectionFactory {
       require(msg.sender == platformAdmin, "Not platform admin");
       _;
    }
+
+   
 }
