@@ -113,7 +113,7 @@ event OrgAdminAdded(
    uint256 indexed orgId,
    address indexed admin,
    address indexed addedBy
-)
+);
 
 /**
  * @notice Emitted when an organization admin is removed
