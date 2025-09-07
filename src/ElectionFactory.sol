@@ -130,5 +130,6 @@ event OrgAdminRemoved(
 
 /**
  * @notice Emitted when an election's active status changes
+ * @param electionId The election that was toggled
  */
 }
