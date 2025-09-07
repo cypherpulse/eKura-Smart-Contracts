@@ -85,13 +85,15 @@ address public platformAdmin;
 
 //<============= EVENTS ============>
 
-/* @notice Emitted when a new election is created
+/** @notice Emitted when a new election is created
  * @param orgId The ID of the organization creating the election
  * @param electionId The unique ID of the created election
  * @param electionName The name of the election
  * @param creator The address of the election creator
  * @param createdAt The timestamp when the election was created
  */
+ */
+
 
    
 }
