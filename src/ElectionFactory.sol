@@ -115,5 +115,10 @@ event OrgAdminAdded(
    address indexed addedBy
 )
 
-
+/**
+ * @notice Emitted when an organization admin is removed
+ * @param orgId The ID of the organization
+ * @param admin The address of the removed admin
+ * @param removedBy The address of the platform admin who removed the admin
+ */
 }
