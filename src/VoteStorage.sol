@@ -25,7 +25,7 @@
 // private
 // view & pure functions
 
-
+pragma solidity ^0.8.20;
 contract VoteStorage {
     // Vote storage logic
 }
