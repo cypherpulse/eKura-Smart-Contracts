@@ -128,5 +128,7 @@ event OrgAdminRemoved(
    address indexed removedBy
 )
 
-
+/**
+ * @notice Emitted when an election's active status changes
+ */
 }
