@@ -142,5 +142,7 @@ contract ElectionFactory {
 
     // <============ MODIFIERS ============>
 
-    
+    /***
+     * @notice Ensures only the platfro
+     */
 }
