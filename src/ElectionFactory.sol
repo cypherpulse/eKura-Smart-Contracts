@@ -131,5 +131,11 @@ event OrgAdminRemoved(
 /**
  * @notice Emitted when an election's active status changes
  * @param electionId The election that was toggled
+ * @param isActive The new active status of the election
+ * @param changedBy The address of the platform admin who changed the status
  */
+
+event ElectionStatusChanged(
+   
+)
 }
