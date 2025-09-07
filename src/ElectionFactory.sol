@@ -98,7 +98,7 @@ event ElectionCreated(
    uint256 indexed electionId,
    string title,
    address indexed creator,
-   uint256 createdAt
+   uint256 startTime,
 )
 
 
