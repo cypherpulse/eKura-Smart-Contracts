@@ -111,5 +111,9 @@ event ElectionCreated(
 
 event OrgAdminAdded(
    uint256 indexed orgId,
+   address indexed admin,
+   address indexed addedBy
 )
+
+
 }
