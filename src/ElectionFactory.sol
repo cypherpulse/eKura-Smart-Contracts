@@ -121,4 +121,12 @@ event OrgAdminAdded(
  * @param admin The address of the removed admin
  * @param removedBy The address of the platform admin who removed the admin
  */
+
+event OrgAdminRemoved(
+   uint256 indexed orgId,
+   address indexed admin,
+   address indexed removedBy
+)
+
+
 }
