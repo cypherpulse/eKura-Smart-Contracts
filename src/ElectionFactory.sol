@@ -102,6 +102,12 @@ event ElectionCreated(
    uint256 endTime
 )
 
+/**
+ * @notice Emitted when an organization admin is added
+ * @param orgId The ID of the organization
+ * @param admin The address of the new admin
+ */
+
 
    
 }
