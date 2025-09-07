@@ -106,7 +106,9 @@ event ElectionCreated(
  * @notice Emitted when an organization admin is added
  * @param orgId The ID of the organization
  * @param admin The address of the new admin
+ * @param addedBy The address of the platform admin who added the new admin
  */
+
 
 
    
