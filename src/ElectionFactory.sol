@@ -109,5 +109,7 @@ event ElectionCreated(
  * @param addedBy The address of the platform admin who added the new admin
  */
 
-
+event OrgAdminAdded(
+   uint256 indexed orgId,
+)
 }
