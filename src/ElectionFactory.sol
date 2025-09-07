@@ -94,7 +94,8 @@ address public platformAdmin;
  */
 
 event ElectionCreated(
-   
+   uint256 indexed orgId,
+   uint256 indexed electionId,
 )
 
 
