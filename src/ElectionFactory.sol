@@ -140,4 +140,7 @@ event ElectionStatusChanged(
    bool isActive,
    address indexed changedBy
 )
+
+// <============ MODIFIERS ============>
+
 }
