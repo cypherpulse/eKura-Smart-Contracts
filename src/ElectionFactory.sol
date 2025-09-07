@@ -92,7 +92,10 @@ address public platformAdmin;
  * @param creator The address of the election creator
  * @param createdAt The timestamp when the election was created
  */
- */
+
+event ElectionCreated(
+   
+)
 
 
    
