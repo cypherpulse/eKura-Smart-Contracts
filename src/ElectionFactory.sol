@@ -110,6 +110,4 @@ event ElectionCreated(
  */
 
 
-
-   
 }
