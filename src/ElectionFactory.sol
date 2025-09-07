@@ -154,6 +154,6 @@ contract ElectionFactory {
 
    /***
     * @notice Ensures only organization admins can call a function
-    * 
+    * @param orgId The organization ID to check admin status against
     */
 }
