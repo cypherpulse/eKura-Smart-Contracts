@@ -152,5 +152,8 @@ contract ElectionFactory {
       _;
    }
 
-   
+   /***
+    * @notice Ensures only organization admins can call a function
+    * 
+    */
 }
