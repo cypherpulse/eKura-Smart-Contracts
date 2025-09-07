@@ -162,4 +162,29 @@ contract ElectionFactory {
        _;
    }
 
+   /// @notice Ensures the election exists
+/// @param electionId The election ID to validate
+/// @dev Reverts if the election doesn't exist (electionId = 0 means not created)
+modifier validElection(uint256 electionId) {
+    require(elections[electionId].electionId != 0, "Election not found");
+    _;
+}
+
+/// @notice Validates time parameters for elections
+/// @param startTime When the election should start
+/// @param endTime When the election should end
+/// @dev Ensures startTime is in future and endTime is after startTime
+modifier validTimeRange(uint256 startTime, uint256 endTime) {
+    require(startTime > block.timestamp, "Start time must be in future");
+    require(endTime > startTime, "End time must be after start time");
+    _;
+}
+
+/// @notice Ensures input is not empty or zero
+/// @param value The value to check (for addresses, use address(0))
+modifier notEmpty(string calldata value) {
+    require(bytes(value).length > 0, "Input cannot be empty");
+    _;
+}
+
 }
