@@ -100,7 +100,7 @@ event ElectionCreated(
    address indexed creator,
    uint256 startTime,
    uint256 endTime
-)
+);
 
 /**
  * @notice Emitted when an organization admin is added
