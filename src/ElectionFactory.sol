@@ -138,5 +138,6 @@ event OrgAdminRemoved(
 event ElectionStatusChanged(
    uint256 indexed electionId,
    bool isActive,
+   address indexed changedBy
 )
 }
