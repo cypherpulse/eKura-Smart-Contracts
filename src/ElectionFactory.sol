@@ -126,7 +126,7 @@ event OrgAdminRemoved(
    uint256 indexed orgId,
    address indexed admin,
    address indexed removedBy
-)
+);
 
 /**
  * @notice Emitted when an election's active status changes
@@ -139,7 +139,7 @@ event ElectionStatusChanged(
    uint256 indexed electionId,
    bool isActive,
    address indexed changedBy
-)
+);
 
 // <============ MODIFIERS ============>
 
