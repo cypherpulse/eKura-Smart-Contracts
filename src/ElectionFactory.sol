@@ -143,6 +143,12 @@ contract ElectionFactory {
     // <============ MODIFIERS ============>
 
     /***
-     * @notice Ensures only the platfro
+     * @notice Ensures only the platform admin can call a function
+     * @dev Revert if msg.sender is not the platform admin
      */
+
+   modifier onlyPlatformAdmin(){
+      require(msg.sender == platformAdmin, "Not platform admin");
+      _;
+   }
 }
