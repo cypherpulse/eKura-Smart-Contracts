@@ -258,5 +258,7 @@ contract ElectionFactory {
     ) external 
       onlyOrgAdmin(orgId)
       notEmpty(electionName)
+      validTimeRange(startTime,endTime)
+      returns(uint256)
 
 }
