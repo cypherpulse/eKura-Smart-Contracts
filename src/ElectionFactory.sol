@@ -354,5 +354,9 @@ contract ElectionFactory {
     function isOrgAdmin(uint256 orgId, address admin) external view returns(bool){
         return orgAdmins[orgId][admin];
     }
+
+    /***
+     * @notice Gets the candidates for a specific election
+     */
     
 }
