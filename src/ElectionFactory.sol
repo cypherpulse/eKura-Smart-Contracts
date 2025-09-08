@@ -348,6 +348,8 @@ contract ElectionFactory {
      * @param orgId The organization ID to check against
      * @param admin the address to check
      * @return bool True if the address is an org admin
-     * @dev
+     * @dev Public getter for orgAdmins mapping with additional context
      */
+
+    function 
 }
