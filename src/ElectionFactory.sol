@@ -218,7 +218,7 @@ contract ElectionFactory {
        require(admin != adress(0), "Invalid admin address");
        require(!orgAdmins[orgId][admin], "Already an admin");
 
-       org
+       orgAdmins[orgId][admin] = true;
     }
 
 }
