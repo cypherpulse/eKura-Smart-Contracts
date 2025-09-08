@@ -335,4 +335,5 @@ contract ElectionFactory {
      * @return bool True if election is active and within voting period
      * @dev combines isActive flag with time validation
      */
+    
 }
