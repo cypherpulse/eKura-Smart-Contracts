@@ -393,5 +393,7 @@ contract ElectionFactory {
         );
     }
 
-    
+    /***
+     * @notice Gets the total number of elections created
+     */
 }
