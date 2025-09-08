@@ -322,5 +322,6 @@ contract ElectionFactory {
      * @notice Gets complete election details 
      * @param electionId The ID of the election to fetch
      * @return Election struct with all election details
+     * @dev Returns the full Election struct for the given ID
      */
 }
