@@ -228,4 +228,11 @@ contract ElectionFactory {
      * @param admin The address to revoke admin privileges from
      * @dev Only the platform admin can call this function
      */
+
+    function removeOrgAdmin(uint256 orgId, address admin) external onlyPlatformAdmin{
+        require (orgAdmins[orgId][admin], "Not an admin");
+        
+        orgAdmins[orgId][admin] = false;
+        emit OrgAdminRemoved(orgId, admin, msg.sender);
+    }
 }
