@@ -256,4 +256,7 @@ contract ElectionFactory {
         uint256 endTime,
         string[] calldata candidates
     ) external 
+      onlyOrgAdmin(orgId)
+      notEmpty(electionName)
+
 }
