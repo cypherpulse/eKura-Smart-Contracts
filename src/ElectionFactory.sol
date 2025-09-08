@@ -338,6 +338,8 @@ contract ElectionFactory {
 
     function isElectionActive(uint256 electionId) external view validElection(electionId) returns (bool){
         Election memory election = elections[electionId];
-        
+        return election.isActive &&
+                block.timestamp >= election.startTime &&
+                block.timestamp <= election.endTime;
     }
 }
