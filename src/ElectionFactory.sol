@@ -287,6 +287,8 @@ contract ElectionFactory {
      */
     
     function toggleElectionStatus(uint256 electionId) external onlyPlatformAdmin validElection(electionId){
-        
+        elections[electionId].isActive = !elections[electionId].isActive;
+        emit 
+
     }
 }
