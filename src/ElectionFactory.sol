@@ -168,5 +168,7 @@ contract ElectionFactory {
     * @dev Reverts if the election does not exist (elction=0 means not created)
     */
 
-   
+   modifier validElection(uint256 electionId){
+    require (elections[electionId].electionId != 0, "Election Not Found");
+   }
 }
