@@ -378,5 +378,10 @@ contract ElectionFactory {
         uint256 orgId,
         string memory electionName,
         uint256 startTime,
-    )
+        uint256 endTime,
+        bool isActive,
+        address creator
+    ){
+        Election memory election = elections[electionId];
+    }
 }
