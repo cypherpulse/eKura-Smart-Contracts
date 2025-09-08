@@ -248,5 +248,9 @@ contract ElectionFactory {
      * @dev Only Organizaton admins can create elections for their org
      */
 
-    
+    function createElection(
+        uint256 orgId,
+        string calldata electionName,
+        string calldata description,
+    )
 }
