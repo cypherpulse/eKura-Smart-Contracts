@@ -271,6 +271,8 @@ contract ElectionFactory {
             startTime: startTime,
             endTime: endTime,
             isActive: true,
+            candidates: candidates,
+            creator: msg.sender,
         })
       }
 
