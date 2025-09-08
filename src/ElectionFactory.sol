@@ -276,6 +276,10 @@ contract ElectionFactory {
             createdAt: block.timestamp
         });
         orgElections[orgId].push(electionId);
+        emit ElectionCreated(orgId, electionId, electionName, msg.sender, startTime, endTime);
+        return electionId;
       }
+    
+    /
 
 }
