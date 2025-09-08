@@ -219,6 +219,10 @@ contract ElectionFactory {
        require(!orgAdmins[orgId][admin], "Already an admin");
 
        orgAdmins[orgId][admin] = true;
+       emit OrgAdminAdded(orgId, admin, msg.sender);
     }
 
+    /***
+     * @notice Removes an organization admin
+     */
 }
