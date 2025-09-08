@@ -357,6 +357,8 @@ contract ElectionFactory {
 
     /***
      * @notice Gets the candidates for a specific election
+     * @param electionId The election ID
+     * @return Array of candidates names/IDs
      */
     
 }
