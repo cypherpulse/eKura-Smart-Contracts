@@ -386,8 +386,12 @@ contract ElectionFactory {
         return(
             election.orgId,
             election.electionName,
-            election.startTime
-            ,election.endTime,
-        )
+            election.startTime,
+            election.endTime,
+            election.isActive,
+            election.creator
+        );
     }
+
+    
 }
