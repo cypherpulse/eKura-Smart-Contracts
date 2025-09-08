@@ -224,5 +224,8 @@ contract ElectionFactory {
 
     /***
      * @notice Removes an organization admin
+     * @param orgId The ID of the organization
+     * @param admin The address to revoke admin privileges from
+     * @dev Only the platform admin can call this function
      */
 }
