@@ -194,4 +194,10 @@ contract ElectionFactory {
     require(bytes(value).length > 0, "Input cannot be empty");
     _; 
    }
+
+   // <============ FUNCTIONS ============>
+   /***
+    * @notice Contract constructor - sets up the initial state
+    * @dev sets the deployer as the platform admin and initializes nextElectionId
+    */
 }
