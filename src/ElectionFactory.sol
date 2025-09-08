@@ -213,6 +213,7 @@ contract ElectionFactory {
       * @param admin The address of the new admin to add
       * @dev Only the platform admin can call this function
       */
+    
+    
 
-     
 }
