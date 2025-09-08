@@ -268,6 +268,9 @@ contract ElectionFactory {
             electionId : electionId,
             electionName: electionName,
             description: description,
+            startTime: startTime,
+            endTime: endTime,
+            isActive: true,
         })
       }
 
