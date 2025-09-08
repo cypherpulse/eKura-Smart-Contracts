@@ -214,6 +214,7 @@ contract ElectionFactory {
       * @dev Only the platform admin can call this function
       */
     
-    
+    function addOrgAdmin(uint256 orgId, address admin) external onlyPlatformAdmin{
+    }
 
 }
