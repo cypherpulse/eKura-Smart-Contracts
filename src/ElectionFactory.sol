@@ -265,6 +265,10 @@ contract ElectionFactory {
 
         elections[electionId] = Election({
             orgId: orgId,
-            electionId : 
+            electionId : electionId,
+            electionName: electionName,
+            description: description,
         })
- 
+      }
+
+}
