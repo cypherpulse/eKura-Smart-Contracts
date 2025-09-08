@@ -335,5 +335,9 @@ contract ElectionFactory {
      * @return bool True if election is active and within voting period
      * @dev combines isActive flag with time validation
      */
-    
+
+    function isElectionActive(uint256 electionId) external view validElection(electionId) returns (bool){
+        Election memory election = elections[electionId];
+        
+    }
 }
