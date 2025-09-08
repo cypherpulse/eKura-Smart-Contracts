@@ -373,5 +373,7 @@ contract ElectionFactory {
      * @dev Lighter weight getter for election summary info when you don't need the full struct
      */
 
-    
+    function getElectionInfo(uint256 electionId) external view validElection(electionId) 
+    returns(
+    )
 }
