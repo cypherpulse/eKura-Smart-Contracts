@@ -375,5 +375,8 @@ contract ElectionFactory {
 
     function getElectionInfo(uint256 electionId) external view validElection(electionId) 
     returns(
+        uint256 orgId,
+        string memory electionName,
+        uint256 startTime,
     )
 }
