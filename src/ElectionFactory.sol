@@ -264,8 +264,7 @@ contract ElectionFactory {
         uint256 electionId = nextElectionID++;
 
         elections[electionId] = Election({
-            orgId: orgId
+            orgId: orgId,
+            electionId : 
         })
-      }
-
-}
+ 
