@@ -242,5 +242,7 @@ contract ElectionFactory {
      * @param electionName The name/title of the election 
      * @param description Detailed description of the elction
      * @param startTime Unix timestamp when elction starts
+     * @param endTime Unix timestamp when elction ends
+     * @param candidates Array of candidate names/Ids
      */
 }
