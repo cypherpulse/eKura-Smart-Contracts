@@ -259,6 +259,13 @@ contract ElectionFactory {
       onlyOrgAdmin(orgId)
       notEmpty(electionName)
       validTimeRange(startTime,endTime)
-      returns(uint256)
+      returns(uint256){
+        require(candidates.length > 0, "At least one candidate required");
+        uint256 electionId = nextElectionID++;
+
+        elections[electionId] = Election({
+            orgId: orgId
+        })
+      }
 
 }
