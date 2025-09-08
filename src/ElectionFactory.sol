@@ -200,4 +200,6 @@ contract ElectionFactory {
     * @notice Contract constructor - sets up the initial state
     * @dev sets the deployer as the platform admin and initializes nextElectionId
     */
+
+    contructor()
 }
