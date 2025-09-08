@@ -170,6 +170,7 @@ contract ElectionFactory {
 
    modifier validElection(uint256 electionId){
     require (elections[electionId].electionId != 0, "Election Not Found");
+    _;
    }
 
    /***
@@ -201,8 +202,8 @@ contract ElectionFactory {
     * @dev sets the deployer as the platform admin and initializes nextElectionId
     */
 
-    contructor(){
-        platfromAdmin=msg.sender;
+    constructor(){
+        platformAdmin=msg.sender;
         nextElectionID=1; // Start election IDs from 1(0 means not created)
     }
 
@@ -291,4 +292,6 @@ contract ElectionFactory {
         emit ElectionStatusChanged(electionId, elections[electionId].isActive, msg.sender);
 
     }
+
+
 }
