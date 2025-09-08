@@ -395,5 +395,11 @@ contract ElectionFactory {
 
     /***
      * @notice Gets the total number of elections created
+     * @return uint256 The next election ID(total elections +1)
+     * @dev Useful for tracking total elections without iterating
      */
+
+    function getTotalElections() external view returns (uint256){
+        return nextElectionId-1 
+    }
 }
