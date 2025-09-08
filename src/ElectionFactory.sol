@@ -205,4 +205,7 @@ contract ElectionFactory {
         platfromAdmin=msg.sender;
         nextElectionID=1; // Start election IDs from 1(0 means not created)
     }
+
+    // <============ EXTERNAL FUNCTIONS ============>
+    
 }
