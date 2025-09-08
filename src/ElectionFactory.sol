@@ -352,7 +352,7 @@ contract ElectionFactory {
      */
 
     function isOrgAdmin(uint256 orgId, address admin) external view returns(bool){
-        returns orgAdmins[orgId][admin];
+        return orgAdmins[orgId][admin];
     }
-
+    
 }
