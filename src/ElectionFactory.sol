@@ -317,5 +317,10 @@ contract ElectionFactory {
     }
 
     // <============ VIEW & PURE FUNCTIONS ============>
-    
+
+    /***
+     * @notice Gets complete election details 
+     * @param electionId The ID of the election to fetch
+     * @return Election struct with all election details
+     */
 }
