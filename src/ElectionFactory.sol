@@ -171,4 +171,11 @@ contract ElectionFactory {
    modifier validElection(uint256 electionId){
     require (elections[electionId].electionId != 0, "Election Not Found");
    }
+
+   /***
+    * @notice Validates time parameters for Elections
+    * @param startTime when the election should start
+    * @param endTime when the election should end
+    * @dev Ensures startTime is in future and endTime is after startTime
+    */
 }
