@@ -273,7 +273,9 @@ contract ElectionFactory {
             isActive: true,
             candidates: candidates,
             creator: msg.sender,
-        })
+            createdAt: block.timestamp
+        });
+        orgElections[orgId].push(electionId);
       }
 
 }
