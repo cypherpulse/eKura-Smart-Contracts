@@ -178,4 +178,10 @@ contract ElectionFactory {
     * @param endTime when the election should end
     * @dev Ensures startTime is in future and endTime is after startTime
     */
+
+   modifier validTimeRange(uint256 startTime,uint256 endTime){
+    require(startTime >= block.timestamp, "Start time must be in the future");
+    require(endTime > startTime, "End time must be after start time");
+    _;
+   }
 }
