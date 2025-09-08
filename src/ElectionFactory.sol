@@ -215,6 +215,10 @@ contract ElectionFactory {
       */
     
     function addOrgAdmin(uint256 orgId, address admin) external onlyPlatformAdmin{
+       require(admin != adress(0), "Invalid admin address");
+       require(!orgAdmins[orgId][admin], "Already an admin");
+
+       org
     }
 
 }
