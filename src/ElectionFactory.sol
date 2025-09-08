@@ -324,4 +324,12 @@ contract ElectionFactory {
      * @return Election struct with all election details
      * @dev Returns the full Election struct for the given ID
      */
+
+    function getElection(uint256 electionId) external view validElection(electionId) returns (Election memory){
+        return elections[electionId];
+    }
+
+    /***
+     * @notice Checks if an election is currently active
+     */
 }
