@@ -207,5 +207,5 @@ contract ElectionFactory {
     }
 
     // <============ EXTERNAL FUNCTIONS ============>
-    
+     
 }
