@@ -346,6 +346,8 @@ contract ElectionFactory {
     /***
      * @notice Checks if an address is an admin for speficif organization
      * @param orgId The organization ID to check against
-     * 
+     * @param admin the address to check
+     * @return bool True if the address is an org admin
+     * @dev
      */
 }
