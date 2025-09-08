@@ -252,5 +252,8 @@ contract ElectionFactory {
         uint256 orgId,
         string calldata electionName,
         string calldata description,
-    )
+        uint256 startTime,
+        uint256 endTime,
+        string[] calldata candidates
+    ) external 
 }
