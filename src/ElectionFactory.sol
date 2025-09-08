@@ -351,5 +351,7 @@ contract ElectionFactory {
      * @dev Public getter for orgAdmins mapping with additional context
      */
 
-    function 
+    function isOrgAdmin(uint256 orgId, address admin) external view returns(bool){
+        returns orgAdmins[orgId][admin];
+    }
 }
