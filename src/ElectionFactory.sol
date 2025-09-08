@@ -147,80 +147,86 @@ contract ElectionFactory {
      * @dev Revert if msg.sender is not the platform admin
      */
 
-   modifier onlyPlatformAdmin(){
-      require(msg.sender == platformAdmin, "Not platform admin");
-      _;
-   }
+    modifier onlyPlatformAdmin() {
+        require(msg.sender == platformAdmin, "Not platform admin");
+        _;
+    }
 
-   /***
-    * @notice Ensures only organization admins can call a function
-    * @param orgId The organization ID to check admin status against
-    * @dev  Reverts if msg.sender is not an admin for the specified organization
-    */
-   modifier onlyOrgAdmin(uint256 orgId) {
-       require(orgAdmins[orgId][msg.sender], "Not organization admin");
-       _;
-   }
+    /***
+     * @notice Ensures only organization admins can call a function
+     * @param orgId The organization ID to check admin status against
+     * @dev  Reverts if msg.sender is not an admin for the specified organization
+     */
+    modifier onlyOrgAdmin(uint256 orgId) {
+        require(orgAdmins[orgId][msg.sender], "Not organization admin");
+        _;
+    }
 
-   /***
-    * @notice Ensures the election exists
-    * @param electionId The election ID to Validate
-    * @dev Reverts if the election does not exist (elction=0 means not created)
-    */
+    /***
+     * @notice Ensures the election exists
+     * @param electionId The election ID to Validate
+     * @dev Reverts if the election does not exist (elction=0 means not created)
+     */
 
-   modifier validElection(uint256 electionId){
-    require (elections[electionId].electionId != 0, "Election Not Found");
-    _;
-   }
+    modifier validElection(uint256 electionId) {
+        require(elections[electionId].electionId != 0, "Election Not Found");
+        _;
+    }
 
-   /***
-    * @notice Validates time parameters for Elections
-    * @param startTime when the election should start
-    * @param endTime when the election should end
-    * @dev Ensures startTime is in future and endTime is after startTime
-    */
+    /***
+     * @notice Validates time parameters for Elections
+     * @param startTime when the election should start
+     * @param endTime when the election should end
+     * @dev Ensures startTime is in future and endTime is after startTime
+     */
 
-   modifier validTimeRange(uint256 startTime,uint256 endTime){
-    require(startTime >= block.timestamp, "Start time must be in the future");
-    require(endTime > startTime, "End time must be after start time");
-    _;
-   }
+    modifier validTimeRange(uint256 startTime, uint256 endTime) {
+        require(
+            startTime >= block.timestamp,
+            "Start time must be in the future"
+        );
+        require(endTime > startTime, "End time must be after start time");
+        _;
+    }
 
-   /***
-    * @notice Ensure input is not empty or zero
-    * @param value the value to chek (for addresses,use address(0))
-    */
+    /***
+     * @notice Ensure input is not empty or zero
+     * @param value the value to chek (for addresses,use address(0))
+     */
 
-   modifier notEmpty(string calldata value){
-    require(bytes(value).length > 0, "Input cannot be empty");
-    _; 
-   }
+    modifier notEmpty(string calldata value) {
+        require(bytes(value).length > 0, "Input cannot be empty");
+        _;
+    }
 
-   // <============ FUNCTIONS ============>
-   /***
-    * @notice Contract constructor - sets up the initial state
-    * @dev sets the deployer as the platform admin and initializes nextElectionId
-    */
+    // <============ FUNCTIONS ============>
+    /***
+     * @notice Contract constructor - sets up the initial state
+     * @dev sets the deployer as the platform admin and initializes nextElectionId
+     */
 
-    constructor(){
-        platformAdmin=msg.sender;
-        nextElectionID=1; // Start election IDs from 1(0 means not created)
+    constructor() {
+        platformAdmin = msg.sender;
+        nextElectionID = 1; // Start election IDs from 1(0 means not created)
     }
 
     // <============ EXTERNAL FUNCTIONS ============>
-     /**
-      * @notice adds a new organization admin
-      * @param orgId The ID of the organization
-      * @param admin The address of the new admin to add
-      * @dev Only the platform admin can call this function
-      */
-    
-    function addOrgAdmin(uint256 orgId, address admin) external onlyPlatformAdmin{
-       require(admin != adress(0), "Invalid admin address");
-       require(!orgAdmins[orgId][admin], "Already an admin");
+    /**
+     * @notice adds a new organization admin
+     * @param orgId The ID of the organization
+     * @param admin The address of the new admin to add
+     * @dev Only the platform admin can call this function
+     */
 
-       orgAdmins[orgId][admin] = true;
-       emit OrgAdminAdded(orgId, admin, msg.sender);
+    function addOrgAdmin(
+        uint256 orgId,
+        address admin
+    ) external onlyPlatformAdmin {
+        require(admin != address(0), "Invalid admin address");
+        require(!orgAdmins[orgId][admin], "Already an admin");
+
+        orgAdmins[orgId][admin] = true;
+        emit OrgAdminAdded(orgId, admin, msg.sender);
     }
 
     /***
@@ -230,8 +236,11 @@ contract ElectionFactory {
      * @dev Only the platform admin can call this function
      */
 
-    function removeOrgAdmin(uint256 orgId, address admin) external onlyPlatformAdmin{
-        require (orgAdmins[orgId][admin], "Not an admin");
+    function removeOrgAdmin(
+        uint256 orgId,
+        address admin
+    ) external onlyPlatformAdmin {
+        require(orgAdmins[orgId][admin], "Not an admin");
 
         orgAdmins[orgId][admin] = false;
         emit OrgAdminRemoved(orgId, admin, msg.sender);
@@ -240,7 +249,7 @@ contract ElectionFactory {
     /***
      * @notice Creates a new election for an organization
      * @param orgId The organization ID creating the elction
-     * @param electionName The name/title of the election 
+     * @param electionName The name/title of the election
      * @param description Detailed description of the elction
      * @param startTime Unix timestamp when elction starts
      * @param endTime Unix timestamp when elction ends
@@ -256,17 +265,19 @@ contract ElectionFactory {
         uint256 startTime,
         uint256 endTime,
         string[] calldata candidates
-    ) external 
-      onlyOrgAdmin(orgId)
-      notEmpty(electionName)
-      validTimeRange(startTime,endTime)
-      returns(uint256){
+    )
+        external
+        onlyOrgAdmin(orgId)
+        notEmpty(electionName)
+        validTimeRange(startTime, endTime)
+        returns (uint256)
+    {
         require(candidates.length > 0, "At least one candidate required");
         uint256 electionId = nextElectionID++;
 
         elections[electionId] = Election({
             orgId: orgId,
-            electionId : electionId,
+            electionId: electionId,
             electionName: electionName,
             description: description,
             startTime: startTime,
@@ -277,21 +288,34 @@ contract ElectionFactory {
             createdAt: block.timestamp
         });
         orgElections[orgId].push(electionId);
-        emit ElectionCreated(orgId, electionId, electionName, msg.sender, startTime, endTime);
+        emit ElectionCreated(
+            orgId,
+            electionId,
+            electionName,
+            msg.sender,
+            startTime,
+            endTime
+        );
         return electionId;
-      }
-    
+    }
+
     /***
      * @notice Toggles an election's active status( emergency function)
      * @param electionId The ID of the election to toggle
      * @dev Only platform admin can pause /unpause elections
      */
-    
-    function toggleElectionStatus(uint256 electionId) external onlyPlatformAdmin validElection(electionId){
-        elections[electionId].isActive = !elections[electionId].isActive;
-        emit ElectionStatusChanged(electionId, elections[electionId].isActive, msg.sender);
 
+    function toggleElectionStatus(
+        uint256 electionId
+    ) external onlyPlatformAdmin validElection(electionId) {
+        elections[electionId].isActive = !elections[electionId].isActive;
+        emit ElectionStatusChanged(
+            electionId,
+            elections[electionId].isActive,
+            msg.sender
+        );
     }
 
-
+    // <============ VIEW & PURE FUNCTIONS ============>
+    
 }
