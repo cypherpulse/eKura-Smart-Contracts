@@ -370,6 +370,8 @@ contract ElectionFactory {
      * @notice Gets all election info without candidates array
      * @param electionId The election ID
      * @return orgId, electionName, startTime,endTime, isActive,creator
-     * @dev Lighter weight getter for election summary info
+     * @dev Lighter weight getter for election summary info when you don't need the full struct
      */
+
+    
 }
