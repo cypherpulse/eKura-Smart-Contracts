@@ -231,8 +231,16 @@ contract ElectionFactory {
 
     function removeOrgAdmin(uint256 orgId, address admin) external onlyPlatformAdmin{
         require (orgAdmins[orgId][admin], "Not an admin");
-        
+
         orgAdmins[orgId][admin] = false;
         emit OrgAdminRemoved(orgId, admin, msg.sender);
     }
+
+    /***
+     * @notice Creates a new election for an organization
+     * @param orgId The organization ID creating the elction
+     * @param electionName The name/title of the election 
+     * @param description Detailed description of the elction
+     * @param startTime Unix timestamp when elction starts
+     */
 }
