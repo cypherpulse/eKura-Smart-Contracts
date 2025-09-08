@@ -332,6 +332,7 @@ contract ElectionFactory {
     /***
      * @notice Checks if an election is currently active and withtin time bounds 
      * @param electionId The ID of the election to check
-     * @ret
+     * @return bool True if election is active and within voting period
+     * @dev combines isActive flag with time validation
      */
 }
