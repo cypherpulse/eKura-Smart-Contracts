@@ -285,5 +285,8 @@ contract ElectionFactory {
      * @param electionId The ID of the election to toggle
      * @dev Only platform admin can pause /unpause elections
      */
-
+    
+    function toggleElectionStatus(uint256 electionId) external onlyPlatformAdmin validElection(electionId){
+        
+    }
 }
