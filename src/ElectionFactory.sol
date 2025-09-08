@@ -243,6 +243,10 @@ contract ElectionFactory {
      * @param description Detailed description of the elction
      * @param startTime Unix timestamp when elction starts
      * @param endTime Unix timestamp when elction ends
-     * @param candidates Array of candidate names/Ids
+     * @param candidates Array of candidate names/IDs
+     * @return electionId the unique ID of the created elction
+     * @dev Only Organizaton admins can create elections for their org
      */
+
+    
 }
