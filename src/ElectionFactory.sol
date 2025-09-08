@@ -365,5 +365,11 @@ contract ElectionFactory {
     function getElectionCandidates(uint256 electionId) external view validElection(electionId) returns (string[] memory) {
         return elections[electionId].candidates;
     }
-
+    
+    /***
+     * @notice Gets all election info without candidates array
+     * @param electionId The election ID
+     * @return orgId, electionName, startTime,endTime, isActive,creator
+     * @dev Lighter weight getter for election summary info
+     */
 }
