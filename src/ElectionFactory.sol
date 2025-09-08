@@ -330,6 +330,6 @@ contract ElectionFactory {
     }
 
     /***
-     * @notice Checks if an election is currently active
+     * @notice Checks if an election is currently active and withtin time bounds 
      */
 }
