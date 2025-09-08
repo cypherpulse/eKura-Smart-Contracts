@@ -361,5 +361,9 @@ contract ElectionFactory {
      * @return Array of candidates names/IDs
      * @dev Separate getter for just the candidate array
      */
-    
+
+    function getElectionCandidates(uint256 electionId) external view validElection(electionId) returns (string[] memory) {
+        return elections[electionId].candidates;
+    }
+
 }
