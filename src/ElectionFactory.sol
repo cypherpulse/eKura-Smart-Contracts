@@ -184,4 +184,14 @@ contract ElectionFactory {
     require(endTime > startTime, "End time must be after start time");
     _;
    }
+
+   /***
+    * @notice Ensure input is not empty or zero
+    * @param value the value to chek (for addresses,use address(0))
+    */
+
+   modifier notEmpty(string calldata value){
+    require(bytes(value).length > 0, "Input cannot be empty");
+    _; 
+   }
 }
