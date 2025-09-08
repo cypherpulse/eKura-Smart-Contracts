@@ -207,5 +207,9 @@ contract ElectionFactory {
     }
 
     // <============ EXTERNAL FUNCTIONS ============>
-     
+     /**
+      * @notice adds a new organization admin
+      * @param orgId The ID of the organization
+      * @param admin The address of the new admin to add
+      */
 }
