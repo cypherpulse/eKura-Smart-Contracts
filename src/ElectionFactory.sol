@@ -201,5 +201,8 @@ contract ElectionFactory {
     * @dev sets the deployer as the platform admin and initializes nextElectionId
     */
 
-    contructor()
+    contructor(){
+        platfromAdmin=msg.sender;
+        nextElectionID=1; // Start election IDs from 1(0 means not created)
+    }
 }
