@@ -342,4 +342,9 @@ contract ElectionFactory {
                 block.timestamp >= election.startTime &&
                 block.timestamp <= election.endTime;
     }
+
+    /***
+     * @notice Checks if an address is an admin for speficif organization
+     * 
+     */
 }
