@@ -383,5 +383,11 @@ contract ElectionFactory {
         address creator
     ){
         Election memory election = elections[electionId];
+        return(
+            election.orgId,
+            election.electionName,
+            election.startTime
+            ,election.endTime,
+        )
     }
 }
