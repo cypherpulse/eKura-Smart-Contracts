@@ -280,6 +280,10 @@ contract ElectionFactory {
         return electionId;
       }
     
-    /
+    /***
+     * @notice Toggles an election's active status( emergency function)
+     * @param electionId The ID of the election to toggle
+     * @dev Only platform admin can pause /unpause elections
+     */
 
 }
