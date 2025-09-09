@@ -26,6 +26,8 @@
 // view & pure functions
 
 pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 contract VoteStorage {
     // Vote storage logic
 }
