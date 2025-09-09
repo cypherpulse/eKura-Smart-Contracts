@@ -103,6 +103,7 @@ contract VoteStorage is
     mapping(uint256 => mapping(uint256 => uint256)) private s_voteCounts;
 
     /***
-     * 
+     * @dev Mapping to track nonces for meta-transactions: voterAddress => nonce
      */
+    mapping(address => uint256)
 }
