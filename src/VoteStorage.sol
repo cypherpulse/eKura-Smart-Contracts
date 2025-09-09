@@ -112,5 +112,7 @@ contract VoteStorage is
      */
     mapping(uint256 => mapping(address => uint256)) private s_voteTimestamps;
 
-    
+    /***
+     * @dev 
+     */
 }
