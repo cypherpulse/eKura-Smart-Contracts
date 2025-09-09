@@ -76,5 +76,7 @@ contract VoteStorage is
     }
 
     // State Variables //
-    
+    /***
+     * @dev Reference to the ElectionFactory contract for election validation.
+     */
 }
