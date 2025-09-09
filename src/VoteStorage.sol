@@ -80,4 +80,8 @@ contract VoteStorage is
      * @dev Reference to the ElectionFactory contract for election validation.
      */
     ElectionFactory private electionFactory;
+
+    /***
+     * 
+     */
 }
