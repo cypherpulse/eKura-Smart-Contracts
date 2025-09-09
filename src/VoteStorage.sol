@@ -86,4 +86,8 @@ contract VoteStorage is
      */
     bytes32 private constant VOTE_TYPEHASH = 
         keccak256("VoteData(address voter,uint256 electionId,uint256 candidateId,uint256 nonce,uint256 deadline)");
+
+    /***
+     * 
+     */
 }
