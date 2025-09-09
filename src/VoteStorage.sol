@@ -33,6 +33,11 @@ import "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 import "@openzeppelin/contracts/utils/cryptography/EIP712.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+import "./ElectionFactory.sol";
+/***
+ * @title VoteStorage
+ * @
+ */
 contract VoteStorage {
     // Vote storage logic
 }
