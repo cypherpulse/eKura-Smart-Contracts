@@ -53,4 +53,5 @@ contract VoteStorage is
     error VoteStorage__InvalidCandidate();
     error VoteStorage__InvalidSignature();
     error VoteStorage__SignatureExpired();
+    error VoteStorage__InvalidNonce();
 }
