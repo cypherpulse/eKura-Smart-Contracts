@@ -67,4 +67,8 @@ contract VoteStorage is
      * @param deadline Unix timestamp after which signature expires
      */
 
+    struct VoteData{
+        address voter;
+        
+    }
 }
