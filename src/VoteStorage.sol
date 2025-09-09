@@ -37,6 +37,7 @@ import "./ElectionFactory.sol";
 /***
  * @title VoteStorage
  * @author cypherpulse.base.eth
+ * @notice This contract handles the vote storage and counting for all elections created via the ElectionFactory.
  */
 contract VoteStorage {
     // Vote storage logic
