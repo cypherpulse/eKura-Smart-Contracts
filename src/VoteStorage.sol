@@ -93,6 +93,7 @@ contract VoteStorage is
     mapping(uint256 => mapping(address => bytes32)) private s_voteHashes;
 
     /***
-     * Mapping to track voting status: electionId => 
+     * Mapping to track voting status: electionId => voterAddress => hasVoted
      */
+    mapping(uint256 => mapping(address => bool)) private s_hasVoted;
 }
