@@ -61,6 +61,7 @@ contract VoteStorage is
     /***
      * @notice Struct to for meta-transaction vote data.
      * @param voter Address of the voter
+     * @param electionId Election Identifier
      */
 
 }
