@@ -1,6 +1,4 @@
-
 //SPDX-License-Identifier: MIT
-
 
 // Layout of the contract file:
 // version
@@ -34,6 +32,7 @@ import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.
 import "@openzeppelin/contracts/utils/cryptography/EIP712.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "./ElectionFactory.sol";
+
 /***
  * @title VoteStorage
  * @author cypherpulse.base.eth
@@ -46,6 +45,8 @@ contract VoteStorage is
     PausableUpgradeable,
     ReentrancyGuardUpgradeable,
     EIP712
- {
-    // Vote storage logic
+{
+    // Errors //
+
+    error VoteStorage__ElectionNotActive();
 }
