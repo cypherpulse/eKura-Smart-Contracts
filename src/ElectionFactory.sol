@@ -400,6 +400,6 @@ contract ElectionFactory {
      */
 
     function getTotalElections() external view returns (uint256){
-        return nextElectionId-1 
+        return nextElectionID-1;
     }
 }
