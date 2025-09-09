@@ -64,6 +64,7 @@ contract VoteStorage is
      * @param electionId Election Identifier
      * @param candidateId Candidate/position/project identifier
      * @param nonce Unique number to prevent reply attacks
+     * @param deadline Unix timestamp after which signature expires
      */
 
 }
