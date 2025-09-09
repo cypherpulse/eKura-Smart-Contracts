@@ -74,4 +74,6 @@ contract VoteStorage is
         uint256 nonce;
         uint256 deadline;
     }
+
+    // State Variables //
 }
