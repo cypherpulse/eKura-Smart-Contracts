@@ -108,6 +108,6 @@ contract VoteStorage is
     mapping(address => uint256) private s_nonces;
 
     /***
-     * @dev 
+     * @dev Mapping to store 
      */
 }
