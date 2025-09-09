@@ -82,6 +82,7 @@ contract VoteStorage is
     ElectionFactory private electionFactory;
 
     /***
-     * 
+     * @dev EIP712 typehash for voteData struct.
      */
+    
 }
