@@ -49,4 +49,5 @@ contract VoteStorage is
     // Errors //
 
     error VoteStorage__ElectionNotActive();
+    error VoteStorage__AlreadyVoted();
 }
