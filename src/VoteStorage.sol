@@ -88,6 +88,8 @@ contract VoteStorage is
         keccak256("VoteData(address voter,uint256 electionId,uint256 candidateId,uint256 nonce,uint256 deadline)");
 
     /***
-     * 
+     * @dev Mapping to store vote hashes : electionId => voterAddress => voteHash
      */
+
+    mapping
 }
