@@ -76,4 +76,5 @@ contract VoteStorage is
     }
 
     // State Variables //
+    
 }
