@@ -45,6 +45,7 @@ contract VoteStorage is
     OwnableUpgradeable,
     PausableUpgradeable,
     ReentrancyGuardUpgradeable,
+    EIP712
  {
     // Vote storage logic
 }
