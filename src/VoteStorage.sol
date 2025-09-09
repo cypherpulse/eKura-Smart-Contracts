@@ -105,5 +105,5 @@ contract VoteStorage is
     /***
      * @dev Mapping to track nonces for meta-transactions: voterAddress => nonce
      */
-    mapping(address => uint256)
+    mapping(address => uint256) private s_nonces;
 }
