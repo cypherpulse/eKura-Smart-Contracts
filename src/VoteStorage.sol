@@ -71,5 +71,7 @@ contract VoteStorage is
         address voter;
         uint256 electionId;
         uint256 candidateId;
+        uint256 nonce;
+        uint256 deadline;
     }
 }
