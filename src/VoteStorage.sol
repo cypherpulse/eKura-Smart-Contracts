@@ -59,4 +59,5 @@ contract VoteStorage is
 
     // Type Declarations //
     
+
 }
