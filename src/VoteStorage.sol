@@ -58,6 +58,9 @@ contract VoteStorage is
 
 
     // Type Declarations //
-    
+    /***
+     * @notice Struct to for meta-transaction vote data.
+     * @param voter Address of the voter
+     */
 
 }
