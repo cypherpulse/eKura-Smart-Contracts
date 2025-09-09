@@ -44,6 +44,7 @@ contract VoteStorage is
     Initializable,
     OwnableUpgradeable,
     PausableUpgradeable,
+    ReentrancyGuardUpgradeable,
  {
     // Vote storage logic
 }
