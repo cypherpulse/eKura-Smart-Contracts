@@ -36,7 +36,7 @@ import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "./ElectionFactory.sol";
 /***
  * @title VoteStorage
- * @
+ * @author cypherpulse.base.eth
  */
 contract VoteStorage {
     // Vote storage logic
