@@ -108,6 +108,9 @@ contract VoteStorage is
     mapping(address => uint256) private s_nonces;
 
     /***
-     * @dev Mapping to store 
+     * @dev Mapping to store vote timestamps: electionId => voterAddress => timestamp
      */
+    mapping(uint256 => mapping(address => uint256)) private s_voteTimestamps;
+
+    
 }
