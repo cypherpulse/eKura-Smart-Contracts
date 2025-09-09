@@ -84,5 +84,5 @@ contract VoteStorage is
     /***
      * @dev EIP712 typehash for voteData struct.
      */
-    
+    bytes32 private constant VOTE_TYPEHASH = 
 }
