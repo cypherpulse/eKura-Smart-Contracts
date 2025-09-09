@@ -43,6 +43,7 @@ import "./ElectionFactory.sol";
 contract VoteStorage is
     Initializable,
     OwnableUpgradeable,
+    PausableUpgradeable,
  {
     // Vote storage logic
 }
