@@ -69,6 +69,7 @@ contract VoteStorage is
 
     struct VoteData{
         address voter;
-        uint256 electionId;  
+        uint256 electionId;
+        uint256 candidateId;
     }
 }
