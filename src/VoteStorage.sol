@@ -85,5 +85,5 @@ contract VoteStorage is
      * @dev EIP712 typehash for voteData struct.
      */
     bytes32 private constant VOTE_TYPEHASH = 
-        keccak256()
+        keccak256("VoteData(address voter,uint256 electionId,uint256 candidateId,uint256 nonce,uint256 deadline)");
 }
