@@ -91,5 +91,5 @@ contract VoteStorage is
      * @dev Mapping to store vote hashes : electionId => voterAddress => voteHash
      */
 
-    mapping
+    mapping(uint256 => mapping(address => bytes32)) private s_voteHashes;
 }
