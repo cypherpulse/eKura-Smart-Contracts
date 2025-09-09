@@ -100,5 +100,7 @@ contract VoteStorage is
     /***
      * @dev Mapping to track vote counts: electionId => candidateId => voteCount
      */
+    mapping(uint256 => mapping(uint256 => uint256)) private s_voteCounts;
+
     
 }
