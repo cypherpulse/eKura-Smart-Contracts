@@ -188,5 +188,5 @@ contract VoteStorage is
      * @dev Checks with ElectionFactory for election status and timing
      */
 
-    modifier  
+    modifier onlyActiveElection(uint256 electionId){}
 }
