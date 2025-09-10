@@ -205,6 +205,6 @@ contract VoteStorage is
      */
 
     modifier notAlreadyVoted(uint256 electionId, address voter){
-        
+        if(s_hasVoted[electionId][voter])
     }
 }
