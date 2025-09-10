@@ -153,5 +153,6 @@ contract VoteStorage is
 
     /***
      * @notice Emitted when the ElectionFactory address is set 
+     * @param oldFactory Previous factory address
      */
 }
