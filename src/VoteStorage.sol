@@ -251,7 +251,8 @@ contract VoteStorage is
         address signer = ECDSA.recover(hash, signatures);
 
         if (signer != voteData.voter){
-            
+            revert VoteStorage__InvalidSignature();
         }
+        
     }
 }
