@@ -163,4 +163,9 @@ contract VoteStorage is
         address indexed newFactory,
         address indexed changedBy
     )
+
+    /***
+     * @notice Emitted when a meta-transaction vote is processed
+     * @param voter Address of the voter 
+     */
 }
