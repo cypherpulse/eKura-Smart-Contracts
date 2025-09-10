@@ -145,5 +145,7 @@ contract VoteStorage is
      * @param newCount Updated vote count
      */
 
-    event VoteCountUpdated()
+    event VoteCountUpdated(
+        uint256 indexed electionId,
+    )
 }
