@@ -168,5 +168,7 @@ contract VoteStorage is
      * @notice Emitted when a meta-transaction vote is processed
      * @param voter Address of the voter
      * @param relayer Address that submitted the meta-transaction
+     * @param electionId Election Identifier
+     * @param nonce 
      */
 }
