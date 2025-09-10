@@ -126,5 +126,6 @@ contract VoteStorage is
      * @param electionId Election Identifier
      * @param candidateId Candidate/position/project voted for
      * @param voteHash Hash of the vote for verification
+     * @param timestamp
      */
 }
