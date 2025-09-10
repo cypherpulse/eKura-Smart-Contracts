@@ -242,7 +242,7 @@ contract VoteStorage is
             VOTE_TYPEHASH,
             voteData.voter,
             voteData.electionId,
-            
+            voteData.candidateId,
         ))
     }
 }
