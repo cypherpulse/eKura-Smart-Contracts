@@ -185,5 +185,8 @@ contract VoteStorage is
     /***
      * @notice Ensures the election exists and is currently active.
      * @param electionId The election to validate
+     * @dev Checks with ElectionFactory for election status and timing
      */
+
+    modifier  
 }
