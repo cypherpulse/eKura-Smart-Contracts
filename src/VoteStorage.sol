@@ -158,5 +158,7 @@ contract VoteStorage is
      * @param changedBy Address that made the change
      */
 
-    
+    event ElectionFactoryUpdated(
+        
+    )
 }
