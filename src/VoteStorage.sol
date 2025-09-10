@@ -148,5 +148,6 @@ contract VoteStorage is
     event VoteCountUpdated(
         uint256 indexed electionId,
         uint256 indexed candidateId,
+        uint256 newCount
     )
 }
