@@ -228,5 +228,8 @@ contract VoteStorage is
     /***
      * @notice Validates meta-transaction signature and timing
      * @param voteData The vote data struct containing signature details
+     * @param signature The EIP-712 Signature
      */
+
+    modifier validS
 }
