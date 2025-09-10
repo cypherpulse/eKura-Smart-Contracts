@@ -188,5 +188,10 @@ contract VoteStorage is
      * @dev Checks with ElectionFactory for election status and timing
      */
 
-    modifier onlyActiveElection(uint256 electionId){}
+    modifier onlyActiveElection(uint256 electionId){
+        if(address(s_electionFactory)==address(0)){
+            revert VoteStorage__ElectionFactoryNotSet();
+        }
+        if
+    }
 }
