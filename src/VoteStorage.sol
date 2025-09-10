@@ -161,6 +161,6 @@ contract VoteStorage is
     event ElectionFactoryUpdated(
         address indexed oldFactory,
         address indexed newFactory,
-        address indexed ch
+        address indexed changedBy
     )
 }
