@@ -136,7 +136,7 @@ contract VoteStorage is
         uint256 indexed candidateId,
         bytes32 voteHash,
         bool isMetaTransaction,
-    )
+    );
 
     /***
      * @notice Emitted when vote counts are updated
@@ -149,7 +149,7 @@ contract VoteStorage is
         uint256 indexed electionId,
         uint256 indexed candidateId,
         uint256 newCount
-    )
+    );
 
     /***
      * @notice Emitted when the ElectionFactory address is set 
@@ -162,7 +162,7 @@ contract VoteStorage is
         address indexed oldFactory,
         address indexed newFactory,
         address indexed changedBy
-    )
+    );
 
     /***
      * @notice Emitted when a meta-transaction vote is processed
