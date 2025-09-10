@@ -201,5 +201,10 @@ contract VoteStorage is
     /***
      * @notice Ensures the voter hasn't already voted in this election
      * @param electionId The election to check
+     * @param voter The voter address to validate
      */
+
+    modifier notAlreadyVoted(uint256 electionId, address voter){
+        
+    }
 }
