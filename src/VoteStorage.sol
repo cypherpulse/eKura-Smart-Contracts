@@ -238,5 +238,8 @@ contract VoteStorage is
         if(voteData.nonce != s_nonces[voteData.voter]){
             revert VoteStorage__InvalidNonce();
         }
+        byte32 structHash = keccak256(abi.encode(
+            
+        ))
     }
 }
