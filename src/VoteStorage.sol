@@ -241,6 +241,7 @@ contract VoteStorage is
         byte32 structHash = keccak256(abi.encode(
             VOTE_TYPEHASH,
             voteData.voter,
+            voteData.electionId,
             
         ))
     }
