@@ -137,4 +137,11 @@ contract VoteStorage is
         bytes32 voteHash,
         bool isMetaTransaction,
     )
+
+    /***
+     * @notice Emitted when vote counts are updated
+     * @param electionId Election Identifier
+     * @param candidateId Candidate whose count changed
+     * @param newCount Updated vote count
+     */
 }
