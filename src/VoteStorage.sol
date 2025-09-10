@@ -179,4 +179,8 @@ contract VoteStorage is
         uint256 indexed electionId,
         uint256 nonce
     );
+
+    //MODIFIERS//
+
+    
 }
