@@ -150,4 +150,8 @@ contract VoteStorage is
         uint256 indexed candidateId,
         uint256 newCount
     )
+
+    /***
+     * @notice Emitted when the ElectionFactory address is set 
+     */
 }
