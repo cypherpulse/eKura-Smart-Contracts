@@ -239,7 +239,9 @@ contract VoteStorage is
             revert VoteStorage__InvalidNonce();
         }
         byte32 structHash = keccak256(abi.encode(
-            VOTE_TYPEHASH
+            VOTE_TYPEHASH,
+            voteData.voter,
+            
         ))
     }
 }
