@@ -134,5 +134,7 @@ contract VoteStorage is
         address indexed voter,
         uint256 indexed electionId,
         uint256 indexed candidateId,
+        bytes32 voteHash,
+        bool isMetaTransaction,
     )
 }
