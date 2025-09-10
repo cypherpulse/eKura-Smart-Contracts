@@ -244,6 +244,7 @@ contract VoteStorage is
             voteData.electionId,
             voteData.candidateId,
             voteData.nonce,
+            voteData.deadline
         ))
     }
 }
