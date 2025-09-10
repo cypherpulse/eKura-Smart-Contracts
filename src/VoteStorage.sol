@@ -217,5 +217,7 @@ contract VoteStorage is
      * @param candidateId The candidate to validate (index in candidates array)
      */
 
-    modifier
+    modifier validCandidate(uint256 electionId, uint256 candidateId){
+        
+    }
 }
