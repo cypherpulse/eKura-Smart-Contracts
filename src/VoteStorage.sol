@@ -113,8 +113,10 @@ contract VoteStorage is
     mapping(uint256 => mapping(address => uint256)) private s_voteTimestamps;
 
     /***
-     * @dev Mapping to track used for vote hashes: electionId => voterAdress => salt
+     * @dev Mapping to store salts used for vote hashes: electionId => voterAddress => salt
      */
 
     mapping(uint256 => mapping(address => bytes32)) private s_voteSalts;
+
+    // Events //
 }
