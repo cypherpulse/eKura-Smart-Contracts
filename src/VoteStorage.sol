@@ -200,6 +200,6 @@ contract VoteStorage is
 
     /***
      * @notice Ensures the voter hasn't already voted in this election
-     * @param 
+     * @param electionId The election to check
      */
 }
