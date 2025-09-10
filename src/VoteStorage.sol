@@ -182,5 +182,7 @@ contract VoteStorage is
 
     //MODIFIERS//
 
-    
+    /***
+     * @notice Ensures the election exists and is currently active.
+     */
 }
