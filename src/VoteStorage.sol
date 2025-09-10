@@ -210,4 +210,9 @@ contract VoteStorage is
         }
         _;
     }
+
+    /***
+     * @notice Validates that the candidate exists for the given election
+     * @param electionId The election identifier
+     */
 }
