@@ -197,4 +197,9 @@ contract VoteStorage is
         }
         _;
     }
+
+    /***
+     * @notice Ensures the voter hasn't already voted in this election
+     * @param 
+     */
 }
