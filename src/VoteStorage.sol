@@ -192,6 +192,9 @@ contract VoteStorage is
         if(address(s_electionFactory)==address(0)){
             revert VoteStorage__ElectionFactoryNotSet();
         }
-        if
+        if(!s_electionFactory.isElectionActive(electionId)){
+            revert VoteStorage__ElectionNotActive();
+        }
+        _;
     }
 }
