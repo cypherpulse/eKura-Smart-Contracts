@@ -214,5 +214,8 @@ contract VoteStorage is
     /***
      * @notice Validates that the candidate exists for the given election
      * @param electionId The election identifier
+     * @param candidateId The candidate to validate (index in candidates array)
      */
+
+    modifier
 }
