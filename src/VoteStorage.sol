@@ -172,5 +172,8 @@ contract VoteStorage is
      * @param nonce Nonce used in the meta-transaction
      */
 
-    event MetaTransactionExecuted()
+    event MetaTransactionExecuted(
+        address indexed voter,
+        address indexed relayer,
+    )
 }
