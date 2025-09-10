@@ -124,5 +124,6 @@ contract VoteStorage is
      * @notice Emitted when a vote is successfully cast
      * @param voter Address of the voter
      * @param electionId Election Identifier
+     * @param candidateId Candidate/position/project voted for
      */
 }
