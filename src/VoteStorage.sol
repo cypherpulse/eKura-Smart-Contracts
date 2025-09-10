@@ -231,5 +231,5 @@ contract VoteStorage is
      * @param signature The EIP-712 Signature
      */
 
-    modifier validS
+    modifier validSignature(VoteData calldata voteData, bytes calldata signatures )
 }
