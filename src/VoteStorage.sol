@@ -231,5 +231,7 @@ contract VoteStorage is
      * @param signature The EIP-712 Signature
      */
 
-    modifier validSignature(VoteData calldata voteData, bytes calldata signatures )
+    modifier validSignature(VoteData calldata voteData, bytes calldata signatures ){
+        if(block.timestamp > voteData.deadline)
+    }
 }
