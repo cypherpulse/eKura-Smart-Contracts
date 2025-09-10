@@ -218,6 +218,9 @@ contract VoteStorage is
      */
 
     modifier validCandidate(uint256 electionId, uint256 candidateId){
-        ElectionFactory.Election memory election = s_electionFactory.getElection
+        ElectionFactory.Election memory election = s_electionFactory.getElection(electionId);
+        if(candidateId >= election.candidates.length){
+            
+        }
     }
 }
