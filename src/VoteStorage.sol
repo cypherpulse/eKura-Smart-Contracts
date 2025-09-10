@@ -220,7 +220,13 @@ contract VoteStorage is
     modifier validCandidate(uint256 electionId, uint256 candidateId){
         ElectionFactory.Election memory election = s_electionFactory.getElection(electionId);
         if(candidateId >= election.candidates.length){
-            
+            revert VoteStorage__InvalidCandidate();
         }
+        _;
     }
+
+    /***
+     * @notice Validates meta-transaction signature and timing
+     * @param voteData The vote data struct containing signature details
+     */
 }
