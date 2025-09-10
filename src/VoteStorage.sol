@@ -232,6 +232,8 @@ contract VoteStorage is
      */
 
     modifier validSignature(VoteData calldata voteData, bytes calldata signatures ){
-        if(block.timestamp > voteData.deadline)
+        if(block.timestamp > voteData.deadline){
+            revert VoteStorage__SignatureExpired();
+        }
     }
 }
