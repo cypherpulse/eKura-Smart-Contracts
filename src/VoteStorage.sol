@@ -79,7 +79,7 @@ contract VoteStorage is
     /***
      * @dev Reference to the ElectionFactory contract for election validation.
      */
-    ElectionFactory private electionFactory;
+    ElectionFactory private s_electionFactory;
 
     /***
      * @dev EIP712 typehash for voteData struct.
@@ -135,7 +135,8 @@ contract VoteStorage is
         uint256 indexed electionId,
         uint256 indexed candidateId,
         bytes32 voteHash,
-        bool isMetaTransaction,
+        uint256 timestamp,
+        bool isMetaTransaction
     );
 
     /***
