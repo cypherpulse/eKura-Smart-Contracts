@@ -119,4 +119,10 @@ contract VoteStorage is
     mapping(uint256 => mapping(address => bytes32)) private s_voteSalts;
 
     // Events //
+
+    /***
+     * @notice Emitted when a vote is successfully cast
+     * @param voter Address of the voter
+     * @param electionId Election Identifier
+     */
 }
