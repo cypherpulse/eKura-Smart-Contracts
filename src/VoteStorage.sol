@@ -245,6 +245,8 @@ contract VoteStorage is
             voteData.candidateId,
             voteData.nonce,
             voteData.deadline
-        ))
+        ));
+
+        bytes32 hash = _hashTypedDataV4(structHash);
     }
 }
