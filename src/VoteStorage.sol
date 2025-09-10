@@ -177,5 +177,5 @@ contract VoteStorage is
         address indexed relayer,
         uint256 indexed electionId,
         uint256 nonce
-    )
+    );
 }
