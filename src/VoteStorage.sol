@@ -248,5 +248,8 @@ contract VoteStorage is
         ));
 
         bytes32 hash = _hashTypedDataV4(structHash);
+        address signer = ECDSA.recover(hash, signatures);
+
+        
     }
 }
