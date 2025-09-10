@@ -235,5 +235,8 @@ contract VoteStorage is
         if(block.timestamp > voteData.deadline){
             revert VoteStorage__SignatureExpired();
         }
+        if(voteData.nonce != s_nonces[voteData.voter]){
+            revert VoteStorage__InvalidNonce();
+        }
     }
 }
