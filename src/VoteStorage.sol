@@ -129,4 +129,9 @@ contract VoteStorage is
      * @param timestamp Unix timestamp when the vote was cast
      * @param isMetaTransaction True if vote was cast via meta-transaction
      */
+
+    event VoteCast(
+        address indexed voter,
+        uint256 indexed electionId
+    )
 }
