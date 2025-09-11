@@ -391,5 +391,5 @@ contract VoteStorage is
             salt
         ));
     }
-
+    
 }
