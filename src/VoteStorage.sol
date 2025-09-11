@@ -410,7 +410,9 @@ contract VoteStorage is
             isMetaTransaction
         );
 
-        
+        emit VoteCountUpdated(
+            electionId,
+        )
     }
        
 }
