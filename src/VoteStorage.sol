@@ -298,4 +298,8 @@ contract VoteStorage is
      * @param signatures EIP-712 Signature from the voter
      * @dev Enables gasless voting via relayers, requires valid signature
      */
+
+    function voteWithSignature(
+        
+    )
 }
