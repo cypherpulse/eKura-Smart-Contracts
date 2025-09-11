@@ -522,7 +522,11 @@ contract VoteStorage is
    
    /***
     * @notice Gets the ElectionFactory contract address
-    * @return The current ElectionFac
+    * @return The current ElectionFactory address
     */
+
+   function getElectionFactory() external view returns(address){
+        return address(s_electionFactory);
+   }
 
 }
