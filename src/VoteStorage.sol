@@ -514,6 +514,7 @@ contract VoteStorage is
 
    function getVoteSalt(uint246 electionId, address voter)
        external
-       
+       view
+       returns(bytes32)
 
 }
