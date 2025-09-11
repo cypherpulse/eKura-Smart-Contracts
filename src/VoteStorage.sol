@@ -413,7 +413,8 @@ contract VoteStorage is
         emit VoteCountUpdated(
             electionId,
             candidateId,
-        )
+            s_voteCounts[electionId][candidateId]
+        );
     }
        
 }
