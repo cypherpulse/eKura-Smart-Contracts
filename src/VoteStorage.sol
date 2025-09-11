@@ -490,5 +490,10 @@ contract VoteStorage is
         return s_nonces[voter];
     }
 
+    /***
+     * @notice Gets the timestamp when a voter voted
+     * @param electionId The election identifier
+     */
+
 
 }
