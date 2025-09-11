@@ -295,6 +295,7 @@ contract VoteStorage is
     /***
      * @notice Meta-transaction voting for gasless voting (web2 and web3 users)
      * @param voteData Struct containing vote details and signature parameters
-     * 
+     * @param signatures EIP-712 Signature from the voter
+     * @dev Enables gasless voting via relayers, requires valid signature
      */
 }
