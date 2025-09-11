@@ -339,4 +339,8 @@ contract VoteStorage is
 
         emit ElectionFactoryUpdated(oldFactory, newElectionFactory, msg.sender);
     }
+
+    /***
+     * @notice Emergency pause function
+     */
 }
