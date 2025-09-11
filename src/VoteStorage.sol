@@ -382,7 +382,8 @@ contract VoteStorage is
             candidateId,
             block.timestamp,
             block.prevrandao, // More secure than block.difficulty in post-merge Ethereum
-        ))
+        ));
+        // Generate vote hash for verification
     }
 
 }
