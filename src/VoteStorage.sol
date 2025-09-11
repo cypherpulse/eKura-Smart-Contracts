@@ -277,4 +277,6 @@ contract VoteStorage is
     constructor(){
         _disableInitializers();
     }
+
+    /// EXternal Functions ///
 }
