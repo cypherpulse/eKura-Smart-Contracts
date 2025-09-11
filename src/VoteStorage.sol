@@ -482,7 +482,11 @@ contract VoteStorage is
 
     /***
      * @notice Gets the current nonce for a voter (for meta-transactions)
+     * @param voter The voter address
+     * @return The current nonce
      */
+
+    function getNonce(address voter)
 
 
 }
