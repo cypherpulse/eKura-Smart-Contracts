@@ -388,13 +388,14 @@ contract VoteStorage is
             voter,
             candidateId,
             electionId,
+            
             salt
         ));
 
         //update Storage
         s_voteHashes[electionId][voter]=voteHash;
         s_hasVoted[electionId][voter]=true;
-        s_votedTimestamps[electionId][voter] =block.timestamp;  
+        s_voteTimestamps[electionId][voter] =block.timestamp;  
         s_voteSalts[electionId][voter]=salt;
 
         // Increment vote count
