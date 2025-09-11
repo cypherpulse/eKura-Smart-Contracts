@@ -541,6 +541,8 @@ contract VoteStorage is
         uint256 electionId,
         address voter,
         uint256 candidateId
-    )
+    )external view returns (bool){
+        bytes32 storeHash = s_voteHashes[electionId][voter];
+    }
 
 }
