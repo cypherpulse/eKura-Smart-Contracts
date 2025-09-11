@@ -346,6 +346,10 @@ contract VoteStorage is
      */
 
     function pause() external onlyOwner{
-        
+        _pause();
     }
+
+    /***
+     * 
+     */
 }
