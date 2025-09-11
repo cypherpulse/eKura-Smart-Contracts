@@ -328,5 +328,8 @@ contract VoteStorage is
     /***
      * @notice Updates the ElectionFactory contract address(emergency function)
      * @param newElectionFactory Address of the new ElectionFactory contract
+     * @dev Only owner can update, emits event for transparency
      */
+
+    function
 }
