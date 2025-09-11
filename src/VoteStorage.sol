@@ -398,7 +398,10 @@ contract VoteStorage is
         s_voteSalts[electionId][voter]=salt;
 
         // Increment vote count
-        s_voteCounts[electionId][]
+        s_voteCounts[electionId][candidateId]++;
+
+        //Emit events
+        
     }
        
 }
