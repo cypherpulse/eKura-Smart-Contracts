@@ -537,6 +537,10 @@ contract VoteStorage is
     * @return True if the recomputed hash matches stored hash
     */
 
-    
+    function verifyVoteHash(
+        uint256 electionId,
+        address voter,
+        uint256 candidateId
+    )
 
 }
