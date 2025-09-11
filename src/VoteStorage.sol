@@ -466,6 +466,12 @@ contract VoteStorage is
      */
 
     function getAllVoteCounts(uint256 electionId)
+       external
+       view
+       returns(uint256[] memory)
+    {
+        ElectionFactory.Election memory election = s_electionFactory
+    }
 
 
 }
