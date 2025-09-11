@@ -267,7 +267,8 @@ contract VoteStorage is
     function initialize(address electionFactory) external initializer{
         __Ownable_init();
         __Pausable_init();
-        __ReentracyGuard_init();
+        __ReentrancyGuard_init();
         __EIP712_init("VoteStorage","1"); // Initialize EIP712 with name and version
+        s_electionFactory = ElectionFactory(electionFactory);
     }
 }
