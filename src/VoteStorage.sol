@@ -521,7 +521,8 @@ contract VoteStorage is
     }
    
    /***
-    * @notice Gets the  
+    * @notice Gets the ElectionFactory contract address
+    * @return The current ElectionFac
     */
 
 }
