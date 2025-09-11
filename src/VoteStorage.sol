@@ -481,7 +481,7 @@ contract VoteStorage is
     }
 
     /***
-     * @notice Gets 
+     * @notice Gets the current nonce for a voter (for meta-transactions)
      */
 
 
