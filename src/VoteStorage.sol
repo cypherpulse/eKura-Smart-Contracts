@@ -545,6 +545,11 @@ contract VoteStorage is
         bytes32 storedHash = s_voteHashes[electionId][voter];
         bytes32 salt = s_voteSalts[electionId][voter];
         bytes32 timestamp = s_votedTimestamps[electionId][voter];
+
+        bytes32 recomputedHash = keccak256(abi.encodePacked(
+            voter,
+            
+        ))
     }
 
 }
