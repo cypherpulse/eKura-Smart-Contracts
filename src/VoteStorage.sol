@@ -301,7 +301,7 @@ contract VoteStorage is
 
     function voteWithSignature(
         VoteData calldata voteData,
-        bytes calldate signatures
+        bytes calldate signature
     )
       external
       whenNotPaused
