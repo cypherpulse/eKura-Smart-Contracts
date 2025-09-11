@@ -324,4 +324,9 @@ contract VoteStorage is
         //process the vote
         _processVote(voteData.voter, voteData.electionId, voteData.candidateId, true);
     }
+
+    /***
+     * @notice Updates the ElectionFactory contract address(emergency function)
+     * @param newElectionFactory Address of the new ElectionFactory contract
+     */
 }
