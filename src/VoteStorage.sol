@@ -459,5 +459,9 @@ contract VoteStorage is
             return s_voteCounts[electionId][candidateId];
         }
 
+    /***
+     * @notice Gets all vote counts for an election
+     */
+
 
 }
