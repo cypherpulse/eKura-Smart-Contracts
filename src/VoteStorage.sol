@@ -476,7 +476,13 @@ contract VoteStorage is
         for(uint256 i=0; i< election.candidates.length; i++){
             counts[i] = s_voteCounts[electionId][i];
         }
+
+        return counts;
     }
+
+    /***
+     * @notice Gets 
+     */
 
 
 }
