@@ -425,6 +425,10 @@ contract VoteStorage is
          * @param voter The voter address
          * @return The stored vote hash for verification
          */
+
+        function getVoteHash(uint256 electionId, address voter) external view returns(bytes32){
+            
+        }
     }
        
 }
