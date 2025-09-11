@@ -519,5 +519,9 @@ contract VoteStorage is
     {
         return s_voteSalts[electionId][voter];
     }
+   
+   /***
+    * @notice Gets the  
+    */
 
 }
