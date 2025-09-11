@@ -439,6 +439,7 @@ contract VoteStorage is
 
         function hasVoted(uint256 electionId, address voter)
            external
+           view
     }
        
 }
