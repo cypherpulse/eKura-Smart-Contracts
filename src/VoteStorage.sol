@@ -268,5 +268,6 @@ contract VoteStorage is
         __Ownable_init();
         __Pausable_init();
         __ReentracyGuard_init();
+        __EIP712_init("VoteStorage","1"); // Initialize EIP712 with name and version
     }
 }
