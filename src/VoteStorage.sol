@@ -312,6 +312,8 @@ contract VoteStorage is
       validSignature(voteData, signature)
     {
         //Increment nonce to prevent reply attacks
-        s_non
+        s_nonces[voteData.voter]++;
+
+        // Emit meta-transaction execution event
     }
 }
