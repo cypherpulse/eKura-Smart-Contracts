@@ -388,7 +388,7 @@ contract VoteStorage is
             voter,
             candidateId,
             electionId,
-            
+            block.timestamp,
             salt
         ));
 
@@ -416,6 +416,12 @@ contract VoteStorage is
             candidateId,
             s_voteCounts[electionId][candidateId]
         );
+
+
+        // View & Pure Functions //
+        /***
+         * @notice gets the vote hash for a voter in an election
+         */
     }
        
 }
