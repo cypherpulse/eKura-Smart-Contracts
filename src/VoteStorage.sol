@@ -529,4 +529,8 @@ contract VoteStorage is
         return address(s_electionFactory);
    }
 
+   /***
+    * function ver
+    */
+
 }
