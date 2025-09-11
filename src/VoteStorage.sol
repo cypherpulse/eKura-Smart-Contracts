@@ -258,5 +258,8 @@ contract VoteStorage is
     }
 
     // Functions //
-    
+    /***
+     * @notice Initializes the upgradable contract
+     * @param electionFactory Address of the ElectionFactory contract
+     */
 }
