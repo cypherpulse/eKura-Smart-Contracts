@@ -486,7 +486,9 @@ contract VoteStorage is
      * @return The current nonce
      */
 
-    function getNonce(address voter)
+    function getNonce(address voter) external view returns(uint256){
+        return s_nonces[voter];
+    }
 
 
 }
