@@ -256,4 +256,7 @@ contract VoteStorage is
         _;
         
     }
+
+    // Functions //
+    
 }
