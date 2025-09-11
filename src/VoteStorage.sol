@@ -530,7 +530,7 @@ contract VoteStorage is
    }
 
    /***
-    * function ver
+    * @notice Verifies a vote hash against stored data
     */
 
 }
