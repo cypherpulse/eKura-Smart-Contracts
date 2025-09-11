@@ -471,7 +471,9 @@ contract VoteStorage is
        returns(uint256[] memory)
     {
         ElectionFactory.Election memory election = s_electionFactory.getElection(electionId);
-        uint256[] memory counts = new uint256[]
+        uint256[] memory counts = new uint256[](election.candidates.length);
+
+        
     }
 
 
