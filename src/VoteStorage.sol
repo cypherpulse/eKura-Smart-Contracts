@@ -315,5 +315,9 @@ contract VoteStorage is
         s_nonces[voteData.voter]++;
 
         // Emit meta-transaction execution event
+        emit MetaTransactionExecuted(
+            voteData.voter,
+            msg.sender,//relayer address 
+        )
     }
 }
