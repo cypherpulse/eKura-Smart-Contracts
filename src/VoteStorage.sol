@@ -375,7 +375,10 @@ contract VoteStorage is
         uint256 candidateId,
         bool isMetaTransaction
     )internal{
-        
+        // Generate a rando, salt for privacy
+        bytes32 salt = keccak256(abi.encodePacked(
+            voter,
+        ))
     }
 
 }
