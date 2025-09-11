@@ -394,6 +394,8 @@ contract VoteStorage is
         //update Storage
         s_voteHashes[electionId][voter]=voteHash;
         s_hasVoted[electionId][voter]=true;
+        s_votedTimestamps[electionId][voter] =block.timestamp;  
+        
     }
        
 }
