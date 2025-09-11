@@ -401,7 +401,10 @@ contract VoteStorage is
         s_voteCounts[electionId][candidateId]++;
 
         //Emit events
-        
+        emit VoteCast(
+            voter,
+            
+        )
     }
        
 }
