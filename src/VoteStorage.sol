@@ -379,6 +379,7 @@ contract VoteStorage is
         bytes32 salt = keccak256(abi.encodePacked(
             voter,
             electionId,
+            candidateId,
             
         ))
     }
