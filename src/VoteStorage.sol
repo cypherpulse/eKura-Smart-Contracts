@@ -318,6 +318,10 @@ contract VoteStorage is
         emit MetaTransactionExecuted(
             voteData.voter,
             msg.sender,//relayer address 
-        )
+            voteData.electionId,
+            voteData.nonce
+        );
+        //process the vote
+        _processVote(voteData.voter, voteData.electionId,)
     }
 }
