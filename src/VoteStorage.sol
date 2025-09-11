@@ -29,7 +29,7 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
-import "@openzeppelin/contracts/utils/cryptography/EIP712.sol";
+import "@openzeppelin/contracts-upgradeable/utils/cryptography/EIP712Upgradeable.sol"; // Changed this line
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "./ElectionFactory.sol";
 
@@ -44,7 +44,7 @@ contract VoteStorage is
     OwnableUpgradeable,
     PausableUpgradeable,
     ReentrancyGuardUpgradeable,
-    EIP712
+    EIP712Upgradeable
 {
     // Errors //
 
@@ -253,6 +253,7 @@ contract VoteStorage is
         if (signer != voteData.voter){
             revert VoteStorage__InvalidSignature();
         }
+        _;
         
     }
 }
