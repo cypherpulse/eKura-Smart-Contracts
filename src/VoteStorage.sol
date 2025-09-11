@@ -331,5 +331,10 @@ contract VoteStorage is
      * @dev Only owner can update, emits event for transparency
      */
 
-    function
+    function setElectionFactory(address newElectionFactory) external onlyOwner{
+        require(newElectionFactory != address(0),"Invalid factory address");
+
+        address oldFactory = address(s_electionFactory);
+        s_electionFactory = ElectionFactory(newElectionFactory)
+    }
 }
