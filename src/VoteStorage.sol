@@ -451,8 +451,11 @@ contract VoteStorage is
      * @return The current vote count
      *  */ 
 
-     function getVoteCount(uint256 electionId,uint256candidateId){
-        
-     }
+     function getVoteCount(uint256 electionId,uint256candidateId)
+        external
+        view
+        returns(uint256){
+            
+        }
 
 }
