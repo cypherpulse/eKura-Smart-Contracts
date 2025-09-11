@@ -291,4 +291,10 @@ contract VoteStorage is
     function vote(uint256 electionId,uint256 candidateId) external whenNotPaused nonReentrant onlyActiveElection(electionId) onlyActiveElection(electionId) notAlreadyVoted(electionId,msg.sender) validCandidate(electionId, candidateId){
         _processVote(msg.sender,electionId, candidateId, false);
     }
+
+    /***
+     * @notice Meta-transaction voting for gasless voting (web2 and web3 users)
+     * @param voteData Struct containing vote details and signature parameters
+     * 
+     */
 }
