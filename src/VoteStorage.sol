@@ -380,7 +380,8 @@ contract VoteStorage is
             voter,
             electionId,
             candidateId,
-            
+            block.timestamp,
+            block.prevrandao, // More secure than block.difficulty in post-merge Ethereum
         ))
     }
 
