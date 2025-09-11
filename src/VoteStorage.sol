@@ -434,7 +434,10 @@ contract VoteStorage is
          * @notice Checks if a voter has voted in specific election
          * @param electionId The election identifier
          * @param voter The voter address
+         * @return True if the voter has already voted
          */
+
+        
     }
        
 }
