@@ -350,6 +350,7 @@ contract VoteStorage is
     }
 
     /***
-     * 
+     * @notice Emergency unpause function
+     * @dev Only owner can unpause the contract
      */
 }
