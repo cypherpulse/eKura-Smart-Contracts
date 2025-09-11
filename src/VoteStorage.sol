@@ -470,7 +470,8 @@ contract VoteStorage is
        view
        returns(uint256[] memory)
     {
-        ElectionFactory.Election memory election = s_electionFactory
+        ElectionFactory.Election memory election = s_electionFactory.getElection(electionId);
+        uint256[] memory counts = new uint256[]
     }
 
 
