@@ -548,7 +548,8 @@ contract VoteStorage is
 
         bytes32 recomputedHash = keccak256(abi.encodePacked(
             voter,
-            
+            candidateId,
+
         ))
     }
 
