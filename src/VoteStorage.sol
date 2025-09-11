@@ -279,4 +279,10 @@ contract VoteStorage is
     }
 
     /// EXternal Functions ///
+    
+
+    /***
+     * @notice Direct voting function for web3 users with connected wallets
+     * @param electionId The election to vote in
+     */
 }
