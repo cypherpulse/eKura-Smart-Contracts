@@ -437,7 +437,8 @@ contract VoteStorage is
          * @return True if the voter has already voted
          */
 
-        
+        function hasVoted(uint256 electionId, address voter)
+           external
     }
        
 }
