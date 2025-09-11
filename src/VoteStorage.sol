@@ -386,6 +386,8 @@ contract VoteStorage is
         // Generate vote hash for verification
         bytes32 voteHash = keccak256(abi.encodePacked(
             voter,
+            candidateId,
+            
         ));
     }
 
