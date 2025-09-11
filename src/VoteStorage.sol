@@ -308,4 +308,6 @@ contract VoteStorage is
       nonReentrant
       onlyActiveElection(voteData.electionId)
       notAlreadyVoted(voteData.electionId,  voteData.voter)
+      validCandidate(voteData.electionId, voteData.candidateId)
+      validSignature(voteData, signature)
 }
