@@ -336,5 +336,7 @@ contract VoteStorage is
 
         address oldFactory = address(s_electionFactory);
         s_electionFactory = ElectionFactory(newElectionFactory)
+
+        emit ElectionFactoryUpdated(oldFactory, newElectionFactory, msg.sender);
     }
 }
