@@ -427,7 +427,7 @@ contract VoteStorage is
          */
 
         function getVoteHash(uint256 electionId, address voter) external view returns(bytes32){
-            
+            return s_voteHashes[electionId][voter];
         }
     }
        
