@@ -445,4 +445,5 @@ contract VoteStorage is
             return s_hasVoted[electionId][voter];
            }
        
+       
 }
