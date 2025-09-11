@@ -356,4 +356,9 @@ contract VoteStorage is
 
     function unpause() external onlyOwner{
         _unpause();
+    }
+
+    // Internal Functions //
+
+    
 }
