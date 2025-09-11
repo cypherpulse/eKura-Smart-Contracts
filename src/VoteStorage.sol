@@ -261,5 +261,10 @@ contract VoteStorage is
     /***
      * @notice Initializes the upgradable contract
      * @param electionFactory Address of the ElectionFactory contract
+     * @dev Replaces constructor for upgradable contracts
      */
+
+    function initialize(address electionFactory) external initializer{
+        
+    }
 }
