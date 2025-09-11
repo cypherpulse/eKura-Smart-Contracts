@@ -310,4 +310,8 @@ contract VoteStorage is
       notAlreadyVoted(voteData.electionId,  voteData.voter)
       validCandidate(voteData.electionId, voteData.candidateId)
       validSignature(voteData, signature)
+    {
+        //Increment nonce to prevent reply attacks
+        s_non
+    }
 }
