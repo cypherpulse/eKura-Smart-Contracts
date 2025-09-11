@@ -403,7 +403,8 @@ contract VoteStorage is
         //Emit events
         emit VoteCast(
             voter,
-            
+            electionId,
+            candidateId,
         )
     }
        
