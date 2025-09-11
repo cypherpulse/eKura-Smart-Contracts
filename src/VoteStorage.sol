@@ -450,6 +450,9 @@ contract VoteStorage is
      * @param candidateId The candidate identifier
      * @return The current vote count
      *  */ 
-     
+
+     function getVoteCount(uint256 electionId,uint256candidateId){
+        
+     }
 
 }
