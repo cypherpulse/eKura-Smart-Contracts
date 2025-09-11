@@ -387,7 +387,8 @@ contract VoteStorage is
         bytes32 voteHash = keccak256(abi.encodePacked(
             voter,
             candidateId,
-            
+            electionId,
+            salt
         ));
     }
 
