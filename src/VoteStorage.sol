@@ -378,6 +378,8 @@ contract VoteStorage is
         // Generate a rando, salt for privacy
         bytes32 salt = keccak256(abi.encodePacked(
             voter,
+            electionId,
+            
         ))
     }
 
