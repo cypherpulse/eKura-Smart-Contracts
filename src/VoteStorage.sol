@@ -288,5 +288,7 @@ contract VoteStorage is
      * @dev Requires active election,valid candidate, and no previous vote
      */
 
-    function vote(uint256 electionId,uint256 candidateId) external whenNotPaused nonReentrant only
+    function vote(uint256 electionId,uint256 candidateId) external whenNotPaused nonReentrant onlyActiveElection(electionId) onlyActiveElection(electionId) notAlreadyVoted(electionId,msg.sender) validCandidate(electionId, candidateId){
+        
+    }
 }
