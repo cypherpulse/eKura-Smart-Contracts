@@ -493,6 +493,7 @@ contract VoteStorage is
     /***
      * @notice Gets the timestamp when a voter voted
      * @param electionId The election identifier
+     * @param voter The voter address
      */
 
 
