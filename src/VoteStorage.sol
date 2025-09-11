@@ -534,7 +534,9 @@ contract VoteStorage is
     * @param electionId The election identifier
     * @param voter The voter address
     * @param candidateId The candidate they voted for
-    * 
+    * @return True if the recomputed hash matches stored hash
     */
+
+    
 
 }
