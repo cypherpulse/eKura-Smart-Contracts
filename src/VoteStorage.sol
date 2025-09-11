@@ -531,6 +531,8 @@ contract VoteStorage is
 
    /***
     * @notice Verifies a vote hash against stored data
+    * @param electionId The election identifier
+    * @param voter The voter
     */
 
 }
