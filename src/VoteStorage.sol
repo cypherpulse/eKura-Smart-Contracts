@@ -371,6 +371,8 @@ contract VoteStorage is
 
     function _processVote(
         address voter,
+        uint256 electionId,
+        uint256 candidateId,
     )
 
 }
