@@ -364,6 +364,8 @@ contract VoteStorage is
      * @notice Internal function to process votes and update storage
      * @param voter Address of voter
      * @param electionId Election identifier
+     * @param candidateId Candidate identifier
+     * @param isMetaTransaction Wheather this vte came via 
      */
 
 }
