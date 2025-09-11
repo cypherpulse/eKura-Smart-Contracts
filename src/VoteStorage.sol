@@ -231,14 +231,14 @@ contract VoteStorage is
      * @param signature The EIP-712 Signature
      */
 
-    modifier validSignature(VoteData calldata voteData, bytes calldata signatures ){
+    modifier validSignature(VoteData calldata voteData, bytes calldata signature){
         if(block.timestamp > voteData.deadline){
             revert VoteStorage__SignatureExpired();
         }
         if(voteData.nonce != s_nonces[voteData.voter]){
             revert VoteStorage__InvalidNonce();
         }
-        byte32 structHash = keccak256(abi.encode(
+        bytes32 structHash = keccak256(abi.encode(
             VOTE_TYPEHASH,
             voteData.voter,
             voteData.electionId,
@@ -248,7 +248,7 @@ contract VoteStorage is
         ));
 
         bytes32 hash = _hashTypedDataV4(structHash);
-        address signer = ECDSA.recover(hash, signatures);
+        address signer = ECDSA.recover(hash, signature);
 
         if (signer != voteData.voter){
             revert VoteStorage__InvalidSignature();
