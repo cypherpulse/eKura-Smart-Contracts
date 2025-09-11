@@ -365,7 +365,8 @@ contract VoteStorage is
      * @param voter Address of voter
      * @param electionId Election identifier
      * @param candidateId Candidate identifier
-     * @param isMetaTransaction Wheather this vte came via 
+     * @param isMetaTransaction Wheather this vte came via meta-transaction
+     * @dev 
      */
 
 }
