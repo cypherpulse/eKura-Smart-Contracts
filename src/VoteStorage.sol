@@ -342,5 +342,8 @@ contract VoteStorage is
 
     /***
      * @notice Emergency pause function
+     * @dev Only owner can pause the contract, halts voting functions
      */
+
+    
 }
