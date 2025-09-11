@@ -505,6 +505,10 @@ contract VoteStorage is
         return s_voteTimestamps[electionId][voter];
     }
    
-   
+   /***
+    * @notice Gets the salt used for a specific vote hash
+    * @param electionId The election identifier
+    * @param voter The voter address
+    */
 
 }
