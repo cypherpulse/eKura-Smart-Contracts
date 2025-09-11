@@ -446,6 +446,8 @@ contract VoteStorage is
            }
     /***
      * @notice Gets vote count for a spefic candidate in an election
+     * @param electionId The election identifier
+     * @param candidateId The candidate identifier
      *  */ 
 
 }
