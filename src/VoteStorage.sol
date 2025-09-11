@@ -369,4 +369,8 @@ contract VoteStorage is
      * @dev 
      */
 
+    function _processVote(
+        address voter,
+    )
+
 }
