@@ -345,5 +345,7 @@ contract VoteStorage is
      * @dev Only owner can pause the contract, halts voting functions
      */
 
-    
+    function pause() external onlyOwner{
+        
+    }
 }
