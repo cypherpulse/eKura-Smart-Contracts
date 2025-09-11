@@ -359,6 +359,10 @@ contract VoteStorage is
     }
 
     // Internal Functions //
-
     
+    /***
+     * @notice Internal function to process votes and update storage
+     * @param voter 
+     */
+
 }
