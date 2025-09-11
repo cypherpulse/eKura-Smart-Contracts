@@ -390,6 +390,9 @@ contract VoteStorage is
             electionId,
             salt
         ));
+
+        //update Storage
+        
     }
-    
+       
 }
