@@ -497,7 +497,13 @@ contract VoteStorage is
      * @return The timestamp of the vote
      */
 
-    function getVoteTimestamp(uint)
+    function getVoteTimestamp(uint256 electionId, address voter)
+        external 
+        view
+        returns(uint256)
+    {
+        return s_voteTimestamps[electionId][voter];
+    }
 
 
 }
