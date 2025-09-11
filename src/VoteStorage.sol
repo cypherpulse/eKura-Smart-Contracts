@@ -421,7 +421,9 @@ contract VoteStorage is
         // View & Pure Functions //
         /***
          * @notice gets the vote hash for a voter in an election
-         * @param electionId 
+         * @param electionId The election identifier
+         * @param voter The voter address
+         * @return The stored vote hash for verification
          */
     }
        
