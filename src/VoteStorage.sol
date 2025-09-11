@@ -373,6 +373,9 @@ contract VoteStorage is
         address voter,
         uint256 electionId,
         uint256 candidateId,
-    )
+        bool isMetaTransaction
+    )internal{
+        
+    }
 
 }
