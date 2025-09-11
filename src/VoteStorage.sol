@@ -550,9 +550,12 @@ contract VoteStorage is
             voter,
             candidateId,
             electionId,
-            
+            timestamp,
+            salt
 
-        ))
+        ));
+
+        return storedHash == recomputedHash;
     }
 
 }
