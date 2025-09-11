@@ -455,7 +455,7 @@ contract VoteStorage is
         external
         view
         returns(uint256){
-            
+            return 
         }
 
 }
