@@ -444,6 +444,8 @@ contract VoteStorage is
            {
             return s_hasVoted[electionId][voter];
            }
-     
+    /***
+     * @notice Gets vote count for a spefic candidate in an election
+     *  */ 
 
 }
