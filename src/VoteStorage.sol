@@ -284,5 +284,7 @@ contract VoteStorage is
     /***
      * @notice Direct voting function for web3 users with connected wallets
      * @param electionId The election to vote in
+     * @param candidateId The candidate/position/project to vote for
+     * 
      */
 }
