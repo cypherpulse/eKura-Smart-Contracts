@@ -416,9 +416,9 @@ contract VoteStorage is
             candidateId,
             s_voteCounts[electionId][candidateId]
         );
+    }
 
-
-        // View & Pure Functions //
+    // View & Pure Functions //
         /***
          * @notice gets the vote hash for a voter in an election
          * @param electionId The election identifier
@@ -440,6 +440,9 @@ contract VoteStorage is
         function hasVoted(uint256 electionId, address voter)
            external
            view
-    }
+           returns(bool)
+           {
+            return s_hasVoted[electionId][voter];
+           }
        
 }
