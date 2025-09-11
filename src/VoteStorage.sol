@@ -516,5 +516,8 @@ contract VoteStorage is
        external
        view
        returns(bytes32)
+    {
+        return s_voteSalts[electionId][voter];
+    }
 
 }
