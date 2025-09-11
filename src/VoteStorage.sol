@@ -504,6 +504,7 @@ contract VoteStorage is
     {
         return s_voteTimestamps[electionId][voter];
     }
-
+   
+   
 
 }
