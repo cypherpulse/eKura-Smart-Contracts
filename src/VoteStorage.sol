@@ -269,6 +269,9 @@ contract VoteStorage is
         __Pausable_init();
         __ReentrancyGuard_init();
         __EIP712_init("VoteStorage","1"); // Initialize EIP712 with name and version
+
         s_electionFactory = ElectionFactory(electionFactory);
     }
+
+    /// @custom:oz-upgrades-unsafe-allow constructor
 }
