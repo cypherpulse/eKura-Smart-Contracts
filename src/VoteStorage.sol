@@ -454,8 +454,10 @@ contract VoteStorage is
      function getVoteCount(uint256 electionId,uint256candidateId)
         external
         view
-        returns(uint256){
-            return 
+        returns(uint256)
+        {
+            return s_voteCounts[electionId][candidateId];
         }
+
 
 }
