@@ -322,6 +322,6 @@ contract VoteStorage is
             voteData.nonce
         );
         //process the vote
-        _processVote(voteData.voter, voteData.electionId,)
+        _processVote(voteData.voter, voteData.electionId, voteData.candidateId, true);
     }
 }
