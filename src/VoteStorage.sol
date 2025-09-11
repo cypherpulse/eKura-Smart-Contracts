@@ -265,6 +265,6 @@ contract VoteStorage is
      */
 
     function initialize(address electionFactory) external initializer{
-        
+        __Ownable_init();
     }
 }
