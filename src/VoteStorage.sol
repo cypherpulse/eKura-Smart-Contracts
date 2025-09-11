@@ -405,7 +405,12 @@ contract VoteStorage is
             voter,
             electionId,
             candidateId,
-        )
+            voteHash,
+            block.timestamp,
+            isMetaTransaction
+        );
+
+        
     }
        
 }
