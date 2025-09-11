@@ -289,6 +289,6 @@ contract VoteStorage is
      */
 
     function vote(uint256 electionId,uint256 candidateId) external whenNotPaused nonReentrant onlyActiveElection(electionId) onlyActiveElection(electionId) notAlreadyVoted(electionId,msg.sender) validCandidate(electionId, candidateId){
-        
+        _processVote(msg.sender,electionId, candidateId, false);
     }
 }
