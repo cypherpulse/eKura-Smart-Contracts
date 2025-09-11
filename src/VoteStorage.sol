@@ -465,5 +465,7 @@ contract VoteStorage is
      * @return Array of vote counts for each candidate
      */
 
+    function getAllVoteCounts(uint256 electionId)
+
 
 }
