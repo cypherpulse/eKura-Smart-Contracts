@@ -300,6 +300,12 @@ contract VoteStorage is
      */
 
     function voteWithSignature(
-        
+        VoteData calldata voteData,
+        bytes calldate signatures
     )
+      external
+      whenNotPaused
+      nonReentrant
+      onlyActiveElection(voteData.electionId)
+      notAlreadyVoted(voteData.electionId,  voteData.voter)
 }
