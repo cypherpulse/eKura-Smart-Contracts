@@ -353,4 +353,7 @@ contract VoteStorage is
      * @notice Emergency unpause function
      * @dev Only owner can unpause the contract
      */
+
+    function unpause() external onlyOwner{
+        _unpause();
 }
