@@ -509,6 +509,9 @@ contract VoteStorage is
     * @notice Gets the salt used for a specific vote hash
     * @param electionId The election identifier
     * @param voter The voter address
+    * @return The salt used in vote hash generation
     */
+
+   function getVoteSalt(uint246 )
 
 }
