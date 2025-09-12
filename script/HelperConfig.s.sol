@@ -49,7 +49,7 @@ contract HelperConfig is Script{
         }else if(block.chainid == ETH_MAINNET_CHAIN_ID){
             s_activeNetworkConfig = getEthMainnetConfig();
         }else{
-            s_activeNetworkConfig
+            s_activeNetworkConfig = getOrCreateAnvilConfig();
         }
     }
 
