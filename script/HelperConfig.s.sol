@@ -94,6 +94,7 @@ contract HelperConfig is Script{
 
     function getBaseMainnetConfig() public view returns(NetworkConfig memory){
         return NetworkConfig{
+            deployer: vm.envAddress("DEPLOYER_ADDRESS"),
             
         }
     }
