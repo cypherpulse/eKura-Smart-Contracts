@@ -17,6 +17,7 @@ contract HelperConfig is Script{
 
     //Type Declarations
     struct NetworkConfig{
-        
+        address deloyer; //Address that deploys contracts
+        uint256 deployerKey // Private ke for deployment
     }
 }
