@@ -132,6 +132,11 @@ contract HelperConfig is Script{
             chainId: LOCAL_CHAIN_ID,
             verifyContract: address(0)
         })
-    }   
+    }  
+
+    /***
+     * @notice Gets the active network configuration
+     * @return c
+     */
 
 }
