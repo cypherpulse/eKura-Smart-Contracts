@@ -111,8 +111,14 @@ contract HelperConfig is Script{
             isTestnet: false,
             networkName: "Ethereum Mainnet",
             rpcURL: vm.envString("ETH_MAINNET_RPC_URL"),
-            
+            chainId: ETH_MAINNET_HAIN_ID,
+            verifyContract: address(0)
         });
     }
+
+    /***
+     * @notice Gets or creates local Anvil configuration
+     * 
+     */
 
 }
