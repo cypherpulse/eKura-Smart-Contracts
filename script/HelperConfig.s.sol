@@ -56,7 +56,7 @@ contract HelperConfig is Script{
     /***
      * @notice Gets Ethereum Sepolia testnet configuration
      * @return NetworkConfig for Ethereum Sepolia
-     * @dev Good
+     * @dev Good for initial testing before moving to BaseL2
      */
 
 }
