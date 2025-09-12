@@ -87,6 +87,7 @@ contract HelperConfig is Script{
     }
 
     /***
-     * 
+     * @notice Gets Base Mainnet configuration
+     * @return NetworkConfig for Base Mainnet
+     * @dev
      */
-}
