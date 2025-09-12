@@ -99,7 +99,8 @@ contract HelperConfig is Script{
             isTestnet: false,
             networkName: "Base Mainnet",
             rpcUrl: vm.envString("BASE_MAINNET_RPC_URL"),
-
+            chainId: ETH_MAINNET_CHAIN_ID,
+            verifyContract: address(0)
         }
     }
 
