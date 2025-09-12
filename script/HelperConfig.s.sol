@@ -20,6 +20,10 @@ contract HelperConfig is Script{
         address deployer; //Address that deploys contracts
         uint256 deployerKey; // Private key for deployment
         bool isTestnet; // True if testnet, false if mainnet
-        string networkName; 
+        string networkName; // Human readable network name
+        string rpcUrl; // RPC endpoint
+        uint256 chainId; // Network chain Id
+        address verifyContract; // Contract verification API endpoint
+
     }
 }
