@@ -97,7 +97,9 @@ contract HelperConfig is Script{
             deployer: vm.envAddress("DEPLOYER_ADDRESS"),
             deployerKey: vm.envUint("PRIVATE_KEY"),
             isTestnet: false,
+            networkName: "Base Mainnet",
             
+
         }
     }
 
