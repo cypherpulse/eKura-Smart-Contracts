@@ -71,8 +71,9 @@ contract HelperConfig is Script{
 
     /***
      * @notice Gets Base Sepolia testnet configuration
-     * @return NetworkConfig for local testing
+     * @return NetworkConfig forBase Sepolia
+     * @dev Good for testing BaseL2 deployments
      */
 
-    function getOrCreateAnvilConfig() 
+    function getBaseSepoliaConfig() public view returns(NetworkConfig memory)
 }
