@@ -128,7 +128,8 @@ contract HelperConfig is Script{
             deployerKey: DEFAULT_ANVIL_PRIVATE_KEY,
             isTestnet: true,
             networkName: "Local Anvil",
-            
+            rpcUrl: "http://127.0.0.1:8545",
+            chainId: LOCAL_CHAIN_ID,
         })
     }   
 
