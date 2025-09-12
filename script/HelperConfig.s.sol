@@ -149,7 +149,9 @@ contract HelperConfig is Script{
      */
 
     function isTestnet() external view returns (bool){
-        
+        return s_activeNetworkConfig.isTestnet;
     }
+
+    
 
 }
