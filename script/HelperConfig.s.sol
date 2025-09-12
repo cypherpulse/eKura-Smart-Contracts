@@ -65,6 +65,12 @@ contract HelperConfig is Script{
             deployerKey: vm.envUint("PRIVATE_KEY"),
             isTestnet: true,
             rpcUrl: vm.envString("ETH_SEPOLIA_RPC_URL"),
-        })
+            chainId: BASE_SEPOLIA_CHAIN_ID 
+        });
     }
+
+    /***
+     * @notice Gets or creates local Anvil configuration
+     * @return NetworkConfig for local Anvil
+     */
 }
