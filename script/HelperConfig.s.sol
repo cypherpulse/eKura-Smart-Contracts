@@ -40,9 +40,9 @@ contract HelperConfig is Script{
 
     // FUNCTONS //
     constructor(){
-        if (block.chaind === ETH_SEPOLIA_CHAIN_ID){
-            
-        }
+        if (block.chainid == ETH_SEPOLIA_CHAIN_ID){
+            s_activeNetworkConfig = getSepoliaEthConfig();
+        }else if(block.chainid ==BASE_SEPOLIA_CHAIN_ID)
     }
 
 }
