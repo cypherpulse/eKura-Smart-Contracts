@@ -106,7 +106,8 @@ contract HelperConfig is Script{
 
     function getEthMainnetConfig() public view returns(NetworkConfig memory){
         return NetworkConfig({
-            
+            deployer: vm.envAdrress("DEPLOYER_ADDRESS")
+            deployerKey: vm.envUnit("PRIVATE_KEY"),
         });
     }
 
