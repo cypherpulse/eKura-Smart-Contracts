@@ -140,7 +140,12 @@ contract HelperConfig is Script{
      */
 
     function getActiveNetworkConfig() external view returns(NetworkConfig memory){
-        
+        return s_activeNetworkConfig.isTestnet;
     }
+
+    /***
+     * @notice Checks if current network is a testnet
+     * @return True 
+     */
 
 }
