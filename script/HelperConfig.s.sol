@@ -145,7 +145,11 @@ contract HelperConfig is Script{
 
     /***
      * @notice Checks if current network is a testnet
-     * @return True 
+     * @return True if testnet, false if mainnet
      */
+
+    function isTestnet() external view returns (bool){
+        
+    }
 
 }
