@@ -24,6 +24,8 @@ contract HelperConfig is Script{
         string rpcUrl; // RPC endpoint
         uint256 chainId; // Network chain Id
         address verifyContract; // Contract verification API endpoint
-
     }
+
+    // STATE VARIABLES //
+    
 }
