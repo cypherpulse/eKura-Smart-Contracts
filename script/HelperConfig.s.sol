@@ -59,4 +59,9 @@ contract HelperConfig is Script{
      * @dev Good for initial testing before moving to BaseL2
      */
 
+    function getEthSepoliaConfig() public view returns(NetworkConfig memory){
+        return NetworkConfig({
+            
+        })
+    }
 }
