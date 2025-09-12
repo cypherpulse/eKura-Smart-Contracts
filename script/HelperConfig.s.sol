@@ -11,6 +11,8 @@ import {Script} from "forge-std/Script.sol";
  * @dev Handles deployment parameters for local, testnet, and mainnet environments
  */
 
-contract HelperConfig{
+contract HelperConfig is Script{
+
+
 
 }
