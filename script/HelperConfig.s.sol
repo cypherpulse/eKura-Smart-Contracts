@@ -104,4 +104,10 @@ contract HelperConfig is Script{
         }
     }
 
+    function getEthMainnetConfig() public view returns(NetworkConfig memory){
+        return NetworkConfig({
+            
+        });
+    }
+
 }
