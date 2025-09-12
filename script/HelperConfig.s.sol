@@ -80,6 +80,9 @@ contract HelperConfig is Script{
             deployer: vm.envAddress("DEPLOYER_ADDRESS"),
             deployerKey: vm.envUint("PRIVATE_KEY"),
             isTestnet: true,
+            rpcUrl: vm.envString("BASE_SEPOLIA_RPC_URL"),
+            chainId: BASE_SEPOLIA_CHAIN_ID,
+            verifyContract
         })
     }
 }
