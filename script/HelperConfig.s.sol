@@ -89,5 +89,9 @@ contract HelperConfig is Script{
     /***
      * @notice Gets Base Mainnet configuration
      * @return NetworkConfig for Base Mainnet
-     * @dev
+     * @dev For production deployments on BaseL2
      */
+
+    
+
+}
