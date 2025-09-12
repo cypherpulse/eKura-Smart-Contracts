@@ -79,6 +79,7 @@ contract HelperConfig is Script{
         return NetworkConfig({
             deployer: vm.envAddress("DEPLOYER_ADDRESS"),
             deployerKey: vm.envUint("PRIVATE_KEY"),
+            isTestnet: true,
         })
     }
 }
