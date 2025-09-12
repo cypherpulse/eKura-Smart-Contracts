@@ -98,7 +98,7 @@ contract HelperConfig is Script{
             deployerKey: vm.envUint("PRIVATE_KEY"),
             isTestnet: false,
             networkName: "Base Mainnet",
-            
+            rpcUrl: vm.envString("BASE_MAINNET_RPC_URL"),
 
         }
     }
