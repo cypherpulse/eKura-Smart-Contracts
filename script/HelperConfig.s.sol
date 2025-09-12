@@ -122,4 +122,10 @@ contract HelperConfig is Script{
      * @dev Used for unit tests and local development
      */
 
+    function getOrCreateAnvilConfig() public pure returns (NetworkConfig memory){
+        return NetworkConfig({
+            
+        })
+    }
+
 }
