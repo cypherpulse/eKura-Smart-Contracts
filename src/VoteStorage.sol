@@ -512,7 +512,7 @@ contract VoteStorage is
     * @return The salt used in vote hash generation
     */
 
-   function getVoteSalt(uint246 electionId, address voter)
+   function getVoteSalt(uint256 electionId, address voter)
        external
        view
        returns(bytes32)
