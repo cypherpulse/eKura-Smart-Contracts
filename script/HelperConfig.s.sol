@@ -70,7 +70,7 @@ contract HelperConfig is Script{
     }
 
     /***
-     * @notice Gets or creates local Anvil configuration
+     * @notice Gets Base Sepolia testnet configuration
      * @return NetworkConfig for local testing
      */
 
