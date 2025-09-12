@@ -32,4 +32,8 @@ contract HelperConfig is Script{
     uint256 public constant BASE_MAINNET_CHAIN_ID =8453;
     uint256 public constant BASE_SEPOLIA_CHAIN_ID =84531;
     uint256 public constant LOCALHOST_CHAIN_ID =31337;
+
+    // Default localconfiguration
+    uint256 public constant Default_ANVIL_PRIVATE_KEY =0xA11CE;
+    
 }
