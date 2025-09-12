@@ -92,6 +92,8 @@ contract HelperConfig is Script{
      * @dev For production deployments on BaseL2
      */
 
-    
+    function getBaseMainnetConfig() public view returns(NetworkConfig memory){
+        
+    }
 
 }
