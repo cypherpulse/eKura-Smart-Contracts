@@ -47,7 +47,9 @@ contract HelperConfig is Script{
         }else if(bock.chainid == BASE_MAINNET_CHAIN_ID){
             s_activeNetworkConfig = getBaseMainnetConfig();
         }else if(block.chainid == ETH_MAINNET_CHAIN_ID){
-            
+            s_activeNetworkConfig = getEthMainnetConfig();
+        }else{
+            s_activeNetworkConfig
         }
     }
 
