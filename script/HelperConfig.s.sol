@@ -14,4 +14,9 @@ import {Script} from "forge-std/Script.sol";
 contract HelperConfig is Script{
     //Errors//
     error HelperConfig__InvalidChainId();
+
+    //Type Declarations
+    struct NetworkConfig{
+        
+    }
 }
