@@ -139,6 +139,8 @@ contract HelperConfig is Script{
      * @return Currently active NetworkConfig
      */
 
-    function getActive
+    function getActiveNetworkConfig() external view returns(NetworkConfig memory){
+        
+    }
 
 }
