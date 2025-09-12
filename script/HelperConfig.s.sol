@@ -124,8 +124,12 @@ contract HelperConfig is Script{
 
     function getOrCreateAnvilConfig() public pure returns (NetworkConfig memory){
         return NetworkConfig({
+            deployer: vm.addr(DEFAULT_ANVIL_PRIVATE_KEY),
+            deployerKey: DEFAULT_ANVIL_PRIVATE_KEY,
+            isTestnet: true,
+            networkName: "Local Anvil",
             
         })
-    }
+    }   
 
 }
