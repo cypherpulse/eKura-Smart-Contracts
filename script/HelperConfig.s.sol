@@ -130,6 +130,7 @@ contract HelperConfig is Script{
             networkName: "Local Anvil",
             rpcUrl: "http://127.0.0.1:8545",
             chainId: LOCAL_CHAIN_ID,
+            verifyContract: address(0)
         })
     }   
 
