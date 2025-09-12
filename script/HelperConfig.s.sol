@@ -136,7 +136,9 @@ contract HelperConfig is Script{
 
     /***
      * @notice Gets the active network configuration
-     * @return c
+     * @return Currently active NetworkConfig
      */
+
+    function getActive
 
 }
