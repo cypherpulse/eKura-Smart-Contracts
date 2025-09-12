@@ -77,7 +77,7 @@ contract HelperConfig is Script{
 
     function getBaseSepoliaConfig() public view returns(NetworkConfig memory){
         return NetworkConfig({
-            
+            deployer: vm.envAddress("DEPLOYER_ADDRESS"),
         })
     }
 }
