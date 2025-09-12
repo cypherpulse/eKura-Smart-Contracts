@@ -39,5 +39,10 @@ contract HelperConfig is Script{
     NetworkConfig public s_activeNetworkConfig;
 
     // FUNCTONS //
+    constructor(){
+        if (block.chaind === ETH_SEPOLIA_CHAIN_ID){
+            
+        }
+    }
 
 }
