@@ -93,7 +93,9 @@ contract HelperConfig is Script{
      */
 
     function getBaseMainnetConfig() public view returns(NetworkConfig memory){
-        
+        return NetworkConfig{
+            
+        }
     }
 
 }
