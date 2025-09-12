@@ -335,7 +335,7 @@ contract VoteStorage is
         require(newElectionFactory != address(0),"Invalid factory address");
 
         address oldFactory = address(s_electionFactory);
-        s_electionFactory = ElectionFactory(newElectionFactory)
+        s_electionFactory = ElectionFactory(newElectionFactory);
 
         emit ElectionFactoryUpdated(oldFactory, newElectionFactory, msg.sender);
     }
