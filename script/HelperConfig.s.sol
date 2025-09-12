@@ -152,6 +152,9 @@ contract HelperConfig is Script{
         return s_activeNetworkConfig.isTestnet;
     }
 
-    
+    /***
+     * @notice Gets current network name
+     * @return Human readable 
+     */
 
 }
