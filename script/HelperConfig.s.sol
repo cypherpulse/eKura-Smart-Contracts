@@ -157,6 +157,8 @@ contract HelperConfig is Script{
      * @return Human readable network name
      */
 
-    function getNetwokName() external view returns(string memory)
+    function getNetwokName() external view returns(string memory){
+        return s_activeNetworkConfig.networkName;
+    }
 
 }
