@@ -28,4 +28,6 @@ contract HelperConfig is Script{
 
     // STATE VARIABLES //
     uint256 public constant ETH_MAINNET_HAIN_ID =1
+    uint256 public constant ETH_SEPOLA_CHAIN_ID =11155111;
+    uint256 
 }
