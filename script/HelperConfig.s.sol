@@ -75,5 +75,9 @@ contract HelperConfig is Script{
      * @dev Good for testing BaseL2 deployments
      */
 
-    function getBaseSepoliaConfig() public view returns(NetworkConfig memory)
+    function getBaseSepoliaConfig() public view returns(NetworkConfig memory){
+        return NetworkConfig({
+            
+        })
+    }
 }
