@@ -43,7 +43,9 @@ contract HelperConfig is Script{
         if (block.chainid == ETH_SEPOLIA_CHAIN_ID){
             s_activeNetworkConfig = getSepoliaEthConfig();
         }else if(block.chainid ==BASE_SEPOLIA_CHAIN_ID){
-            s_activeNet
+            s_activeNetworkConfig = getBaseSepoliaConfig();
+        }else if(bock.chainid == BASE_MAINNET_CHAIN_ID){
+            
         }
     }
 
