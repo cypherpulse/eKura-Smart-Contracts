@@ -109,7 +109,9 @@ contract HelperConfig is Script{
             deployer: vm.envAdrress("DEPLOYER_ADDRESS")
             deployerKey: vm.envUnit("PRIVATE_KEY"),
             isTestnet: false,
-            networkName: "Ethereum Mainnet"
+            networkName: "Ethereum Mainnet",
+            rpcURL: vm.envString("ETH_MAINNET_RPC_URL"),
+            
         });
     }
 
