@@ -82,7 +82,11 @@ contract HelperConfig is Script{
             isTestnet: true,
             rpcUrl: vm.envString("BASE_SEPOLIA_RPC_URL"),
             chainId: BASE_SEPOLIA_CHAIN_ID,
-            verifyContract
-        })
+            verifyContract: address(0)
+        });
     }
+
+    /***
+     * 
+     */
 }
