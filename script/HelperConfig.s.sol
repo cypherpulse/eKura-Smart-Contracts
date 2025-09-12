@@ -61,6 +61,7 @@ contract HelperConfig is Script{
 
     function getEthSepoliaConfig() public view returns(NetworkConfig memory){
         return NetworkConfig({
+            deployer: vm.envAddress("DEPLOYER_ADDRESS"),
             
         })
     }
