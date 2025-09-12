@@ -118,7 +118,8 @@ contract HelperConfig is Script{
 
     /***
      * @notice Gets or creates local Anvil configuration
-     * 
+     * @return NetworkConfig for local Anvil for local testing
+     * @dev Used for unit tests and local development
      */
 
 }
