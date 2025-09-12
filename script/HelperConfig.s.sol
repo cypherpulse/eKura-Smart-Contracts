@@ -27,5 +27,5 @@ contract HelperConfig is Script{
     }
 
     // STATE VARIABLES //
-    
+    uint256 public constant ETH_MAINNET_HAIN_ID =1
 }
