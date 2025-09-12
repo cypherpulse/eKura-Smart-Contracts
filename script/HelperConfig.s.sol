@@ -30,4 +30,5 @@ contract HelperConfig is Script{
     uint256 public constant ETH_MAINNET_HAIN_ID =1
     uint256 public constant ETH_SEPOLA_CHAIN_ID =11155111;
     uint256 public constant BASE_MAINNET_CHAIN_ID =8453;
-}
+    uint256 public constant BASE_SEPOLIA_CHAIN_ID =84531;
+ 
