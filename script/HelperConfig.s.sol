@@ -108,6 +108,8 @@ contract HelperConfig is Script{
         return NetworkConfig({
             deployer: vm.envAdrress("DEPLOYER_ADDRESS")
             deployerKey: vm.envUnit("PRIVATE_KEY"),
+            isTestnet: false,
+            networkName: "Ethereum Mainnet"
         });
     }
 
