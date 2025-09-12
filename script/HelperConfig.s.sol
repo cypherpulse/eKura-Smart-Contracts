@@ -27,7 +27,7 @@ contract HelperConfig is Script{
     }
 
     // STATE VARIABLES //
-    uint256 public constant ETH_MAINNET_HAIN_ID =1
+    uint256 public constant ETH_MAINNET_HAIN_ID =1;
     uint256 public constant ETH_SEPOLA_CHAIN_ID =11155111;
     uint256 public constant BASE_MAINNET_CHAIN_ID =8453;
     uint256 public constant BASE_SEPOLIA_CHAIN_ID =84531;
@@ -35,5 +35,9 @@ contract HelperConfig is Script{
 
     // Default localconfiguration
     uint256 public constant Default_ANVIL_PRIVATE_KEY =0xA11CE;
-    
+
+    NetworkConfig public s_activeNetworkConfig;
+
+    // FUNCTONS //
+
 }
