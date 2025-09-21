@@ -10,4 +10,6 @@ import {HelperConfig} from "./HelperConfig.s.sol";
 /**
  * @title DeployElectionFactory
  * @author cypherpulse.base.eth
+ * @notice This script deploys the ElectionFactory contract
+ * @dev Handles deployment across different networks using HelperConfig
  */
