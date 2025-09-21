@@ -15,5 +15,5 @@ import {HelperConfig} from "./HelperConfig.s.sol";
  */
 
 contract DeployElectionFactory is Script{
-    //
+    //Funcions //
 }
