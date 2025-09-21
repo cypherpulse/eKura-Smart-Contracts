@@ -13,3 +13,7 @@ import {HelperConfig} from "./HelperConfig.s.sol";
  * @notice This script deploys the ElectionFactory contract
  * @dev Handles deployment across different networks using HelperConfig
  */
+
+contract DeployElectionFactory is Script{
+    //
+}
