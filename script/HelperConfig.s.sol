@@ -132,7 +132,7 @@ contract HelperConfig is Script{
             chainId: LOCAL_CHAIN_ID,
             verifyContract: address(0)
         })
-    }  
+    }
 
     /***
      * @notice Gets the active network configuration
@@ -150,7 +150,7 @@ contract HelperConfig is Script{
 
     function isTestnet() external view returns (bool){
         return s_activeNetworkConfig.isTestnet;
-    };
+    }
 
     /***
      * @notice Gets current network name
