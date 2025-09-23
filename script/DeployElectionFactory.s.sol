@@ -32,6 +32,10 @@ contract DeployElectionFactory is Script{
     /***
      * @notice Deploys ElectionFactory contract
      * @param config Network configuration from HelperCofig
+     * @return electionFactory The deployed contract instance
+     * @return helperConfig The HelperConfig instance
      * 
      */
+
+    function deployElectionFactory()
 }
