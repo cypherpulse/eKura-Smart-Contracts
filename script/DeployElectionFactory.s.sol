@@ -18,6 +18,11 @@ contract DeployElectionFactory is Script{
     //Funcions //
     /***
      * @notice Main deployment function
-     * @return electionFactory The 
+     * @return electionFactory The deployed ElectionFactory contract
+     * @return helperConfig The HelperConfig instance used
      */
+
+    function run() external returns (ElectionFactory,HelperConfig){
+        
+    }
 }
