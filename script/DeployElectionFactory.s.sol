@@ -37,5 +37,12 @@ contract DeployElectionFactory is Script{
      * 
      */
 
-    function deployElectionFactory()
+    function deployElectionFactory(HelperConfig.NetworkConfig memory config)
+    public 
+    returns (ElectionFactory,HelperConfig)
+    {
+        console.log("Deploying ElectionFactory on", config.networkName);
+        console.log("Deployer address:", config.deployer);
+        console.log("Chain ID:", config.chainId);
+    }
 }
