@@ -25,5 +25,7 @@ contract DeployElectionFactory is Script{
     function run() external returns (ElectionFactory,HelperConfig){
         HelperConfig helperConfig = new HelperConfig();
         HelperConfg.NetworkConfig memory config = helperConfig.getActiveNetworkConfig();
+
+        return deployElectionFactory(config);
     }
 }
