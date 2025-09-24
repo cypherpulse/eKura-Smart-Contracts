@@ -65,6 +65,9 @@ contract DeployElectionFactory is Script{
         ElectionFactory electionFactory = new ElectionFactory();
 
         //Stop broadcasting
-        
+        vm.stopBroadcast();
+
+        console.log("ElectionFactory deployed at:",address(electionFactory));
+        console.log("Platform admin set to:",electionFactory.getPlatformAdmin());
     }
 }
