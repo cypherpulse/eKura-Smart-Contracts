@@ -69,5 +69,10 @@ contract DeployElectionFactory is Script{
 
         console.log("ElectionFactory deployed at:",address(electionFactory));
         console.log("Platform admin set to:",electionFactory.getPlatformAdmin());
+
+        //Verify deployment worked correctly 
+        _verifyDeployment(electionFactory, config);
+
+        return (electionFactory, new HelperConfig());
     }
 }
