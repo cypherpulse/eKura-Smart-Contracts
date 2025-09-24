@@ -81,4 +81,24 @@ contract DeployElectionFactory is Script{
      * @param electionFactory The deployed contract to verify
      * @param config Network configuration used
      */
+
+    function _verifyDeployment(
+        ElectionFactory electionFactory,
+        HelperConfig.NetworkConfig memory config
+    )internal view{
+        console.log("Verifying deployment...");
+
+        //check platfrom admin is set correctly 
+        require(
+            electionFactory.getPlatfromAdmin() == config.deployer,
+            "Platform admin not set correctly"
+        );
+
+        //Check initial election ID is set 
+        require(
+            electionFactory.getTotalElections()==0,
+            "Initial election count should be 0"
+        )
+
+    }
 }
