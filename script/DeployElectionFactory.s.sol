@@ -98,7 +98,14 @@ contract DeployElectionFactory is Script{
         require(
             electionFactory.getTotalElections()==0,
             "Initial election count should be 0"
-        )
+        );
 
+        console.log("Deployment Verification Passed");
+
+        //Log deployment summary
+        console.log("\n=== DEPLOYMENT SUMMARY ===");
+        console.log("Network:",config.networkName);
+        console.log("Contract Address:",address(electionFactory));
+        console.log("Platform Admin:",electionFactory.getPlatformAdmin());
     }
 }
