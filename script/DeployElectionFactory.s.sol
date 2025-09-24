@@ -75,4 +75,10 @@ contract DeployElectionFactory is Script{
 
         return (electionFactory, new HelperConfig());
     }
+
+    /***
+     * @notice Verifies the deployment was succesful
+     * @param electionFactory The deployed contract to verify
+     * @param config Network configuration used
+     */
 }
