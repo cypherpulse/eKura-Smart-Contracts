@@ -59,8 +59,6 @@ contract DeployElectionFactory is Script{
         _verifyDeployment(electionFactory, config);
         
         return (electionFactory, new HelperConfig());
-
-        return (electionFactory, new HelperConfig());
     }
 
     /***
