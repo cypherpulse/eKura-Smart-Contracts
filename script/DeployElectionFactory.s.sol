@@ -57,5 +57,8 @@ contract DeployElectionFactory is Script{
         console.log("ElectionFactory deployed at:",config.networkName);
         console.log("Deployer address :",config.deployer);
         console.log("Chain ID:",config.chainId);
+
+        //Start broadcasting transactions
+        vm.startBroadcast(config.deployerKey);
     }
 }
