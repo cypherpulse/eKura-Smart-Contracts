@@ -107,5 +107,7 @@ contract DeployElectionFactory is Script{
         console.log("Network:",config.networkName);
         console.log("Contract Address:",address(electionFactory));
         console.log("Platform Admin:",electionFactory.getPlatformAdmin());
+        console.log("Gas Used: Check transaction receipt");
+        console.log("========================\n");
     }
 }
