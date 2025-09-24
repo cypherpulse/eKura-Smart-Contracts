@@ -49,6 +49,11 @@ contract DeployElectionFactory is Script{
         vm.startBroadcast(config.deployerKey);
 
         //Deploy ElectionFactory contract
-        Elecion
+        ElecionFactory electionFactory = new ElectionFactory();
+
+        // Stop broadcasting
+        vm.stopBroadcast();
+
+        console.log("ElectionFactory deployed at:")
     }
 }
