@@ -60,5 +60,11 @@ contract DeployElectionFactory is Script{
 
         //Start broadcasting transactions
         vm.startBroadcast(config.deployerKey);
+
+        //Deploy ElectionFactory contract
+        ElectionFactory electionFactory = new ElectionFactory();
+
+        //Stop broadcasting
+        
     }
 }
