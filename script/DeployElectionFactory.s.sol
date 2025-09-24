@@ -1,9 +1,8 @@
 
-//SPDX-LIcense-Identifier: MIT
-
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import {Script,console} from "forge-std/Script.sol";
+import {Script, console} from "forge-std/Script.sol";
 import {ElectionFactory} from "../src/ElectionFactory.sol";
 import {HelperConfig} from "./HelperConfig.s.sol";
 
@@ -24,17 +23,16 @@ contract DeployElectionFactory is Script{
 
     function run() external returns (ElectionFactory,HelperConfig){
         HelperConfig helperConfig = new HelperConfig();
-        HelperConfg.NetworkConfig memory config = helperConfig.getActiveNetworkConfig();
+        HelperConfig.NetworkConfig memory config = helperConfig.getActiveNetworkConfig();
 
         return deployElectionFactory(config);
     }
 
-    /***
+    /**
      * @notice Deploys ElectionFactory contract
-     * @param config Network configuration from HelperCofig
+     * @param config Network configuration from HelperConfig
      * @return electionFactory The deployed contract instance
      * @return helperConfig The HelperConfig instance
-     * 
      */
 
     function deployElectionFactory(HelperConfig.NetworkConfig memory config)
@@ -49,19 +47,6 @@ contract DeployElectionFactory is Script{
         vm.startBroadcast(config.deployerKey);
 
         //Deploy ElectionFactory contract
-        ElecionFactory electionFactory = new ElectionFactory();
-
-        // Stop broadcasting
-        vm.stopBroadcast();
-
-        console.log("ElectionFactory deployed at:",config.networkName);
-        console.log("Deployer address :",config.deployer);
-        console.log("Chain ID:",config.chainId);
-
-        //Start broadcasting transactions
-        vm.startBroadcast(config.deployerKey);
-
-        //Deploy ElectionFactory contract
         ElectionFactory electionFactory = new ElectionFactory();
 
         //Stop broadcasting
@@ -72,6 +57,8 @@ contract DeployElectionFactory is Script{
 
         //Verify deployment worked correctly 
         _verifyDeployment(electionFactory, config);
+        
+        return (electionFactory, new HelperConfig());
 
         return (electionFactory, new HelperConfig());
     }
@@ -88,9 +75,9 @@ contract DeployElectionFactory is Script{
     )internal view{
         console.log("Verifying deployment...");
 
-        //check platfrom admin is set correctly 
+        //check platform admin is set correctly 
         require(
-            electionFactory.getPlatfromAdmin() == config.deployer,
+            electionFactory.getPlatformAdmin() == config.deployer,
             "Platform admin not set correctly"
         );
 

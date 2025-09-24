@@ -27,24 +27,24 @@ contract HelperConfig is Script{
     }
 
     // STATE VARIABLES //
-    uint256 public constant ETH_MAINNET_HAIN_ID =1;
-    uint256 public constant ETH_SEPOLA_CHAIN_ID =11155111;
+    uint256 public constant ETH_MAINNET_CHAIN_ID =1;
+    uint256 public constant ETH_SEPOLIA_CHAIN_ID =11155111;
     uint256 public constant BASE_MAINNET_CHAIN_ID =8453;
     uint256 public constant BASE_SEPOLIA_CHAIN_ID =84531;
     uint256 public constant LOCALHOST_CHAIN_ID =31337;
 
     // Default localconfiguration
-    uint256 public constant Default_ANVIL_PRIVATE_KEY =0xA11CE;
+    uint256 public constant DEFAULT_ANVIL_PRIVATE_KEY =0xA11CE;
 
     NetworkConfig public s_activeNetworkConfig;
 
     // Constructor
     constructor(){
         if (block.chainid == ETH_SEPOLIA_CHAIN_ID){
-            s_activeNetworkConfig = getSepoliaEthConfig();
+            s_activeNetworkConfig = getEthSepoliaConfig();
         }else if(block.chainid ==BASE_SEPOLIA_CHAIN_ID){
             s_activeNetworkConfig = getBaseSepoliaConfig();
-        }else if(bock.chainid == BASE_MAINNET_CHAIN_ID){
+        }else if(block.chainid == BASE_MAINNET_CHAIN_ID){
             s_activeNetworkConfig = getBaseMainnetConfig();
         }else if(block.chainid == ETH_MAINNET_CHAIN_ID){
             s_activeNetworkConfig = getEthMainnetConfig();
@@ -64,8 +64,10 @@ contract HelperConfig is Script{
             deployer: vm.envAddress("DEPLOYER_ADDRESS"),
             deployerKey: vm.envUint("PRIVATE_KEY"),
             isTestnet: true,
+            networkName: "Ethereum Sepolia",
             rpcUrl: vm.envString("ETH_SEPOLIA_RPC_URL"),
-            chainId: BASE_SEPOLIA_CHAIN_ID 
+            chainId: ETH_SEPOLIA_CHAIN_ID,
+            verifyContract: address(0)
         });
     }
 
@@ -80,6 +82,7 @@ contract HelperConfig is Script{
             deployer: vm.envAddress("DEPLOYER_ADDRESS"),
             deployerKey: vm.envUint("PRIVATE_KEY"),
             isTestnet: true,
+            networkName: "Base Sepolia",
             rpcUrl: vm.envString("BASE_SEPOLIA_RPC_URL"),
             chainId: BASE_SEPOLIA_CHAIN_ID,
             verifyContract: address(0)
@@ -93,7 +96,7 @@ contract HelperConfig is Script{
      */
 
     function getBaseMainnetConfig() public view returns(NetworkConfig memory){
-        return NetworkConfig{
+        return NetworkConfig({
             deployer: vm.envAddress("DEPLOYER_ADDRESS"),
             deployerKey: vm.envUint("PRIVATE_KEY"),
             isTestnet: false,
@@ -101,17 +104,17 @@ contract HelperConfig is Script{
             rpcUrl: vm.envString("BASE_MAINNET_RPC_URL"),
             chainId: ETH_MAINNET_CHAIN_ID,
             verifyContract: address(0)
-        }
+        });
     }
 
     function getEthMainnetConfig() public view returns(NetworkConfig memory){
         return NetworkConfig({
-            deployer: vm.envAdrress("DEPLOYER_ADDRESS")
-            deployerKey: vm.envUnit("PRIVATE_KEY"),
+            deployer: vm.envAddress("DEPLOYER_ADDRESS"),
+            deployerKey: vm.envUint("PRIVATE_KEY"),
             isTestnet: false,
             networkName: "Ethereum Mainnet",
-            rpcURL: vm.envString("ETH_MAINNET_RPC_URL"),
-            chainId: ETH_MAINNET_HAIN_ID,
+            rpcUrl: vm.envString("ETH_MAINNET_RPC_URL"),
+            chainId: ETH_MAINNET_CHAIN_ID,
             verifyContract: address(0)
         });
     }
@@ -129,9 +132,9 @@ contract HelperConfig is Script{
             isTestnet: true,
             networkName: "Local Anvil",
             rpcUrl: "http://127.0.0.1:8545",
-            chainId: LOCAL_CHAIN_ID,
+            chainId: LOCALHOST_CHAIN_ID,
             verifyContract: address(0)
-        })
+        });
     }
 
     /***
@@ -140,7 +143,7 @@ contract HelperConfig is Script{
      */
 
     function getActiveNetworkConfig() external view returns(NetworkConfig memory){
-        return s_activeNetworkConfig.isTestnet;
+        return s_activeNetworkConfig;
     }
 
     /***
