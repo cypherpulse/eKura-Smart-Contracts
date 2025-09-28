@@ -20,5 +20,6 @@ contract ElectionFactoryTest is Test{
 
     event orgAdminAdded(
         uint256 indexed orgId,
+        address indexed admin,
     )
 }
