@@ -17,4 +17,8 @@ contract ElectionFactoryTest is Test{
         uint256  startTime,
         uint256 endTime
     )
+
+    event orgAdminAdded(
+        uint
+    )
 }
