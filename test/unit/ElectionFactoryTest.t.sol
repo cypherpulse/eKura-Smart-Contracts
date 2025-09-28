@@ -12,5 +12,9 @@ contract ElectionFactoryTest is Test{
     event ElectionCreated(
         uint256 indexed orgId,
         uint256 indexed electionId,
+        string indexed electionName,
+        address creator,
+        uint256  startTime,
+        uint256 endTime
     )
 }
