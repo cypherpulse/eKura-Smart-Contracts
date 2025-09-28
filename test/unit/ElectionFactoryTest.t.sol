@@ -41,6 +41,6 @@ contract ElectionFactoryTest is Test{
     uint256 public constant ORG_ID = 1;
     uint256 public constant ORG_ID = 2;
     string public constant ELECTION_NAME = "Student Council Elections 2025";
-    string public constant ELECTION_DESCRIPTION = ""
+    string public constant ELECTION_DESCRIPTION = "Vote for your student representatives";
 
 }
