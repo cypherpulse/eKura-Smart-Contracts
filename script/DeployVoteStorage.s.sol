@@ -174,7 +174,7 @@ contract DeployVoteStorage is Script {
             "Owner not set correctly"
         );
         
-        console.log("✅ VoteStorage verification passed!");
+        console.log("VoteStorage verification passed!");
     }
     
     /**
@@ -204,7 +204,7 @@ contract DeployVoteStorage is Script {
             "VoteStorage owner incorrect"
         );
         
-        console.log("✅ Both contracts verified successfully!");
+        console.log("Both contracts verified successfully!");
         
         // Log summary
         console.log("\n=== DEPLOYMENT SUMMARY ===");
