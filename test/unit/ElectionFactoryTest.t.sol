@@ -35,6 +35,9 @@ contract ElectionFactoryTest is Test{
     address public orgAdmin1;
     address public orgAdmin2;
     address public user1;
-    address public user
+    address public user2;
+
+    //Test Constants
+    uint256 public constant ORG_ID = 1;
 
 }
