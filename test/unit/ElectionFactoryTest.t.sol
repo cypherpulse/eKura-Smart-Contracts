@@ -30,4 +30,8 @@ contract ElectionFactoryTest is Test{
     HelperConfig public helperConfig;
     HelperConfig.NetworkConfig public networkConfig;
 
+    //Test addresses
+    address public platformAdmin;
+    
+
 }
