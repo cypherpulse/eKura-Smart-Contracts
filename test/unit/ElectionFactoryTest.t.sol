@@ -32,6 +32,7 @@ contract ElectionFactoryTest is Test{
 
     //Test addresses
     address public platformAdmin;
-    
+    address public orgAdmin1;
+    address public orgAdmin2;
 
 }
