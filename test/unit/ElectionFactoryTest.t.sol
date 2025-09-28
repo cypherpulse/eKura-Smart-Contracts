@@ -28,5 +28,6 @@ contract ElectionFactoryTest is Test{
 
     ElectionFactory public electionFactory;
     HelperConfig public helperConfig;
+    HelperConfig.NetworkConfig public networkConfig;
 
 }
