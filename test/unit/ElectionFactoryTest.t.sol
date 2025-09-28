@@ -9,5 +9,6 @@ import {DeployElectionFactory} from "../../script/DeployElectionFactory.s.sol";
 contract ElectionFactoryTest is Test{
     //EVENTS//
 
-    
-}
+    event ElectionCreated(
+        uint
+    )
