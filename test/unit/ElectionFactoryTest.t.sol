@@ -10,5 +10,7 @@ contract ElectionFactoryTest is Test{
     //EVENTS//
 
     event ElectionCreated(
-        uint
+        uint256 indexed orgId,
+        uint256 indexed electionId,
     )
+}
