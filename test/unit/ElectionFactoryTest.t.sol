@@ -24,5 +24,7 @@ contract ElectionFactoryTest is Test{
         address indexed addedBy
     )
 
+    //STATE VARIABLES//
+
     
 }
