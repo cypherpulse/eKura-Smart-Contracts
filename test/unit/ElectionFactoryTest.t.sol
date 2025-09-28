@@ -26,5 +26,7 @@ contract ElectionFactoryTest is Test{
 
     //STATE VARIABLES//
 
-    
+    ElectionFactory public electionFactory;
+    HelperConfig public helperConfig;
+
 }
