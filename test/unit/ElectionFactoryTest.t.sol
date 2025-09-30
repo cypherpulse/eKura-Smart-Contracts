@@ -22,7 +22,7 @@ contract ElectionFactoryTest is Test{
         uint256 indexed orgId,
         address indexed admin,
         address indexed addedBy
-    )
+    );
 
     //STATE VARIABLES//
 
@@ -46,7 +46,7 @@ contract ElectionFactoryTest is Test{
     // SETUP //
 
     function setUp() external{
-
+        //
     }
 
 }
