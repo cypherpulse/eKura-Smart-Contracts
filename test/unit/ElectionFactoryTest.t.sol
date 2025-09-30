@@ -51,7 +51,10 @@ contract ElectionFactoryTest is Test{
         (electionFactory,helperConfig)=deployer.run();
         networkConfig = helperConfig.getActiveNetworkConfig();
 
-        //Set up
+        //Set up test addresses//
+        platformAdmin = networkConfig.deployer;
+        orgAdmin1 = makeAddr("orgAdmin1");
+        orgAdmin2
     }
 
 }
