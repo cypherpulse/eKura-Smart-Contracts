@@ -46,7 +46,12 @@ contract ElectionFactoryTest is Test{
     // SETUP //
 
     function setUp() external{
-        //
+        //Deploy contracts using our deployment script 
+        DeployElectionFactory deployer = new DeployElectionFactory();
+        (electionFactory,helperConfig)=deployer.run();
+        networkConfig = helperConfig.getActiveNetworkConfig();
+
+        //Set up
     }
 
 }
