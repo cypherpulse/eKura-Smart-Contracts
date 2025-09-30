@@ -16,7 +16,7 @@ contract ElectionFactoryTest is Test{
         address creator,
         uint256  startTime,
         uint256 endTime
-    )
+    );
 
     event orgAdminAdded(
         uint256 indexed orgId,
@@ -42,5 +42,11 @@ contract ElectionFactoryTest is Test{
     uint256 public constant ORG_ID = 2;
     string public constant ELECTION_NAME = "Student Council Elections 2025";
     string public constant ELECTION_DESCRIPTION = "Vote for your student representatives";
+
+    // SETUP //
+
+    function setUp() external{
+
+    }
 
 }
