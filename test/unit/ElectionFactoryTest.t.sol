@@ -108,7 +108,10 @@ contract ElectionFactoryTest is Test{
     function test_AddOrgAdmin_RevertWhen_AlreadyAdmin() public{
         //Arrange
         vm.startPrank(platformAdmin);
-        
+        electionFactory.addOrgAdmin(ORG_ID_1,orgAdmin1);
+
+        //act & Assert
+        vm.expectRevert(ElectionFactory.ElectionFactory__AlreadyAdmin.selector)
     }
     
 
