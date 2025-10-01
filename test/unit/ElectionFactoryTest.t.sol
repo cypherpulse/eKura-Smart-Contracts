@@ -70,6 +70,15 @@ contract ElectionFactoryTest is Test{
         assertTrue(address(electionFactory).code.length >0);
         assertEq(electionFactory.getTotalElections(),0);
     }
+
+    //ORG ADMIN TESTS //   
+
+    function test_AddOrgAdmin_Success() public{
+        //Arrange
+        vm.prank(platformAdmin);
+        //Act & Assert
+        vm.expectEmit(true,true,true,false);
+    }
     
 
 }
