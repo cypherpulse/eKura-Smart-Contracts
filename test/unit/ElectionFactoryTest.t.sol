@@ -224,4 +224,7 @@ contract ElectionFactoryTest is Test{
 
         vm.prank(orgAdmin1);
 
-        //Act & Asse
+        //Act & Assert 
+        vm.expectRevert(ElectionFactory.ElectionFactory__startTimeMustBeInFuture.selector)
+    }
+}
