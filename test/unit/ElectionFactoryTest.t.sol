@@ -121,6 +121,9 @@ contract ElectionFactoryTest is Test{
         //Arrange
         vm.startPrank(platformAdmin);
         electionFactory.addOrgAdmin(ORG_ID_1,orgAdmin1);
+
+        //Act
+        
     }
     
 
