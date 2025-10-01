@@ -219,5 +219,9 @@ contract ElectionFactoryTest is Test{
         //Arrange
         uint256 startTime = block.timestamp - 1 days; // Past time
         uint256 endTime = block.timestamp + 7 days;
+        string[] memory candidates = new string[](1);
+        candidates[0] = "Alice Smith";
+
+        
     }
 }
