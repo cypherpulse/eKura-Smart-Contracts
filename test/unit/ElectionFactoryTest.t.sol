@@ -173,6 +173,4 @@ contract ElectionFactoryTest is Test{
         assertTrue(election.isActive);
     }
 
-    
-
 }
