@@ -190,6 +190,12 @@ contract ElectionFactoryTest is Test{
             ELECTION_DESCRIPTION,
             startTime,
             endTime,
-        )
+            candidates
+        );
+    }
+
+    function test_CreateElection_RevertWhen_EmptyName() public withOrgAdmin{
+        //Arrange
+        
     }
 }
