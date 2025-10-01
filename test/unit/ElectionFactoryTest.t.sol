@@ -68,7 +68,7 @@ contract ElectionFactoryTest is Test{
     function test_DeploymentSuccess() public{
         //Test contract was deployed correctly
         assertTrue(address(electionFactory).code.length >0);
-        assertEq(electionFactory.get)
+        assertEq(electionFactory.getPlatformAdmin(),platformAdmin);
         assertEq(electionFactory.getTotalElections(),0);
     }
 
@@ -85,7 +85,10 @@ contract ElectionFactoryTest is Test{
 
         // Verify
         assertTrue(electionFactory.isOrgAdmin(ORG_ID_1,orgAdmin1));
+    }
 
+    function test_AddOrgAdmin_RevertWhen_NotPlatformAdmin() public{
+        
     }
     
 
