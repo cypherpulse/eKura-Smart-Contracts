@@ -88,7 +88,8 @@ contract ElectionFactoryTest is Test{
     }
 
     function test_AddOrgAdmin_RevertWhen_NotPlatformAdmin() public{
-        
+        //Arrange
+        vm.prank(user1);
     }
     
 
