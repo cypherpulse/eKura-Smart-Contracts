@@ -117,7 +117,11 @@ contract ElectionFactoryTest is Test{
         vm.stopPrank();
     }
 
-    function test_Remove
+    function test_RemoveOrgAdmin_Success() public{
+        //Arrange
+        vm.startPrank(platformAdmin);
+        electionFactory.addOrgAdmin(ORG_ID_1,orgAdmin1);
+    }
     
 
 }
