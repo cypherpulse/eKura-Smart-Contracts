@@ -142,6 +142,7 @@ contract ElectionFactoryTest is Test{
         //Arrange
         uint256 startTime = block.timestamp + 1 days;
         uint256 endTime = startTime + 7 days;
+        string[] memory candidates = new string[](3);
     }
 
     
