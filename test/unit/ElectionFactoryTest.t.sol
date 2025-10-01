@@ -92,7 +92,7 @@ contract ElectionFactoryTest is Test{
         vm.prank(user1);
 
         //Act&Assert
-        vm.expectRevert(ElectionFactory.ElectionFactory_NotPlatformAdmin.selector);
+        vm.expectRevert(ElectionFactory.ElectionFactory__NotPlatformAdmin.selector);
         electionFactory.addOrgAdmin(ORG_ID_1,orgAdmin1);
     }
     
