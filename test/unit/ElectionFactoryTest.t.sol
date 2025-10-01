@@ -18,7 +18,7 @@ contract ElectionFactoryTest is Test{
         uint256 endTime
     );
 
-    event orgAdminAdded(
+    event OrgAdminAdded(
         uint256 indexed orgId,
         address indexed admin,
         address indexed addedBy
@@ -68,6 +68,7 @@ contract ElectionFactoryTest is Test{
     function test_DeploymentSuccess() public{
         //Test contract was deployed correctly
         assertTrue(address(electionFactory).code.length >0);
+        assertEq(electionFactory.get)
         assertEq(electionFactory.getTotalElections(),0);
     }
 
