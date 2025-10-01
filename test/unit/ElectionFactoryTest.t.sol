@@ -90,6 +90,10 @@ contract ElectionFactoryTest is Test{
     function test_AddOrgAdmin_RevertWhen_NotPlatformAdmin() public{
         //Arrange
         vm.prank(user1);
+
+        //Act&Assert
+        vm.expectRevert(ElectionFactory.ElectionFactory_NotPlatformAdmin.selector);
+        electionFactory.addOrgAdmin(ORG_ID_1,orgAdmin1);
     }
     
 
