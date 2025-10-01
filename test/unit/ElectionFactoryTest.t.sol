@@ -126,5 +126,14 @@ contract ElectionFactoryTest is Test{
         electionFactory.removeOrgAdmin(ORG_ID_1,orgAdmin1);
 
         //Assert
-        
-    }
+        assertFalse(electionFactory.isOrgAdmin(ORG_ID_1,orgAdmin1));
+
+        vm.stopPrank();
+    }
+
+    // ELECTION CREATION TESTS //
+
+    
+    
+
+}
