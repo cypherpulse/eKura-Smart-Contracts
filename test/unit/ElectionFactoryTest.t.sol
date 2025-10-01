@@ -164,6 +164,9 @@ contract ElectionFactoryTest is Test{
 
         // Verify
         assertEq(electionId, 1);
+        assertEq(electionFactory.getTotalElections(), 1);
+
+        ElectionFactory.Election memory election = electionFactory.getElection(1);
     }
 
     
