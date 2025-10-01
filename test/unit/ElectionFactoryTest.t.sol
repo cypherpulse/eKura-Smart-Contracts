@@ -55,6 +55,10 @@ contract ElectionFactoryTest is Test{
         platformAdmin = networkConfig.deployer;
         orgAdmin1 = makeAddr("orgAdmin1");
         orgAdmin2 = makeAddr("orgAdmin2"); 
+        user1 = makeAddr("user1");
+        user2 = makeAddr("user2");
+
+        
     }
 
 }
