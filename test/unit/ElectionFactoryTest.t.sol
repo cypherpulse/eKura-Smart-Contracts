@@ -179,5 +179,7 @@ contract ElectionFactoryTest is Test{
         uint256 endTime = startTime + 7 days;
         string[] memory candidates = new string[](1);
         candidates[0] = "Alice Smith";
+
+        vm.prank(user1);
     }
 }
