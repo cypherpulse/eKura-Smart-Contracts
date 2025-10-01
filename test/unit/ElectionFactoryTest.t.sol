@@ -135,6 +135,7 @@ contract ElectionFactoryTest is Test{
     modifier withOrgAdmin() {
         vm.prank(platformAdmin);
         electionFactory.addOrgAdmin(ORG_ID_1, orgAdmin1);
+        _;
     }
 
     
