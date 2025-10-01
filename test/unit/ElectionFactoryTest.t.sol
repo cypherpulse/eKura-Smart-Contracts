@@ -181,5 +181,9 @@ contract ElectionFactoryTest is Test{
         candidates[0] = "Alice Smith";
 
         vm.prank(user1);
+
+        //Act & Assert 
+        vm.expectRevert(ElectionFactory.ElectionFactory__NotOrgAdmin.selector);
+        
     }
 }
