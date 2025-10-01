@@ -58,7 +58,9 @@ contract ElectionFactoryTest is Test{
         user1 = makeAddr("user1");
         user2 = makeAddr("user2");
 
-        
+        console.log("ElectionFactory deployed at :",address(electionFactory));
+        console.log("")
+
     }
 
 }
