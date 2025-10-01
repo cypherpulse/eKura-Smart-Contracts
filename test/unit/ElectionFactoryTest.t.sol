@@ -204,6 +204,9 @@ contract ElectionFactoryTest is Test{
         vm.prank(orgAdmin1);
 
         //Act & Asert
-        
+        vm.expectRevert(ElectionFactory.ElectionFactory__EmptyInput.selector);
+        electionFactory.createElection(
+            ORG_ID_1,
+        )
     }
 }
