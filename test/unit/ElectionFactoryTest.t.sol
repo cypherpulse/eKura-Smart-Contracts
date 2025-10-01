@@ -146,6 +146,12 @@ contract ElectionFactoryTest is Test{
         candidates[0] = "Alice Smith";
         candidates[1] = "Bob Johnson";
         candidates[2] = "Carol Davis";
+
+        vm.prank(orgAdmin1);
+
+        // Act & Assert
+        vm.expectEmit(true, true, true, false);
+        emit ElectionCreated(ORG_ID_1, 1, ELECTION_NAME, orgAdmin1, startTime, endTime);
     }
 
     
