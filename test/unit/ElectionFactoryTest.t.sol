@@ -123,8 +123,8 @@ contract ElectionFactoryTest is Test{
         electionFactory.addOrgAdmin(ORG_ID_1,orgAdmin1);
 
         //Act
-        
-    }
-    
+        electionFactory.removeOrgAdmin(ORG_ID_1,orgAdmin1);
 
-}
+        //Assert
+        
+    }
