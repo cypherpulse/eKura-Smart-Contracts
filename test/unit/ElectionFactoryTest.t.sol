@@ -154,8 +154,16 @@ contract ElectionFactoryTest is Test{
         emit ElectionCreated(ORG_ID_1, 1, ELECTION_NAME, orgAdmin1, startTime, endTime);
 
         uint256 electionId = electionFactory.createElection(
-            
-        )
+            ORG_ID_1,
+            ELECTION_NAME,
+            ELECTION_DESCRIPTION,
+            startTime,
+            endTime,
+            candidates
+        );
+
+        // Verify
+        assertEq(electionId, 1);
     }
 
     
