@@ -111,8 +111,13 @@ contract ElectionFactoryTest is Test{
         electionFactory.addOrgAdmin(ORG_ID_1,orgAdmin1);
 
         //act & Assert
-        vm.expectRevert(ElectionFactory.ElectionFactory__AlreadyAdmin.selector)
+        vm.expectRevert(ElectionFactory.ElectionFactory__AlreadyAnAdmin.selector);
+        electionFactory.addOrgAdmin(ORG_ID_1,orgAdmin1);
+
+        vm.stopPrank();
     }
+
+    function test_Remove
     
 
 }
