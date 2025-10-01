@@ -99,7 +99,10 @@ contract ElectionFactoryTest is Test{
     function test_AddOrgAdmin_RevertWhen_InvalidAddress() public{
         //Arrange
         vm.prank(platformAdmin);
-        
+
+        //Act & Assert
+        vm.expectRevert(ElectionFactory.ElectionFactory__InvalidAdminAddress.selector);
+        electionFactory.addOrgAdmin(ORG_ID_1,address(0));
     }
     
 
