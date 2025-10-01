@@ -189,6 +189,7 @@ contract ElectionFactoryTest is Test{
             ELECTION_NAME,
             ELECTION_DESCRIPTION,
             startTime,
+            endTime,
         )
     }
 }
