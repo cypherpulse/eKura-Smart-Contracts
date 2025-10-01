@@ -132,8 +132,10 @@ contract ElectionFactoryTest is Test{
     }
 
     // ELECTION CREATION TESTS //
+    modifier withOrgAdmin() {
+        vm.prank(platformAdmin);
+    }
 
-    
     
 
 }
