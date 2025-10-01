@@ -209,6 +209,9 @@ contract ElectionFactoryTest is Test{
             ORG_ID_1,
             "",// Empty name
             ELECTION_DESCRIPTION,
-        )
+            startTime,
+            endTime,
+            candidates
+        );
     }
 }
