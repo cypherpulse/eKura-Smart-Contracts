@@ -173,4 +173,8 @@ contract ElectionFactoryTest is Test{
         assertTrue(election.isActive);
     }
 
+    function test_CreateElection_RevertWhen_NotOrgAdmin() public {
+        //Arrange
+        uint256 startTime = block.timestamp + 1 days;
+    }
 }
