@@ -138,6 +138,11 @@ contract ElectionFactoryTest is Test{
         _;
     }
 
+    function test_CreateElection_Success() public withOrgAdmin{
+        //Arrange
+        uint256 startTime = block.timestamp + 1 days;
+    }
+
     
 
 }
