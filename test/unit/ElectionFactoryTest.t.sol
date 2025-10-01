@@ -59,8 +59,17 @@ contract ElectionFactoryTest is Test{
         user2 = makeAddr("user2");
 
         console.log("ElectionFactory deployed at :",address(electionFactory));
-        console.log("")
+        console.log("Platform Admin:",platformAdmin);
 
     }
+
+    //DEPLOYMENT TESTS //
+
+    function test_DeploymentSuccess() public{
+        //Test contract was deployed correctly
+        assertTrue(address(electionFactory).code.length >0);
+        assertEq(electionFactory.getTotalElections(),0);
+    }
+    
 
 }
