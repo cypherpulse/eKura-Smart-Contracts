@@ -78,6 +78,12 @@ contract ElectionFactoryTest is Test{
         vm.prank(platformAdmin);
         //Act & Assert
         vm.expectEmit(true,true,true,false);
+        emitOrgAdminAdded(ORG_ID_1,orgAdmin1,platformAdmin);
+
+        electionFactory.addOrgAdmin(ORG_ID_1, orgAdmin1);
+
+        // Verify
+
     }
     
 
