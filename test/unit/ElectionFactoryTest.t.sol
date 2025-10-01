@@ -225,9 +225,14 @@ contract ElectionFactoryTest is Test{
         vm.prank(orgAdmin1);
 
         //Act & Assert 
-        vm.expectRevert(ElectionFactory.ElectionFactory__startTimeMustBeInFuture.selector);
+        vm.expectRevert(ElectionFactory.ElectionFactory__StartTimeMustBeInFuture.selector);
         electionFactory.createElection(
-
-        )
+            ORG_ID_1,
+            ELECTION_NAME,
+            ELECTION_DESCRIPTION,
+            startTime,
+            endTime,
+            candidates
+        );
     }
 }
