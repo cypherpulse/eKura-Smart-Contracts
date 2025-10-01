@@ -38,8 +38,8 @@ contract ElectionFactoryTest is Test{
     address public user2;
 
     //Test Constants
-    uint256 public constant ORG_ID = 1;
-    uint256 public constant ORG_ID = 2;
+    uint256 public constant ORG_ID_1 = 1;
+    uint256 public constant ORG_ID_2 = 2;
     string public constant ELECTION_NAME = "Student Council Elections 2025";
     string public constant ELECTION_DESCRIPTION = "Vote for your student representatives";
 
@@ -78,11 +78,12 @@ contract ElectionFactoryTest is Test{
         vm.prank(platformAdmin);
         //Act & Assert
         vm.expectEmit(true,true,true,false);
-        emitOrgAdminAdded(ORG_ID_1,orgAdmin1,platformAdmin);
+        emit OrgAdminAdded(ORG_ID_1,orgAdmin1,platformAdmin);
 
         electionFactory.addOrgAdmin(ORG_ID_1, orgAdmin1);
 
         // Verify
+        assertTrue(electionFactory.isOrgAdmin(ORG_ID_1,orgAdmin1));
 
     }
     
