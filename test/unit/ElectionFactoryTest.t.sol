@@ -207,6 +207,8 @@ contract ElectionFactoryTest is Test{
         vm.expectRevert(ElectionFactory.ElectionFactory__EmptyInput.selector);
         electionFactory.createElection(
             ORG_ID_1,
+            "",// Empty name
+            ELECTION_DESCRIPTION,
         )
     }
 }
