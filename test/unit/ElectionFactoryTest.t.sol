@@ -196,6 +196,7 @@ contract ElectionFactoryTest is Test{
 
     function test_CreateElection_RevertWhen_EmptyName() public withOrgAdmin{
         //Arrange
-        
+        uint256 startTime = block.timestamp + 1 days;
+        uint256 endTime = startTime + 7 days;
     }
 }
