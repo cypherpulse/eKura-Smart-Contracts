@@ -184,6 +184,8 @@ contract ElectionFactoryTest is Test{
 
         //Act & Assert 
         vm.expectRevert(ElectionFactory.ElectionFactory__NotOrgAdmin.selector);
-        
+        electionFactory.createElection(
+            
+        )
     }
 }
