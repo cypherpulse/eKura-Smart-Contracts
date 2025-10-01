@@ -169,7 +169,8 @@ contract ElectionFactoryTest is Test{
         ElectionFactory.Election memory election = electionFactory.getElection(1);
         assertEq(election.orgId, ORG_ID_1);
         assertEq(election.electionName, ELECTION_NAME);
-        assertEq(election.electionDescription, ELECTION_DESCRIPTION);
+        assertEq(election.creator,orgAdmin1);
+        assertTrue(election.isActive);
     }
 
     
