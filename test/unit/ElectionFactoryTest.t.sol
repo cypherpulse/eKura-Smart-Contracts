@@ -152,6 +152,10 @@ contract ElectionFactoryTest is Test{
         // Act & Assert
         vm.expectEmit(true, true, true, false);
         emit ElectionCreated(ORG_ID_1, 1, ELECTION_NAME, orgAdmin1, startTime, endTime);
+
+        uint256 electionId = electionFactory.createElection(
+            
+        )
     }
 
     
