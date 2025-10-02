@@ -280,6 +280,12 @@ contract ElectionFactoryTest is Test{
             ORG_ID_1,
             "Election 2",
             "Description 2",
-        )
+            startTime
+            endTime
+            candidates
+        );
+
+        // Act
+        uint256[] memory orgElections = electionFactory.getOrgElections(ORG_ID_1);
     )
 }
