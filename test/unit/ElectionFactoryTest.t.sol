@@ -310,7 +310,10 @@ contract ElectionFactoryTest is Test{
             ELECTION_DESCRIPTION,
             startTime,
             endTime,
-            
+            candidates
         );
+
+        // Test before start time
+        assertFalse(electionFactory.isElectionActive(electionId));
     }
 }
