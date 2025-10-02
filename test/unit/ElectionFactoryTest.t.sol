@@ -307,6 +307,8 @@ contract ElectionFactoryTest is Test{
         uint256 electionId = electionFactory.createElection(
             ORG_ID_1,
             ELECTION_NAME,
+            ELECTION_DESCRIPTION,
+            startTime,
         );
     }
 }
