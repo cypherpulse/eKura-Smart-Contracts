@@ -269,7 +269,10 @@ contract ElectionFactoryTest is Test{
 
         electionFactory.createElection(
             ORG_ID_1,
-            
+            "Election 1",
+            "Description 1",
+            startTime,
+            endTime,
         )
     )
 }
