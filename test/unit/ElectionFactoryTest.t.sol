@@ -248,7 +248,8 @@ contract ElectionFactoryTest is Test{
         //Act & Assert
         vm.expectRevert(ElectionFactory.ElectionFactory__InvalidTimeRange.selector);
         electionFactory.createElection(
-            
+            ORG_ID_1,
+            ELECTION_NAME,
         );
     }
 }
