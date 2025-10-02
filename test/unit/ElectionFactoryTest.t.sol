@@ -315,5 +315,8 @@ contract ElectionFactoryTest is Test{
 
         // Test before start time
         assertFalse(electionFactory.isElectionActive(electionId));
+
+        //Test during election period
+        vm.warp(startTime + 1 hours);
     }
 }
