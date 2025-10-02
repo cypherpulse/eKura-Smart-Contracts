@@ -237,6 +237,7 @@ contract ElectionFactoryTest is Test{
     }
 
     function test_CreateElection_RevertWhen_InvalidTimeRange() public withOrgAdmin{
+        //Arrange
         
     }
 }
