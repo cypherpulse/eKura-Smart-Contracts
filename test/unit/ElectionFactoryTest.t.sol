@@ -251,8 +251,9 @@ contract ElectionFactoryTest is Test{
             ORG_ID_1,
             ELECTION_NAME,
             ELECTION_DESCRIPTION,
-            stratTime,
+            startTime,
             endTime,
+            candidates
         );
     }
 
@@ -296,6 +297,10 @@ contract ElectionFactoryTest is Test{
 
     function test_IsElectionActive() public withOrgAdmin{
         //Arrange
-        
+        uint256 startTime = block.timestamp + 1 days;
+        uint256 endTime = startTime + 7 days;
+
+        string[] memory candidates = new string[](1);
+        candidates[0] = "Alice Smith";
     }
 }
