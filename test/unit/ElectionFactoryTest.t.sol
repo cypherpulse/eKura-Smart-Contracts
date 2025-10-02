@@ -294,5 +294,8 @@ contract ElectionFactoryTest is Test{
         assertEq(orgElections[1], 2);
     }
 
-    //
+    function test_IsElectionActive() public withOrgAdmin{
+        //Arrange
+        
+    }
 }
