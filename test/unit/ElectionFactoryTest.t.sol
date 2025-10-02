@@ -257,7 +257,7 @@ contract ElectionFactoryTest is Test{
     }
 
     //   VIEW FUNCTION TESTS   //
-    function test_GetOrgElection() public withOrgAdmin(
+    function test_GetOrgElection() public withOrgAdmin{
         // Arrange - Creating 2 Elections
         uint256 startTime = block.timestamp + 1 days;
         uint256 endTime = startTime + 7 days;
@@ -280,8 +280,8 @@ contract ElectionFactoryTest is Test{
             ORG_ID_1,
             "Election 2",
             "Description 2",
-            startTime
-            endTime
+            startTime,
+            endTime,
             candidates
         );
 
@@ -291,5 +291,8 @@ contract ElectionFactoryTest is Test{
         // Assert
         assertEq(orgElections.length, 2);
         assertEq(orgElections[0], 1);
-    )
+        assertEq(orgElections[1], 2);
+    }
+
+    //
 }
