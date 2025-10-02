@@ -302,5 +302,7 @@ contract ElectionFactoryTest is Test{
 
         string[] memory candidates = new string[](1);
         candidates[0] = "Alice Smith";
+
+        vm.prank(orgAdmin1);
     }
 }
