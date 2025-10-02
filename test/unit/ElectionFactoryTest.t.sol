@@ -264,5 +264,12 @@ contract ElectionFactoryTest is Test{
         string[] memory candidates = new string[](2);
         candidates[0] = "Alice Smith";
         candidates[1] = "Bob Johnson";
+
+        vm.prank(orgAdmin1);
+
+        electionFactory.createElection(
+            ORG_ID_1,
+            
+        )
     )
 }
