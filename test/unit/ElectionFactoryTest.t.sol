@@ -261,5 +261,8 @@ contract ElectionFactoryTest is Test{
         // Arrange - Creating 2 Elections
         uint256 startTime = block.timestamp + 1 days;
         uint256 endTime = startTime + 7 days;
+        string[] memory candidates = new string[](2);
+        candidates[0] = "Alice Smith";
+        candidates[1] = "Bob Johnson";
     )
 }
