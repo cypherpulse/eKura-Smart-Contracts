@@ -258,6 +258,8 @@ contract ElectionFactoryTest is Test{
 
     //   VIEW FUNCTION TESTS   //
     function test_GetOrgElection() public withOrgAdmin(
-        
+        // Arrange - Creating 2 Elections
+        uint256 startTime = block.timestamp + 1 days;
+        uint256 endTime = startTime + 7 days;
     )
 }
