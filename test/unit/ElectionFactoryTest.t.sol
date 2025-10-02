@@ -255,4 +255,9 @@ contract ElectionFactoryTest is Test{
             endTime,
         );
     }
+
+    //   VIEW FUNCTION TESTS   //
+    function test_GetOrgElection() public withOrgAdmin(
+        
+    )
 }
