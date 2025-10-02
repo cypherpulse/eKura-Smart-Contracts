@@ -250,6 +250,8 @@ contract ElectionFactoryTest is Test{
         electionFactory.createElection(
             ORG_ID_1,
             ELECTION_NAME,
+            ELECTION_DESCRIPTION,
+            
         );
     }
 }
