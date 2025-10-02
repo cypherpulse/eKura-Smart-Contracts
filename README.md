@@ -1,4 +1,4 @@
-# eKura Smart Contracts
+# eKura Smart Contract
 
 ## Overview
 
