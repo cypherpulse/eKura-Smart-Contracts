@@ -287,5 +287,9 @@ contract ElectionFactoryTest is Test{
 
         // Act
         uint256[] memory orgElections = electionFactory.getOrgElections(ORG_ID_1);
+
+        // Assert
+        assertEq(orgElections.length, 2);
+        assertEq(orgElections[0], 1);
     )
 }
