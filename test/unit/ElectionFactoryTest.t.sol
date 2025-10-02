@@ -304,5 +304,8 @@ contract ElectionFactoryTest is Test{
         candidates[0] = "Alice Smith";
 
         vm.prank(orgAdmin1);
+        uint256 electionId = electionFactory.createElection(
+
+        );
     }
 }
