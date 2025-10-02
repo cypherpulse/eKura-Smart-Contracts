@@ -322,5 +322,6 @@ contract ElectionFactoryTest is Test{
 
         //Test after end time
         vm.warp(endTime + 1 hours);
+        assertFalse(electionFactory.isElectionActive(electionId));  
     }
 }
