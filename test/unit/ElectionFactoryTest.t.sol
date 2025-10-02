@@ -251,7 +251,8 @@ contract ElectionFactoryTest is Test{
             ORG_ID_1,
             ELECTION_NAME,
             ELECTION_DESCRIPTION,
-            
+            stratTime,
+            endTime,
         );
     }
 }
