@@ -305,7 +305,8 @@ contract ElectionFactoryTest is Test{
 
         vm.prank(orgAdmin1);
         uint256 electionId = electionFactory.createElection(
-
+            ORG_ID_1,
+            ELECTION_NAME,
         );
     }
 }
