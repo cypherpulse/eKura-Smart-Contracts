@@ -273,6 +273,11 @@ contract ElectionFactoryTest is Test{
             "Description 1",
             startTime,
             endTime,
+            candidates
+        );
+
+        electionFactory.createElection(
+            
         )
     )
 }
