@@ -96,10 +96,10 @@ forge build --sizes
 forge test
 
 # Run tests with verbosity
-forge test -v
-forge test -vv
-forge test -vvv
-forge test -vvvv
+forge test -v      # Show test results
+forge test -vv     # Show test results + console.log output
+forge test -vvv    # Show test results + console.log + stack traces for failing tests
+forge test -vvvv   # Show test results + console.log + stack traces + setup traces
 
 # Run specific test file
 forge test --match-path test/unit/ElectionFactoryTest.t.sol
@@ -109,6 +109,12 @@ forge test --match-test test_CreateElection_Success
 
 # Run tests for specific contract
 forge test --match-contract ElectionFactoryTest
+
+# Run tests for specific contract with detailed output
+forge test --match-contract ElectionFactoryTest -vv
+
+# Combine filters for precise testing
+forge test --match-contract ElectionFactoryTest --match-test test_AddOrgAdmin -vv
 ```
 
 ### Gas Reporting
@@ -131,6 +137,38 @@ forge coverage --ir-minimum
 # Generate detailed coverage report
 forge coverage --report lcov
 ```
+
+### Test Filtering & Verbosity
+
+#### Verbosity Levels Explained
+- **`-v`**: Shows only test results (pass/fail)
+- **`-vv`**: Shows test results + `console.log()` output from your tests
+- **`-vvv`**: Shows test results + console.log + stack traces for failing tests
+- **`-vvvv`**: Shows test results + console.log + stack traces + setup traces
+
+#### Filtering Options
+```bash
+# Match by contract name
+forge test --match-contract ElectionFactoryTest -vv
+
+# Match by test function name
+forge test --match-test test_AddOrgAdmin -vv
+
+# Match by file path
+forge test --match-path test/unit/ -vv
+
+# Combine multiple filters
+forge test --match-contract ElectionFactoryTest --match-test test_CreateElection -vv
+
+# Exclude specific tests
+forge test --no-match-test test_ExpensiveFunction
+```
+
+#### When to Use Each Verbosity Level
+- **`-v`**: Quick test runs to see pass/fail status
+- **`-vv`**: Development & debugging (most common) - shows your console.log statements
+- **`-vvv`**: Investigating test failures - shows stack traces
+- **`-vvvv`**: Deep debugging - shows complete execution traces
 
 ### Fork Testing
 ```bash
