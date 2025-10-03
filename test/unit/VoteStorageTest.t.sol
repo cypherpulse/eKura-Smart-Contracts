@@ -180,5 +180,7 @@ contract VoteStorageTest is Test {
         vm.prank(voter1);
         voteStorage.vote(electionId, candidateId);
 
+        // Attempt on second vote should fail
+        vm.prank(voter1);
     }
 }
