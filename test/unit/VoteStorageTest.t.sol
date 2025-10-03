@@ -38,5 +38,8 @@ contract VoteStorageTest is Test {
         address indexed relayer,
         uint256 indexed electionId,
         uint256 nonce
-    )
+    );
+
+    // STATE VARIABLES//
+    VoteStorage public voteStorage
 }
