@@ -119,7 +119,7 @@ contract VoteStorageTest is Test {
 
     // createTestElection Function //
     function _createTestElection() internal {
-
+        uint256 startTime = block.timestamp + 1 hours;
     }
 
 }
