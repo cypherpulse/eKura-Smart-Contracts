@@ -22,5 +22,8 @@ contract VoteStorageTest is Test {
         address indexed voter,
         uint256 indexed electionId,
         uint256 indexed candidateId,
+        bytes32 voteHash,
+        uint256 timestamp,
+        bool isMetaTransaction
     );
 }
