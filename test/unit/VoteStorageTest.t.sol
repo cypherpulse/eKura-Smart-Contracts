@@ -142,6 +142,7 @@ contract VoteStorageTest is Test {
 
     // DEPLOYMENT TESTS //
 
-    
-
+    function test_DeploymentSuccess() public view{
+        assertTrue(address(voteStorage).code.length >0);
+    }
 }
