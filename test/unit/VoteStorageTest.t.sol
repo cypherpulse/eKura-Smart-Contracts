@@ -61,4 +61,6 @@ contract VoteStorageTest is Test {
 
     //EIP-712 Domain
     bytes32 public DOMAIN_SEPARATOR;
+
+    //SETUP//
 }
