@@ -161,7 +161,8 @@ contract VoteStorageTest is Test {
             voter1,
             electionId,
             candidateId,
-            bytes32(0)
+            bytes32(0),
+            block.timestamp,
         );
     }
 }
