@@ -52,4 +52,7 @@ contract VoteStorageTest is Test {
     address public voter1;
     address public voter2;
     address public relayer;
+
+    //Test constants
+    uint256 public constant ORG_ID=1
 }
