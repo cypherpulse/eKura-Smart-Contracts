@@ -103,9 +103,10 @@ contract VoteStorageTest is Test {
         );
 
         // Deploy proxy
-        ERC196TProxy proxy = new ERC1967Proxy(
+        ERC1967Proxy proxy = new ERC1967Proxy(
             address(implementation),
-        )
+            initData
+        );
     }
 
     // createTestElection Function //
