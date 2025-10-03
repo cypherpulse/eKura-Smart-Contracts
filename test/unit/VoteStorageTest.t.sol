@@ -112,6 +112,8 @@ contract VoteStorageTest is Test {
 
         //Warp proxy interface to VoteStorage
         voteStorage = VoteStorage(address(proxy));
+
+        // Set up EIP-712 Domain Separator
     }
 
     // createTestElection Function //
