@@ -21,5 +21,6 @@ contract VoteStorageTest is Test {
     event VoteCast(
         address indexed voter,
         uint256 indexed electionId,
-    )
+        uint256 indexed candidateId,
+    );
 }
