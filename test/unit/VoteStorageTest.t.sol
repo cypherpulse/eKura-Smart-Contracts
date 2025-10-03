@@ -48,4 +48,5 @@ contract VoteStorageTest is Test {
 
     //Test addresses
     address public platfromAdmin;
+    address public orgAdmin1;
 }
