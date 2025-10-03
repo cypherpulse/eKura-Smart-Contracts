@@ -193,4 +193,8 @@ contract VoteStorageTest is Test {
         vm.expectRevert(VoteStorage.VoteStorage__InvalidCandidate.selector);
         voteStorage.vote(electionId, invalidCandidateId);
     }
+
+    function test_Vote_RevertWhen_ElectionNotActive() public {
+        
+    }
 }
