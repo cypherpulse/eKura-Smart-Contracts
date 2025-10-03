@@ -76,5 +76,8 @@ contract VoteStorageTest is Test {
         voter1 = makeAddr("voter1");
         voter2 = makeAddr("voter2");
         relayer = makeAddr("relayer");
+
+        // Deploy VoteStorage with proxy
+        _deployVoteStorageWithProxy();
     }
 }
