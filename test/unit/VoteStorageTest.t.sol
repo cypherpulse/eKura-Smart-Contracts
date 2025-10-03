@@ -85,5 +85,7 @@ contract VoteStorageTest is Test {
         electionFactory.addOrgAdmin(ORG_ID, orgAdmin1);
 
         _createTestElection();
+
+        console.log("VoteStorage deployed at:",address(voteStorage));
     }
 }
