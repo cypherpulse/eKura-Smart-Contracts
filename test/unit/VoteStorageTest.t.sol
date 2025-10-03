@@ -26,4 +26,10 @@ contract VoteStorageTest is Test {
         uint256 timestamp,
         bool isMetaTransaction
     );
+
+    event VoteCountUpdated(
+        uint256 indexed electionId,
+        uint256 indexed candidateId,
+        uint256 newCount
+    );
 }
