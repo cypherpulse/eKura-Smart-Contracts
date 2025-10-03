@@ -114,6 +114,7 @@ contract VoteStorageTest is Test {
         voteStorage = VoteStorage(address(proxy));
 
         // Set up EIP-712 Domain Separator
+        DOMAIN_SEPARATOR = voteStorage.DOMAIN_SEPARTOR();
     }
 
     // createTestElection Function //
