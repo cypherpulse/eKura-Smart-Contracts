@@ -71,6 +71,7 @@ contract VoteStorageTest is Test {
         networkConfig = helperConfig.getActiveNetworkConfig();
 
         // Set Up test addresses
-        
+        platformAdmin = networkConfig.deployer;
+        orgAdmin1 = makeAddr("orgAdmin1");
     }
 }
