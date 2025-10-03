@@ -200,5 +200,6 @@ contract VoteStorageTest is Test {
         vm.warp(elction.endTime + 1);
 
         vm.prank(voter1);
+        vm.expectRevert(VoteStorage.VoteStorage__ElectionNotActive.selector);
     }
 }
