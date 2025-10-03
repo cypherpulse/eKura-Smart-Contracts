@@ -215,4 +215,7 @@ contract VoteStorageTest is Test {
     } 
 
     // Meta Transaction Tests //
+    function test_VoteWithSignature_Success() public{
+        uint256 candidateId = 1; // voting for Bob
+    }
 }
