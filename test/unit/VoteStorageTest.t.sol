@@ -67,5 +67,6 @@ contract VoteStorageTest is Test {
     function setUp() external{
         //Deploy ElectionFactory first
         DeployElectionFactory deployer  = new DeployElectionFactory();
+        (electionFactory,helperConfig)=deployer.run();
     }
 }
