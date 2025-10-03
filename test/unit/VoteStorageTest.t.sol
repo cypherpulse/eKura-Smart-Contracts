@@ -102,7 +102,10 @@ contract VoteStorageTest is Test {
             (address(electionFactory))
         );
 
-        
+        // Deploy proxy
+        ERC196TProxy proxy = new ERC1967Proxy(
+            address(implementation),
+        )
     }
 
     // createTestElection Function //
