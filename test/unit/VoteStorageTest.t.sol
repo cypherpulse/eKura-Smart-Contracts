@@ -91,6 +91,11 @@ contract VoteStorageTest is Test {
     }
 
     function _deployVoteStorageWithProxy() internal {
+
+    }
+
+    // createTestElection Function //
+    function _createTestElection() internal {
         
     }
 
