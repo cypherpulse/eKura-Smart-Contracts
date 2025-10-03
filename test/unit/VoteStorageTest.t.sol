@@ -34,7 +34,9 @@ contract VoteStorageTest is Test {
     );
 
     event MetaTransactionExecuted(
-        address indexed voter;
-        address indexed relayer;
+        address indexed voter,
+        address indexed relayer,
+        uint256 indexed electionId,
+        uint256 nonce
     )
 }
