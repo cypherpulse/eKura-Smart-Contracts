@@ -63,4 +63,8 @@ contract VoteStorageTest is Test {
     bytes32 public DOMAIN_SEPARATOR;
 
     //SETUP//
+
+    function setUp() external{
+        
+    }
 }
