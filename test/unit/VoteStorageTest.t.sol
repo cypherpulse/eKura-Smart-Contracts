@@ -133,7 +133,11 @@ contract VoteStorageTest is Test {
             ELECTION_DESCRIPTION,
             startTime,
             endTime,
-        )
+            candidates
+        );
+
+        // Fast forward to election start
+        vm.warp(startTime + 1);
     }
 
 }
