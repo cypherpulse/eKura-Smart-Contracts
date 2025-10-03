@@ -123,6 +123,7 @@ contract VoteStorageTest is Test {
         uint256 endTime = startTime + 7 days;
         string[] memory candidates = new string[](3);
         candidates[0]="Alice Smith";
+        candidates[1]="Bob Johnson";
     }
 
 }
