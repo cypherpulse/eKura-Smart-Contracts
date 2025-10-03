@@ -93,8 +93,13 @@ contract VoteStorageTest is Test {
     function _deployVoteStorageWithProxy() internal {
         vm.startBroadcast(networkConfig.deployerKey);
 
-        //Dep
+        //Deploy implementation
+        VoteStorage implementation = new VoteStorage();
     }
 
     // createTestElection Function //
-    function _createTestElection() interna
+    function _createTestElection() internal {
+
+    }
+
+}
