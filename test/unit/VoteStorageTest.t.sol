@@ -41,5 +41,7 @@ contract VoteStorageTest is Test {
     );
 
     // STATE VARIABLES//
-    VoteStorage public voteStorage
+    VoteStorage public voteStorage;
+    ElectionFactory public electionFactory;
+    HelperConfig public helperConfig;
 }
