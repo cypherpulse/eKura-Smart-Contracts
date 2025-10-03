@@ -167,5 +167,8 @@ contract VoteStorageTest is Test {
         );
 
         voteStorage.vote(electionId, candidateId);
+
+        // Verify vote was recorded
+        assertTrue(voteStorage.hasVoted(electionId, voter1));
     }
 }
