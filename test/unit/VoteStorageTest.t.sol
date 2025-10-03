@@ -187,6 +187,8 @@ contract VoteStorageTest is Test {
     }
 
     function test_Vote_RevertWhen_InvalidCandidate() public{
-        uint256 invalidCandidateId = 89; //Invalid candidate Id
+        uint256 invalidCandidateId = 89; //candidate id doesnt exist
+
+        vm.prank(voter1);
     }
 }
