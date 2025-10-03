@@ -83,5 +83,7 @@ contract VoteStorageTest is Test {
         //set up an org admin
         vm.prank(platformAdmin);
         electionFactory.addOrgAdmin(ORG_ID, orgAdmin1);
+
+        _createTestElection();
     }
 }
