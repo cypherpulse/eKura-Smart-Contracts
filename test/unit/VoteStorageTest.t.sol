@@ -152,5 +152,10 @@ contract VoteStorageTest is Test {
 
     function test_Vote_Success() public {
         uint256 candidateId = 0; // voting for Alice
+
+        vm.prank(voter1);
+
+        // Expect events
+        
     }
 }
