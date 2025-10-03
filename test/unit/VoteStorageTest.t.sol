@@ -147,4 +147,10 @@ contract VoteStorageTest is Test {
         assertEq(voteStorage.getElectionFactory(),address(electionFactory));
         assertEq(voteStorage.owner(),platformAdmin);
     }
+
+    //VOTING TESTS
+
+    function test_Vote_Success() public {
+        uint256 candidateId = 0; // voting for Alice
+    }
 }
