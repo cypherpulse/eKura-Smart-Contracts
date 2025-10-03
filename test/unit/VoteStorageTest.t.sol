@@ -44,10 +44,10 @@ contract VoteStorageTest is Test {
     VoteStorage public voteStorage;
     ElectionFactory public electionFactory;
     HelperConfig public helperConfig;
-    HelperConfig.NetworkConfig public newtworkConfig;
+    HelperConfig.NetworkConfig public networkConfig;
 
     //Test addresses
-    address public platfromAdmin;
+    address public platformAdmin;
     address public orgAdmin1;
     address public voter1;
     address public voter2;
@@ -68,5 +68,6 @@ contract VoteStorageTest is Test {
         //Deploy ElectionFactory first
         DeployElectionFactory deployer  = new DeployElectionFactory();
         (electionFactory,helperConfig)=deployer.run();
+        networkConfig = helperConfig.getActiveNetworkConfig();
     }
 }
