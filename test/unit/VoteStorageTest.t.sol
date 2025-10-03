@@ -111,9 +111,12 @@ contract VoteStorageTest is Test {
         vm.stopBroadcast();
 
         //Warp proxy interface to VoteStorage
-        v
+        voteStorage = VoteStorage(address(proxy));
     }
 
     // createTestElection Function //
     function _createTestElection() internal {
-
+
+    }
+
+}
