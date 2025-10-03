@@ -172,4 +172,8 @@ contract VoteStorageTest is Test {
         assertTrue(voteStorage.hasVoted(electionId, voter1));
         assertEq(voteStorage.getVoteCount(electionId, candidateId),1);
     }
+
+    function test_Vote_RevertWhen_AlreadyVoted() public {
+        
+    }
 }
