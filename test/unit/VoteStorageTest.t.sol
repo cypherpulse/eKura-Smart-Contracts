@@ -79,5 +79,9 @@ contract VoteStorageTest is Test {
 
         // Deploy VoteStorage with proxy
         _deployVoteStorageWithProxy();
+
+        //set up an org admin
+        vm.prank(platformAdmin);
+        electionFactory.addOrgAdmin(ORG_ID, orgAdmin1);
     }
 }
