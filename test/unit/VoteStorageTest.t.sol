@@ -95,6 +95,14 @@ contract VoteStorageTest is Test {
 
         //Deploy implementation
         VoteStorage implementation = new VoteStorage();
+
+        // Encode initializer
+        bytes memory initData = abi.encodeCall(
+            VoteStorage.initialize,
+            (address(electionFactory))
+        );
+
+        
     }
 
     // createTestElection Function //
