@@ -58,4 +58,7 @@ contract VoteStorageTest is Test {
     uint256 public electionId;
     string public constant ELECTION_NAME ="Test Election";
     string public constant ELECTION_DESCRIPTION = "Test Description";
+
+    //EIP-712 Domain
+    bytes32 public DOMAIN_SEPARATOR;
 }
