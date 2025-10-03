@@ -7,3 +7,10 @@ import {ElectionFactory} from "../../src/ElectionFactory.sol";
 import {DeployElectionFactory} from "../../script/DeployElectionFactory.s.sol";
 import {HelperConfig} from "../../script/HelperConfig.s.sol";
 import {ERC1967Proxy} from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
+
+/***
+ * @title VoteStorageTest
+ * @author cypherpulse.base.eth
+ * @notice Unit tests for the VoteStorage contract
+ * @dev Testing upgradeable contract with proxy pattern
+ */
