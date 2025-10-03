@@ -199,5 +199,6 @@ contract VoteStorageTest is Test {
         ElectionFactory.Election memory elction = electionFactory.getElection(electionId);
         vm.warp(elction.endTime + 1);
 
+        vm.prank(voter1);
     }
 }
