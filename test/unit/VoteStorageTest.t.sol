@@ -159,7 +159,9 @@ contract VoteStorageTest is Test {
         vm.expectEmit(true, true, true, false);
         emit VoteCast(
             voter1,
-            
-        )
+            electionId,
+            candidateId,
+            bytes32(0)
+        );
     }
 }
