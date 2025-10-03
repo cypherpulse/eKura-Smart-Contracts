@@ -157,5 +157,9 @@ contract VoteStorageTest is Test {
 
         // Expect events
         vm.expectEmit(true, true, true, false);
+        emit VoteCast(
+            voter1,
+            
+        )
     }
 }
