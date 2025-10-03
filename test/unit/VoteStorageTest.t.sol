@@ -45,4 +45,7 @@ contract VoteStorageTest is Test {
     ElectionFactory public electionFactory;
     HelperConfig public helperConfig;
     HelperConfig.NetworkConfig public newtworkConfig;
+
+    //Test addresses
+    address public platfromAdmin;
 }
