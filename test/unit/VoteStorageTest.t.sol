@@ -73,5 +73,6 @@ contract VoteStorageTest is Test {
         // Set Up test addresses
         platformAdmin = networkConfig.deployer;
         orgAdmin1 = makeAddr("orgAdmin1");
+        voter1 = makeAddr("voter1");
     }
 }
