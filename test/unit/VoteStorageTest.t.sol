@@ -130,7 +130,8 @@ contract VoteStorageTest is Test {
         electionId = electionFactory.createElection(
             ORG_ID,
             ELECTION_NAME,
-            ELECTION_DESCRIPTION
+            ELECTION_DESCRIPTION,
+            startTime,
         )
     }
 
