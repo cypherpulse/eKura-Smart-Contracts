@@ -69,5 +69,8 @@ contract VoteStorageTest is Test {
         DeployElectionFactory deployer  = new DeployElectionFactory();
         (electionFactory,helperConfig)=deployer.run();
         networkConfig = helperConfig.getActiveNetworkConfig();
+
+        // Set Up test addresses
+        
     }
 }
