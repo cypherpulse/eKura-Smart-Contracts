@@ -125,6 +125,8 @@ contract VoteStorageTest is Test {
         candidates[0]="Alice Smith";
         candidates[1]="Bob Johnson";
         candidates[2]="Carol";
+
+        vm.prank(orgAdmin1);
     }
 
 }
