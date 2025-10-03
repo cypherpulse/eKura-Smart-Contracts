@@ -56,4 +56,5 @@ contract VoteStorageTest is Test {
     //Test constants
     uint256 public constant ORG_ID=1;
     uint256 public electionId;
+    string public constant ELECTION_NAME ="Test Election";
 }
