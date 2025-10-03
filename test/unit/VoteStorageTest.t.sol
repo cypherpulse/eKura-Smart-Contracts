@@ -132,6 +132,7 @@ contract VoteStorageTest is Test {
             ELECTION_NAME,
             ELECTION_DESCRIPTION,
             startTime,
+            endTime,
         )
     }
 
