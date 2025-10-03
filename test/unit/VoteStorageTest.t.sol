@@ -210,5 +210,6 @@ contract VoteStorageTest is Test {
         voteStorage.pause();
 
         vm.prank(voter1);
+        vm.expectRevert("Pausable: Paused");
     } 
 }
