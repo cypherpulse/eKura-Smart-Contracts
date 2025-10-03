@@ -174,6 +174,6 @@ contract VoteStorageTest is Test {
     }
 
     function test_Vote_RevertWhen_AlreadyVoted() public {
-        
+        uint256 candidateId = 0;   
     }
 }
