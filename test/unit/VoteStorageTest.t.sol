@@ -33,5 +33,8 @@ contract VoteStorageTest is Test {
         uint256 newCount
     );
 
-    
+    event MetaTransactionExecuted(
+        address indexed voter;
+        address indexed relayer;
+    )
 }
