@@ -87,6 +87,11 @@ contract VoteStorageTest is Test {
         _createTestElection();
 
         console.log("VoteStorage deployed at:",address(voteStorage));
-        console.log("ElectionFactory at:",address(electionFactory))
+        console.log("ElectionFactory at:",address(electionFactory));
     }
+
+    function _deployVoteStorageWithProxy() internal {
+        
+    }
+
 }
