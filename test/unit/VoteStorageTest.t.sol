@@ -107,6 +107,8 @@ contract VoteStorageTest is Test {
             address(implementation),
             initData
         );
+
+        vm.stopBroadcast();
     }
 
     // createTestElection Function //
