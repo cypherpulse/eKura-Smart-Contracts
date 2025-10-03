@@ -127,6 +127,9 @@ contract VoteStorageTest is Test {
         candidates[2]="Carol";
 
         vm.prank(orgAdmin1);
+        electionId = electionFactory.createElection(
+            ORG_ID,
+        )
     }
 
 }
