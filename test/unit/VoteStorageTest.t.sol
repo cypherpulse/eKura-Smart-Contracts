@@ -145,5 +145,6 @@ contract VoteStorageTest is Test {
     function test_DeploymentSuccess() public view{
         assertTrue(address(voteStorage).code.length >0);
         assertEq(voteStorage.getElectionFactory(),address(electionFactory));
+        assertEq(voteStorage.owner(),platformAdmin);
     }
 }
