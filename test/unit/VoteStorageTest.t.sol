@@ -195,6 +195,8 @@ contract VoteStorageTest is Test {
     }
 
     function test_Vote_RevertWhen_ElectionNotActive() public {
-        
+        //Warp to after election end
+        ElectionFactory.Election memory elction = electionFactory.getElection(electionId);
+
     }
 }
