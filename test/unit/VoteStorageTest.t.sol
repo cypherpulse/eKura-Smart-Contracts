@@ -206,7 +206,9 @@ contract VoteStorageTest is Test {
 
     function test_Vote_RevertWhen_Paused() public {
         // Pause Contract
-        vm.prank(platformAdmin)
+        vm.prank(platformAdmin);
         voteStorage.pause();
+
+        vm.prank(voter1);
     } 
 }
