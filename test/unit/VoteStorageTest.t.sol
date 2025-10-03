@@ -174,6 +174,11 @@ contract VoteStorageTest is Test {
     }
 
     function test_Vote_RevertWhen_AlreadyVoted() public {
-        uint256 candidateId = 0;   
+        uint256 candidateId = 0;
+
+        // First Vote
+        vm.prank(voter1);
+        voteStorage.vote(electionId, candidateId);
+
     }
 }
