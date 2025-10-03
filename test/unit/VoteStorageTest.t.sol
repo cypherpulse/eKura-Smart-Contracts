@@ -203,4 +203,9 @@ contract VoteStorageTest is Test {
         vm.expectRevert(VoteStorage.VoteStorage__ElectionNotActive.selector);
         voteStorage.vote(electionId, 0);
     }
+
+    function test_Vote_RevertWhen_Paused() public {
+        // Pause Contract
+        
+    } 
 }
