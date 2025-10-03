@@ -183,5 +183,6 @@ contract VoteStorageTest is Test {
         // Attempt on second vote should fail
         vm.prank(voter1);
         vm.expectRevert(VoteStorage.VoteStorage__AlreadyVoted.selector);
+        voteStorage.vote(electionId, candidateId);
     }
 }
