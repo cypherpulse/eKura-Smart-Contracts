@@ -124,6 +124,7 @@ contract VoteStorageTest is Test {
         string[] memory candidates = new string[](3);
         candidates[0]="Alice Smith";
         candidates[1]="Bob Johnson";
+        candidates[2]="Carol";
     }
 
 }
