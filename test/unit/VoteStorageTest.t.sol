@@ -190,5 +190,6 @@ contract VoteStorageTest is Test {
         uint256 invalidCandidateId = 89; //candidate id doesnt exist
 
         vm.prank(voter1);
+        vm.expectRevert(VoteStorage.VoteStorage__InvalidCandidate.selector);
     }
 }
