@@ -32,4 +32,6 @@ contract VoteStorageTest is Test {
         uint256 indexed candidateId,
         uint256 newCount
     );
+
+    
 }
