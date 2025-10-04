@@ -227,7 +227,7 @@ contract VoteStorageTest is Test {
             electionId: electionId,
             candidateId: candidateId,
             nonce: nonce,
-            deadline: deadline,
+            deadline: deadline
         });
 
         //Sign the data
@@ -242,5 +242,6 @@ contract VoteStorageTest is Test {
         voteStorage.voteWithSignature(voteData, signature);
 
         //Verify vote was recorded //
+        assertTrue(voteStorage.hasVoted(electionId, voter1));
     }
 }
