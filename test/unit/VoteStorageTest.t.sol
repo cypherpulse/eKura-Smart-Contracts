@@ -236,6 +236,6 @@ contract VoteStorageTest is Test {
         vm.prank(relayer);
 
         //Expect Events
-        
+        vm.expectEmit(true, true, true, true);
     }
 }
