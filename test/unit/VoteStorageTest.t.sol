@@ -197,7 +197,7 @@ contract VoteStorageTest is Test {
     function test_Vote_RevertWhen_ElectionNotActive() public {
         //Warp to after election end
         ElectionFactory.Election memory election = electionFactory.getElection(electionId);
-        vm.warp(elction.endTime + 1);
+        vm.warp(election.endTime + 1);
 
         vm.prank(voter1);
         vm.expectRevert(VoteStorage.VoteStorage__ElectionNotActive.selector);
@@ -264,6 +264,6 @@ contract VoteStorageTest is Test {
 
         vm.prank(relayer);
         vm.expectRevert(VoteStorage.VoteStorage__SignatureExpired.selector);
-        
+        voteStorage.voteWithSignature(voteData, signature);
     }
 }
