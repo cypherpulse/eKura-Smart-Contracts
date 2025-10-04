@@ -269,5 +269,6 @@ contract VoteStorageTest is Test {
 
     function test_VoteWithSignature_RevertWhen_InvalidNonce() public{
         uint256 candidateId = 0;
+        uint256 wrongNonce = 897; //Wrong nonce
     }
 }
