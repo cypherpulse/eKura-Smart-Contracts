@@ -284,5 +284,6 @@ contract VoteStorageTest is Test {
 
        vm.prank(relayer);
        vm.expectRevert(VoteStorage.VoteStorage__InvalidNonce.selector);
+       voteStorage.voteWithSignature(voteData, signature);
     }
 }
