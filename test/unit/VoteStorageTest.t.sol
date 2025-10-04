@@ -253,9 +253,11 @@ contract VoteStorageTest is Test {
         uint256 deadline = block.timestamp - 1; // Expired
 
         VoteStorage.VoteData memory voteData = VoteStorage.VoteData({
-            voter: voter1;
-            electionId: electionId;
-            candidateId: candidateId;
+            voter: voter1,
+            electionId: electionId,
+            candidateId: candidateId,
+            nonce: nonce,
+            deadline: deadline
         });
     }
 }
