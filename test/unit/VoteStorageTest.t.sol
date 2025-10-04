@@ -276,6 +276,7 @@ contract VoteStorageTest is Test {
         voter: voter1,
         electionId: electionId,
         candidateId: candidateId,
+        nonce: wrongNonce,
        }) 
     }
 }
