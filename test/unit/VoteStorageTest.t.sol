@@ -275,6 +275,7 @@ contract VoteStorageTest is Test {
        VoteStorage.VoteData memory voteData = VoteStorage.VoteData({
         voter: voter1,
         electionId: electionId,
+        candidateId: candidateId,
        }) 
     }
 }
