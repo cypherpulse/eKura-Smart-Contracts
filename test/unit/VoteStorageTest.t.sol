@@ -196,7 +196,7 @@ contract VoteStorageTest is Test {
 
     function test_Vote_RevertWhen_ElectionNotActive() public {
         //Warp to after election end
-        ElectionFactory.Election memory elction = electionFactory.getElection(electionId);
+        ElectionFactory.Election memory election = electionFactory.getElection(electionId);
         vm.warp(elction.endTime + 1);
 
         vm.prank(voter1);
@@ -222,7 +222,7 @@ contract VoteStorageTest is Test {
         uint256 deadline = block.timestamp + 1 hours;
 
         //create Vote Data//
-        VoteStorage.VoteData memory voteDat = VoteStorage.VoteData({
+        VoteStorage.VoteData memory voteData = VoteStorage.VoteData({
             voter: voter1,
             electionId: electionId,
             candidateId: candidateId,
@@ -243,5 +243,6 @@ contract VoteStorageTest is Test {
 
         //Verify vote was recorded //
         assertTrue(voteStorage.hasVoted(electionId, voter1));
+        assertEq(voteStorage.getVoteCount(electionId, candidateId), 1)
     }
 }
