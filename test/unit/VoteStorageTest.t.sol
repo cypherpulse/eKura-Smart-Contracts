@@ -277,6 +277,9 @@ contract VoteStorageTest is Test {
         electionId: electionId,
         candidateId: candidateId,
         nonce: wrongNonce,
-       }) 
+        deadline: deadline
+       });
+
+       bytes memory signature = _signVoteData(voteData, voter1);
     }
 }
