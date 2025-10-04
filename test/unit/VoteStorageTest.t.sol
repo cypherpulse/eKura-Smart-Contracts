@@ -249,7 +249,7 @@ contract VoteStorageTest is Test {
 
     function test_VoteWithSignature_RevertWhen_ExpiredSignature() public{
         uint256 candidateId = 0;
-        uint256 WrongNonce=789; //Wrong nonce
-        uint256 deadline = block.timestamp + 1 hours;
+        uint256 nonce = voteStorage.getNonce(voter1);
+        uint256 deadline = block.timestamp - 1; // Expired
     }
 }
