@@ -259,5 +259,7 @@ contract VoteStorageTest is Test {
             nonce: nonce,
             deadline: deadline
         });
+
+        bytes memory signature = _signVoteData(voteData, voter1);
     }
 }
