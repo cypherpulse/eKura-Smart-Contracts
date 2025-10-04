@@ -248,6 +248,6 @@ contract VoteStorageTest is Test {
     }
 
     function test_VoteWithSignature_RevertWhen_ExpiredSignature() public{
-        
+        uint256 candidateId = 0;
     }
 }
