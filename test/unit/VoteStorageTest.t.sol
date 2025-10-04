@@ -222,6 +222,8 @@ contract VoteStorageTest is Test {
         uint256 deadline = block.timestamp + 1 hours;
 
         //create Vote Data//
-        
+        VoteStorage.VoteData memory voteDat = VoteStorage.VoteData({
+            
+        })
     }
 }
