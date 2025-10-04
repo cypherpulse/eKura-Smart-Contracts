@@ -223,11 +223,14 @@ contract VoteStorageTest is Test {
 
         //create Vote Data//
         VoteStorage.VoteData memory voteDat = VoteStorage.VoteData({
-            voter: voter1;
-            electionId: electionId;
+            voter: voter1,
+            electionId: electionId,
             candidateId: candidateId,
-            nonce: nonce;
-            deadline: deadline;
-        })
+            nonce: nonce,
+            deadline: deadline,
+        });
+
+        //Sign the data
+        bytes memory signature = _signVoteData(voteData, voter1);
     }
 }
