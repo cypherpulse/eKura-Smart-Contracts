@@ -272,6 +272,8 @@ contract VoteStorageTest is Test {
         uint256 wrongNonce = 897; //Wrong nonce
         uint256 deadline = block.timestamp + 1 hours;
 
-        
+       VoteStorage.VoteData memory voteData = VoteStorage.VoteData({
+        voter: voter1,
+       }) 
     }
 }
