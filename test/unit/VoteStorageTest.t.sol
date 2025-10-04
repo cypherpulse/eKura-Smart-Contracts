@@ -266,4 +266,8 @@ contract VoteStorageTest is Test {
         vm.expectRevert(VoteStorage.VoteStorage__SignatureExpired.selector);
         voteStorage.voteWithSignature(voteData, signature);
     }
+
+    function test_VoteWithSignature_RevertWhen_InvalidNonce() public{
+        
+    }
 }
