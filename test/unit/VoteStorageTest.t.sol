@@ -239,6 +239,8 @@ contract VoteStorageTest is Test {
         vm.expectEmit(true, true, true, true);
         emit MetaTransactionExecuted(voter1, relayer, electionId, nonce);
 
-        
+        voteStorage.voteWithSignature(voteData, signature);
+
+        //Verify vote was recorded //
     }
 }
