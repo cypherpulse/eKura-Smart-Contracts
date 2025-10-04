@@ -223,7 +223,7 @@ contract VoteStorageTest is Test {
 
         //create Vote Data//
         VoteStorage.VoteData memory voteDat = VoteStorage.VoteData({
-            
+            voter:voter1;
         })
     }
 }
