@@ -251,5 +251,9 @@ contract VoteStorageTest is Test {
         uint256 candidateId = 0;
         uint256 nonce = voteStorage.getNonce(voter1);
         uint256 deadline = block.timestamp - 1; // Expired
+
+        VoteStorage.VoteData memory voteData = VoteStorage.VoteData({
+            
+        })
     }
 }
