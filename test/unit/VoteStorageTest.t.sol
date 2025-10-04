@@ -261,5 +261,7 @@ contract VoteStorageTest is Test {
         });
 
         bytes memory signature = _signVoteData(voteData, voter1);
+
+        vm.prank(relayer);
     }
 }
