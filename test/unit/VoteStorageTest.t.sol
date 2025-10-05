@@ -316,4 +316,10 @@ contract VoteStorageTest is Test {
         // Verify fails with wrong candidate
         assertFalse(voteStorage.verifyVoteHash(electionId, voter1, 1));
     }
+
+    // ADMIN FUNCTION TESTS //
+
+    function test_SetElectionFactory() public {
+
+    }
 }
