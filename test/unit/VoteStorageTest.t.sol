@@ -321,5 +321,7 @@ contract VoteStorageTest is Test {
 
     function test_SetElectionFactory() public {
         address newFactory = makeAddr("newFactory");
+
+        vm.prank(platformAdmin);
     }
 }
