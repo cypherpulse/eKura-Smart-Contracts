@@ -9,7 +9,7 @@ import {ERC1967Proxy} from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.s
 
 /**
  * @title Deploy
- * @author eKura Team
+ * @author cypherpulse
  * @notice Main deployment script for complete eKura system
  * @dev Deploys ElectionFactory + VoteStorage with proper configuration
  */
@@ -38,7 +38,7 @@ contract Deploy is Script {
      */
     function run() external returns (DeploymentResult memory result) {
         HelperConfig helperConfig = new HelperConfig();
-        HelperConfig.NetworkConfig memory config = helperConfig.getActiveNetworkConfig();
+        HelperConfig.NetworkConfig memory config = helperConfig.getActiveNetworkConfigForced();
         
         console.log("Starting eKura Smart Contract Deployment");
         console.log("==========================================");
