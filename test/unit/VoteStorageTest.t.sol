@@ -327,4 +327,8 @@ contract VoteStorageTest is Test {
 
         assertEq(voteStorage.getElectionFactory(), newFactory);
     }
+
+    function test_SetElectionFactory_RevertWhen_NotOwner() public{
+        
+    }
 }
