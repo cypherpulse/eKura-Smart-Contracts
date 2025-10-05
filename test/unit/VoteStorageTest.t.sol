@@ -337,5 +337,11 @@ contract VoteStorageTest is Test {
     }
 
     //HELPER FUNCTIONS //
-    
+    function _signVoteData(VoteStorage.VoteData memory voteData, address signer)
+    internal
+    view
+    returns (bytes memory)
+    {
+        
+    }
 }
