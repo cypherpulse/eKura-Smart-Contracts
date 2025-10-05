@@ -347,6 +347,7 @@ contract VoteStorageTest is Test {
             voteData.voter,
             voteData,electionId,
             voteData,candidateId,
+            voteData.nonce,
        )) 
     }
 }
