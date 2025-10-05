@@ -297,5 +297,9 @@ contract VoteStorageTest is Test {
         voteStorage.vote(electionId, 1); //Bob
 
         uint256[] memory counts = voteStorage.getAllVoteCounts(electionId);
+
+        assertEq(counts.length, 3); //3 candidates
+        assertEq(counts[0], 1); //Alice: 1 Vote
+        
     }
 }
