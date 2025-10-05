@@ -312,5 +312,8 @@ contract VoteStorageTest is Test {
 
         //Verify the vote hash
         assertTrue(voteStorage.verifyVoteHash(electionId, voter1, candidateId));
+
+        // Verify fails with wrong candidate
+        assertFalse(voteStorage.verifyVoteHash(electionId, voter1, 1));
     }
 }
