@@ -345,9 +345,12 @@ contract VoteStorageTest is Test {
        bytes32 structHash = keccak256(abi.encode(
             keccak256("VoteData(address voter, uint256 electionId, uint256 candidateId, uint256 nonce, uint256 deadline)"),
             voteData.voter,
-            voteData,electionId,
-            voteData,candidateId,
+            voteData.electionId,
+            voteData.candidateId,
             voteData.nonce,
-       )) 
+            voteData.deadline
+       ));
+
+       bytes32 hash = keccak256(abi.encodePacked("\x19\x01", DOMAIN_SEPARATOR, structHash));
     }
 }
