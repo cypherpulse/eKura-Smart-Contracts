@@ -286,4 +286,10 @@ contract VoteStorageTest is Test {
        vm.expectRevert(VoteStorage.VoteStorage__InvalidNonce.selector);
        voteStorage.voteWithSignature(voteData, signature);
     }
+
+    //VIEW FUNCTIONS//
+    function test_GetAllVoteCounts() public{
+        // Cast votes for different candidates
+        
+    }
 }
