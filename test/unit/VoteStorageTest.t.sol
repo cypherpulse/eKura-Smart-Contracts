@@ -323,5 +323,8 @@ contract VoteStorageTest is Test {
         address newFactory = makeAddr("newFactory");
 
         vm.prank(platformAdmin);
+        voteStorage.setElectionFactory(newFactory);
+
+        assertEq(voteStorage.getElectionFactory(), newFactory);
     }
 }
