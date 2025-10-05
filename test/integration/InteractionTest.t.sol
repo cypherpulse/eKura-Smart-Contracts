@@ -272,7 +272,7 @@ contract InteractionTest is Test {
         assertEq(counts3[1], 1); // Bob: 1
         assertEq(counts3[2], 0); // Carol: 0
         
-        console.log("✅ Real-time results tracking working correctly!");
+        console.log("Real-time results tracking working correctly!");
     }
     
     ////////////////////////////////////////////////////////////////////////////
