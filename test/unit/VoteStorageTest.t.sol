@@ -333,5 +333,9 @@ contract VoteStorageTest is Test {
 
         vm.prank(voter1);
         vm.expectRevert("Ownable: caller is not the owner");
+        voteStorage.setElectionFactory(newFactory);
     }
+
+    //HELPER FUNCTIONS //
+    
 }
