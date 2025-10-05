@@ -331,6 +331,6 @@ contract VoteStorageTest is Test {
     function test_SetElectionFactory_RevertWhen_NotOwner() public{
         address newFactory = makeAddr("newFactory");
 
-        
+        vm.prank(voter1);
     }
 }
