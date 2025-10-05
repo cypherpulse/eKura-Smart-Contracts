@@ -320,6 +320,6 @@ contract VoteStorageTest is Test {
     // ADMIN FUNCTION TESTS //
 
     function test_SetElectionFactory() public {
-
+        address newFactory = makeAddr("newFactory");
     }
 }
