@@ -357,5 +357,7 @@ contract VoteStorageTest is Test {
             uint256(keccak256(abi.encodePacked(signer))),
             hash
        );
+
+       return abi.encodePacked(r, s, v);
     }
 }
