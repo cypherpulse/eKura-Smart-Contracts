@@ -332,5 +332,6 @@ contract VoteStorageTest is Test {
         address newFactory = makeAddr("newFactory");
 
         vm.prank(voter1);
+        vm.expectRevert("Ownable: caller is not the owner");
     }
 }
