@@ -290,6 +290,7 @@ contract VoteStorageTest is Test {
     //VIEW FUNCTIONS//
     function test_GetAllVoteCounts() public{
         // Cast votes for different candidates
+        vm.prank(voter1);
         
     }
 }
