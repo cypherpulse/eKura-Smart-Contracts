@@ -305,6 +305,8 @@ contract VoteStorageTest is Test {
     }
 
     function test_VerifyVoteHash() public {
+        uint256 candidateId = 0;
+
         
     }
 }
