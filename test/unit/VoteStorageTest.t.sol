@@ -294,5 +294,6 @@ contract VoteStorageTest is Test {
         voteStorage.vote(electionId, 0); //Alice
 
         vm.prank(voter2);
+        voteStorage.vote(electionId, 1); //Bob
     }
 }
