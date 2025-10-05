@@ -295,5 +295,7 @@ contract VoteStorageTest is Test {
 
         vm.prank(voter2);
         voteStorage.vote(electionId, 1); //Bob
+
+        uint256[] memory counts = voteStorage.getAllVoteCounts(electionId);
     }
 }
