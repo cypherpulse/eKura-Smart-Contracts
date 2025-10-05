@@ -352,5 +352,10 @@ contract VoteStorageTest is Test {
        ));
 
        bytes32 hash = keccak256(abi.encodePacked("\x19\x01", DOMAIN_SEPARATOR, structHash));
+
+       (uint8 v, bytes32 r, bytes32 s) = vm.sign(
+            uint256(keccak256(abi.encodePacked(signer))),
+            hash
+       );
     }
 }
