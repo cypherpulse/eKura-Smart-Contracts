@@ -56,7 +56,6 @@ contract VoteStorage is
     error VoteStorage__InvalidNonce();
     error VoteStorage__ElectionFactoryNotSet();
 
-
     // Type Declarations //
     /***
      * @notice Struct to for meta-transaction vote data.
@@ -67,7 +66,7 @@ contract VoteStorage is
      * @param deadline Unix timestamp after which signature expires
      */
 
-    struct VoteData{
+    struct VoteData {
         address voter;
         uint256 electionId;
         uint256 candidateId;
@@ -84,8 +83,10 @@ contract VoteStorage is
     /***
      * @dev EIP712 typehash for voteData struct.
      */
-    bytes32 private constant VOTE_TYPEHASH = 
-        keccak256("VoteData(address voter,uint256 electionId,uint256 candidateId,uint256 nonce,uint256 deadline)");
+    bytes32 private constant VOTE_TYPEHASH =
+        keccak256(
+            "VoteData(address voter,uint256 electionId,uint256 candidateId,uint256 nonce,uint256 deadline)"
+        );
 
     /***
      * @dev Mapping to store vote hashes : electionId => voterAddress => voteHash
@@ -153,7 +154,7 @@ contract VoteStorage is
     );
 
     /***
-     * @notice Emitted when the ElectionFactory address is set 
+     * @notice Emitted when the ElectionFactory address is set
      * @param oldFactory Previous factory address
      * @param newFactory New factory address
      * @param changedBy Address that made the change
@@ -188,11 +189,11 @@ contract VoteStorage is
      * @dev Checks with ElectionFactory for election status and timing
      */
 
-    modifier onlyActiveElection(uint256 electionId){
-        if(address(s_electionFactory)==address(0)){
+    modifier onlyActiveElection(uint256 electionId) {
+        if (address(s_electionFactory) == address(0)) {
             revert VoteStorage__ElectionFactoryNotSet();
         }
-        if(!s_electionFactory.isElectionActive(electionId)){
+        if (!s_electionFactory.isElectionActive(electionId)) {
             revert VoteStorage__ElectionNotActive();
         }
         _;
@@ -204,8 +205,8 @@ contract VoteStorage is
      * @param voter The voter address to validate
      */
 
-    modifier notAlreadyVoted(uint256 electionId, address voter){
-        if(s_hasVoted[electionId][voter]){
+    modifier notAlreadyVoted(uint256 electionId, address voter) {
+        if (s_hasVoted[electionId][voter]) {
             revert VoteStorage__AlreadyVoted();
         }
         _;
@@ -217,9 +218,10 @@ contract VoteStorage is
      * @param candidateId The candidate to validate (index in candidates array)
      */
 
-    modifier validCandidate(uint256 electionId, uint256 candidateId){
-        ElectionFactory.Election memory election = s_electionFactory.getElection(electionId);
-        if(candidateId >= election.candidates.length){
+    modifier validCandidate(uint256 electionId, uint256 candidateId) {
+        ElectionFactory.Election memory election = s_electionFactory
+            .getElection(electionId);
+        if (candidateId >= election.candidates.length) {
             revert VoteStorage__InvalidCandidate();
         }
         _;
@@ -231,30 +233,34 @@ contract VoteStorage is
      * @param signature The EIP-712 Signature
      */
 
-    modifier validSignature(VoteData calldata voteData, bytes calldata signature){
-        if(block.timestamp > voteData.deadline){
+    modifier validSignature(
+        VoteData calldata voteData,
+        bytes calldata signature
+    ) {
+        if (block.timestamp > voteData.deadline) {
             revert VoteStorage__SignatureExpired();
         }
-        if(voteData.nonce != s_nonces[voteData.voter]){
+        if (voteData.nonce != s_nonces[voteData.voter]) {
             revert VoteStorage__InvalidNonce();
         }
-        bytes32 structHash = keccak256(abi.encode(
-            VOTE_TYPEHASH,
-            voteData.voter,
-            voteData.electionId,
-            voteData.candidateId,
-            voteData.nonce,
-            voteData.deadline
-        ));
+        bytes32 structHash = keccak256(
+            abi.encode(
+                VOTE_TYPEHASH,
+                voteData.voter,
+                voteData.electionId,
+                voteData.candidateId,
+                voteData.nonce,
+                voteData.deadline
+            )
+        );
 
         bytes32 hash = _hashTypedDataV4(structHash);
         address signer = ECDSA.recover(hash, signature);
 
-        if (signer != voteData.voter){
+        if (signer != voteData.voter) {
             revert VoteStorage__InvalidSignature();
         }
         _;
-        
     }
 
     // Functions //
@@ -264,22 +270,21 @@ contract VoteStorage is
      * @dev Replaces constructor for upgradable contracts
      */
 
-    function initialize(address electionFactory) external initializer{
+    function initialize(address electionFactory) external initializer {
         __Ownable_init();
         __Pausable_init();
         __ReentrancyGuard_init();
-        __EIP712_init("VoteStorage","1"); // Initialize EIP712 with name and version
+        __EIP712_init("VoteStorage", "1"); // Initialize EIP712 with name and version
 
         s_electionFactory = ElectionFactory(electionFactory);
     }
 
     /// @custom:oz-upgrades-unsafe-allow constructor
-    constructor(){
+    constructor() {
         _disableInitializers();
     }
 
     /// EXternal Functions ///
-    
 
     /***
      * @notice Direct voting function for web3 users with connected wallets
@@ -288,8 +293,18 @@ contract VoteStorage is
      * @dev Requires active election,valid candidate, and no previous vote
      */
 
-    function vote(uint256 electionId,uint256 candidateId) external whenNotPaused nonReentrant onlyActiveElection(electionId)  notAlreadyVoted(electionId,msg.sender) validCandidate(electionId, candidateId){
-        _processVote(msg.sender,electionId, candidateId, false);
+    function vote(
+        uint256 electionId,
+        uint256 candidateId
+    )
+        external
+        whenNotPaused
+        nonReentrant
+        onlyActiveElection(electionId)
+        notAlreadyVoted(electionId, msg.sender)
+        validCandidate(electionId, candidateId)
+    {
+        _processVote(msg.sender, electionId, candidateId, false);
     }
 
     /***
@@ -303,13 +318,13 @@ contract VoteStorage is
         VoteData calldata voteData,
         bytes calldata signature
     )
-      external
-      whenNotPaused
-      nonReentrant
-      onlyActiveElection(voteData.electionId)
-      notAlreadyVoted(voteData.electionId,  voteData.voter)
-      validCandidate(voteData.electionId, voteData.candidateId)
-      validSignature(voteData, signature)
+        external
+        whenNotPaused
+        nonReentrant
+        onlyActiveElection(voteData.electionId)
+        notAlreadyVoted(voteData.electionId, voteData.voter)
+        validCandidate(voteData.electionId, voteData.candidateId)
+        validSignature(voteData, signature)
     {
         //Increment nonce to prevent reply attacks
         s_nonces[voteData.voter]++;
@@ -317,12 +332,17 @@ contract VoteStorage is
         // Emit meta-transaction execution event
         emit MetaTransactionExecuted(
             voteData.voter,
-            msg.sender,//relayer address 
+            msg.sender, //relayer address
             voteData.electionId,
             voteData.nonce
         );
         //process the vote
-        _processVote(voteData.voter, voteData.electionId, voteData.candidateId, true);
+        _processVote(
+            voteData.voter,
+            voteData.electionId,
+            voteData.candidateId,
+            true
+        );
     }
 
     /***
@@ -331,8 +351,8 @@ contract VoteStorage is
      * @dev Only owner can update, emits event for transparency
      */
 
-    function setElectionFactory(address newElectionFactory) external onlyOwner{
-        require(newElectionFactory != address(0),"Invalid factory address");
+    function setElectionFactory(address newElectionFactory) external onlyOwner {
+        require(newElectionFactory != address(0), "Invalid factory address");
 
         address oldFactory = address(s_electionFactory);
         s_electionFactory = ElectionFactory(newElectionFactory);
@@ -345,7 +365,7 @@ contract VoteStorage is
      * @dev Only owner can pause the contract, halts voting functions
      */
 
-    function pause() external onlyOwner{
+    function pause() external onlyOwner {
         _pause();
     }
 
@@ -354,19 +374,19 @@ contract VoteStorage is
      * @dev Only owner can unpause the contract
      */
 
-    function unpause() external onlyOwner{
+    function unpause() external onlyOwner {
         _unpause();
     }
 
     // Internal Functions //
-    
+
     /***
      * @notice Internal function to process votes and update storage
      * @param voter Address of voter
      * @param electionId Election identifier
      * @param candidateId Candidate identifier
      * @param isMetaTransaction Wheather this vte came via meta-transaction
-     * @dev 
+     * @dev
      */
 
     function _processVote(
@@ -374,29 +394,33 @@ contract VoteStorage is
         uint256 electionId,
         uint256 candidateId,
         bool isMetaTransaction
-    )internal{
+    ) internal {
         // Generate a rando, salt for privacy
-        bytes32 salt = keccak256(abi.encodePacked(
-            voter,
-            electionId,
-            candidateId,
-            block.timestamp,
-            block.prevrandao // More secure than block.difficulty in post-merge Ethereum
-        ));
+        bytes32 salt = keccak256(
+            abi.encodePacked(
+                voter,
+                electionId,
+                candidateId,
+                block.timestamp,
+                block.prevrandao // More secure than block.difficulty in post-merge Ethereum
+            )
+        );
         // Generate vote hash for verification
-        bytes32 voteHash = keccak256(abi.encodePacked(
-            voter,
-            candidateId,
-            electionId,
-            block.timestamp,
-            salt
-        ));
+        bytes32 voteHash = keccak256(
+            abi.encodePacked(
+                voter,
+                candidateId,
+                electionId,
+                block.timestamp,
+                salt
+            )
+        );
 
         //update Storage
-        s_voteHashes[electionId][voter]=voteHash;
-        s_hasVoted[electionId][voter]=true;
-        s_voteTimestamps[electionId][voter] =block.timestamp;  
-        s_voteSalts[electionId][voter]=salt;
+        s_voteHashes[electionId][voter] = voteHash;
+        s_hasVoted[electionId][voter] = true;
+        s_voteTimestamps[electionId][voter] = block.timestamp;
+        s_voteSalts[electionId][voter] = salt;
 
         // Increment vote count
         s_voteCounts[electionId][candidateId]++;
@@ -419,45 +443,46 @@ contract VoteStorage is
     }
 
     // View & Pure Functions //
-        /***
-         * @notice gets the vote hash for a voter in an election
-         * @param electionId The election identifier
-         * @param voter The voter address
-         * @return The stored vote hash for verification
-         */
+    /***
+     * @notice gets the vote hash for a voter in an election
+     * @param electionId The election identifier
+     * @param voter The voter address
+     * @return The stored vote hash for verification
+     */
 
-        function getVoteHash(uint256 electionId, address voter) external view returns(bytes32){
-            return s_voteHashes[electionId][voter];
-        }
+    function getVoteHash(
+        uint256 electionId,
+        address voter
+    ) external view returns (bytes32) {
+        return s_voteHashes[electionId][voter];
+    }
 
-        /***
-         * @notice Checks if a voter has voted in specific election
-         * @param electionId The election identifier
-         * @param voter The voter address
-         * @return True if the voter has already voted
-         */
+    /***
+     * @notice Checks if a voter has voted in specific election
+     * @param electionId The election identifier
+     * @param voter The voter address
+     * @return True if the voter has already voted
+     */
 
-        function hasVoted(uint256 electionId, address voter)
-           external
-           view
-           returns(bool)
-           {
-            return s_hasVoted[electionId][voter];
-           }
+    function hasVoted(
+        uint256 electionId,
+        address voter
+    ) external view returns (bool) {
+        return s_hasVoted[electionId][voter];
+    }
     /***
      * @notice Gets vote count for a spefic candidate in an election
      * @param electionId The election identifier
      * @param candidateId The candidate identifier
      * @return The current vote count
-     *  */ 
+     *  */
 
-     function getVoteCount(uint256 electionId,uint256 candidateId)
-        external
-        view
-        returns(uint256)
-        {
-            return s_voteCounts[electionId][candidateId];
-        }
+    function getVoteCount(
+        uint256 electionId,
+        uint256 candidateId
+    ) external view returns (uint256) {
+        return s_voteCounts[electionId][candidateId];
+    }
 
     /***
      * @notice Gets all vote counts for an election
@@ -465,15 +490,14 @@ contract VoteStorage is
      * @return Array of vote counts for each candidate
      */
 
-    function getAllVoteCounts(uint256 electionId)
-       external
-       view
-       returns(uint256[] memory)
-    {
-        ElectionFactory.Election memory election = s_electionFactory.getElection(electionId);
+    function getAllVoteCounts(
+        uint256 electionId
+    ) external view returns (uint256[] memory) {
+        ElectionFactory.Election memory election = s_electionFactory
+            .getElection(electionId);
         uint256[] memory counts = new uint256[](election.candidates.length);
 
-        for(uint256 i=0; i< election.candidates.length; i++){
+        for (uint256 i = 0; i < election.candidates.length; i++) {
             counts[i] = s_voteCounts[electionId][i];
         }
 
@@ -486,7 +510,7 @@ contract VoteStorage is
      * @return The current nonce
      */
 
-    function getNonce(address voter) external view returns(uint256){
+    function getNonce(address voter) external view returns (uint256) {
         return s_nonces[voter];
     }
 
@@ -497,65 +521,66 @@ contract VoteStorage is
      * @return The timestamp of the vote
      */
 
-    function getVoteTimestamp(uint256 electionId, address voter)
-        external 
-        view
-        returns(uint256)
-    {
+    function getVoteTimestamp(
+        uint256 electionId,
+        address voter
+    ) external view returns (uint256) {
         return s_voteTimestamps[electionId][voter];
     }
-   
-   /***
-    * @notice Gets the salt used for a specific vote hash
-    * @param electionId The election identifier
-    * @param voter The voter address
-    * @return The salt used in vote hash generation
-    */
 
-   function getVoteSalt(uint256 electionId, address voter)
-       external
-       view
-       returns(bytes32)
-    {
+    /***
+     * @notice Gets the salt used for a specific vote hash
+     * @param electionId The election identifier
+     * @param voter The voter address
+     * @return The salt used in vote hash generation
+     */
+
+    function getVoteSalt(
+        uint256 electionId,
+        address voter
+    ) external view returns (bytes32) {
         return s_voteSalts[electionId][voter];
     }
-   
-   /***
-    * @notice Gets the ElectionFactory contract address
-    * @return The current ElectionFactory address
-    */
 
-   function getElectionFactory() external view returns(address){
+    /***
+     * @notice Gets the ElectionFactory contract address
+     * @return The current ElectionFactory address
+     */
+
+    function getElectionFactory() external view returns (address) {
         return address(s_electionFactory);
-   }
+    }
 
-   /***
-    * @notice Verifies a vote hash against stored data
-    * @param electionId The election identifier
-    * @param voter The voter address
-    * @param candidateId The candidate they voted for
-    * @return True if the recomputed hash matches stored hash
-    */
+    /***
+     * @notice Verifies a vote hash against stored data
+     * @param electionId The election identifier
+     * @param voter The voter address
+     * @param candidateId The candidate they voted for
+     * @return True if the recomputed hash matches stored hash
+     */
 
     function verifyVoteHash(
         uint256 electionId,
         address voter,
         uint256 candidateId
-    )external view returns (bool){
+    ) external view returns (bool) {
         bytes32 storedHash = s_voteHashes[electionId][voter];
         bytes32 salt = s_voteSalts[electionId][voter];
         uint256 timestamp = s_voteTimestamps[electionId][voter];
 
-        bytes32 recomputedHash = keccak256(abi.encodePacked(
-            voter,
-            candidateId,
-            electionId,
-            timestamp,
-            salt
-
-        ));
+        bytes32 recomputedHash = keccak256(
+            abi.encodePacked(voter, candidateId, electionId, timestamp, salt)
+        );
 
         return storedHash == recomputedHash;
     }
 
+    /***
+     * @notice Gets the EIP712 domain separator for signature verification
+     * @return The current domain separator hash
+     * @dev Used for meta-transaction signature verification
+     */
+    function getDomainSeparator() external view returns (bytes32) {
+        return _domainSeparatorV4();
+    }
 }

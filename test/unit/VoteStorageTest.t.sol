@@ -54,9 +54,9 @@ contract VoteStorageTest is Test {
     address public relayer;
 
     //Test constants
-    uint256 public constant ORG_ID=1;
+    uint256 public constant ORG_ID = 1;
     uint256 public electionId;
-    string public constant ELECTION_NAME ="Test Election";
+    string public constant ELECTION_NAME = "Test Election";
     string public constant ELECTION_DESCRIPTION = "Test Description";
 
     //EIP-712 Domain
@@ -64,10 +64,10 @@ contract VoteStorageTest is Test {
 
     //SETUP//
 
-    function setUp() external{
+    function setUp() external {
         //Deploy ElectionFactory first
-        DeployElectionFactory deployer  = new DeployElectionFactory();
-        (electionFactory,helperConfig)=deployer.run();
+        DeployElectionFactory deployer = new DeployElectionFactory();
+        (electionFactory, helperConfig) = deployer.run();
         networkConfig = helperConfig.getActiveNetworkConfig();
 
         // Set Up test addresses
@@ -86,8 +86,8 @@ contract VoteStorageTest is Test {
 
         _createTestElection();
 
-        console.log("VoteStorage deployed at:",address(voteStorage));
-        console.log("ElectionFactory at:",address(electionFactory));
+        console.log("VoteStorage deployed at:", address(voteStorage));
+        console.log("ElectionFactory at:", address(electionFactory));
     }
 
     function _deployVoteStorageWithProxy() internal {
@@ -114,7 +114,7 @@ contract VoteStorageTest is Test {
         voteStorage = VoteStorage(address(proxy));
 
         // Set up EIP-712 Domain Separator
-        DOMAIN_SEPARATOR = voteStorage.DOMAIN_SEPARTOR();
+        DOMAIN_SEPARATOR = voteStorage.getDomainSeparator();
     }
 
     // createTestElection Function //
@@ -122,9 +122,9 @@ contract VoteStorageTest is Test {
         uint256 startTime = block.timestamp + 1 hours;
         uint256 endTime = startTime + 7 days;
         string[] memory candidates = new string[](3);
-        candidates[0]="Alice Smith";
-        candidates[1]="Bob Johnson";
-        candidates[2]="Carol";
+        candidates[0] = "Alice Smith";
+        candidates[1] = "Bob Johnson";
+        candidates[2] = "Carol";
 
         vm.prank(orgAdmin1);
         electionId = electionFactory.createElection(
@@ -142,10 +142,10 @@ contract VoteStorageTest is Test {
 
     // DEPLOYMENT TESTS //
 
-    function test_DeploymentSuccess() public view{
-        assertTrue(address(voteStorage).code.length >0);
-        assertEq(voteStorage.getElectionFactory(),address(electionFactory));
-        assertEq(voteStorage.owner(),platformAdmin);
+    function test_DeploymentSuccess() public view {
+        assertTrue(address(voteStorage).code.length > 0);
+        assertEq(voteStorage.getElectionFactory(), address(electionFactory));
+        assertEq(voteStorage.owner(), platformAdmin);
     }
 
     //VOTING TESTS
@@ -170,7 +170,7 @@ contract VoteStorageTest is Test {
 
         // Verify vote was recorded
         assertTrue(voteStorage.hasVoted(electionId, voter1));
-        assertEq(voteStorage.getVoteCount(electionId, candidateId),1);
+        assertEq(voteStorage.getVoteCount(electionId, candidateId), 1);
     }
 
     function test_Vote_RevertWhen_AlreadyVoted() public {
@@ -186,7 +186,7 @@ contract VoteStorageTest is Test {
         voteStorage.vote(electionId, candidateId);
     }
 
-    function test_Vote_RevertWhen_InvalidCandidate() public{
+    function test_Vote_RevertWhen_InvalidCandidate() public {
         uint256 invalidCandidateId = 89; //candidate id doesnt exist
 
         vm.prank(voter1);
@@ -196,7 +196,9 @@ contract VoteStorageTest is Test {
 
     function test_Vote_RevertWhen_ElectionNotActive() public {
         //Warp to after election end
-        ElectionFactory.Election memory election = electionFactory.getElection(electionId);
+        ElectionFactory.Election memory election = electionFactory.getElection(
+            electionId
+        );
         vm.warp(election.endTime + 1);
 
         vm.prank(voter1);
@@ -210,13 +212,13 @@ contract VoteStorageTest is Test {
         voteStorage.pause();
 
         vm.prank(voter1);
-        vm.expectRevert("Pausable: Paused");
+        vm.expectRevert("Pausable: paused");
         voteStorage.vote(electionId, 0);
-    } 
+    }
 
     // Meta Transaction Tests //
 
-    function test_VoteWithSignature_Success() public{
+    function test_VoteWithSignature_Success() public {
         uint256 candidateId = 1; // voting for Bob
         uint256 nonce = voteStorage.getNonce(voter1);
         uint256 deadline = block.timestamp + 1 hours;
@@ -233,11 +235,21 @@ contract VoteStorageTest is Test {
         //Sign the data
         bytes memory signature = _signVoteData(voteData, voter1);
 
+        // Store initial values for comparison
+        uint256 initialCount = voteStorage.getVoteCount(
+            electionId,
+            candidateId
+        );
+        uint256 initialNonce = voteStorage.getNonce(voter1);
+
         vm.prank(relayer);
 
         //Expect Events
         vm.expectEmit(true, true, true, true);
         emit MetaTransactionExecuted(voter1, relayer, electionId, nonce);
+
+        vm.expectEmit(true, true, true, false); // Don't check data, just topics
+        emit VoteCast(voter1, electionId, candidateId, bytes32(0), 0, true);
 
         voteStorage.voteWithSignature(voteData, signature);
 
@@ -247,7 +259,7 @@ contract VoteStorageTest is Test {
         assertEq(voteStorage.getNonce(voter1), nonce + 1);
     }
 
-    function test_VoteWithSignature_RevertWhen_ExpiredSignature() public{
+    function test_VoteWithSignature_RevertWhen_ExpiredSignature() public {
         uint256 candidateId = 0;
         uint256 nonce = voteStorage.getNonce(voter1);
         uint256 deadline = block.timestamp - 1; // Expired
@@ -267,28 +279,28 @@ contract VoteStorageTest is Test {
         voteStorage.voteWithSignature(voteData, signature);
     }
 
-    function test_VoteWithSignature_RevertWhen_InvalidNonce() public{
+    function test_VoteWithSignature_RevertWhen_InvalidNonce() public {
         uint256 candidateId = 0;
         uint256 wrongNonce = 897; //Wrong nonce
         uint256 deadline = block.timestamp + 1 hours;
 
-       VoteStorage.VoteData memory voteData = VoteStorage.VoteData({
-        voter: voter1,
-        electionId: electionId,
-        candidateId: candidateId,
-        nonce: wrongNonce,
-        deadline: deadline
-       });
+        VoteStorage.VoteData memory voteData = VoteStorage.VoteData({
+            voter: voter1,
+            electionId: electionId,
+            candidateId: candidateId,
+            nonce: wrongNonce,
+            deadline: deadline
+        });
 
-       bytes memory signature = _signVoteData(voteData, voter1);
+        bytes memory signature = _signVoteData(voteData, voter1);
 
-       vm.prank(relayer);
-       vm.expectRevert(VoteStorage.VoteStorage__InvalidNonce.selector);
-       voteStorage.voteWithSignature(voteData, signature);
+        vm.prank(relayer);
+        vm.expectRevert(VoteStorage.VoteStorage__InvalidNonce.selector);
+        voteStorage.voteWithSignature(voteData, signature);
     }
 
     //VIEW FUNCTIONS//
-    function test_GetAllVoteCounts() public{
+    function test_GetAllVoteCounts() public {
         // Cast votes for different candidates
         vm.prank(voter1);
         voteStorage.vote(electionId, 0); //Alice
@@ -328,7 +340,7 @@ contract VoteStorageTest is Test {
         assertEq(voteStorage.getElectionFactory(), newFactory);
     }
 
-    function test_SetElectionFactory_RevertWhen_NotOwner() public{
+    function test_SetElectionFactory_RevertWhen_NotOwner() public {
         address newFactory = makeAddr("newFactory");
 
         vm.prank(voter1);
@@ -337,27 +349,34 @@ contract VoteStorageTest is Test {
     }
 
     //HELPER FUNCTIONS //
-    function _signVoteData(VoteStorage.VoteData memory voteData, address signer)
-    internal
-    view
-    returns (bytes memory)
-    {
-       bytes32 structHash = keccak256(abi.encode(
-            keccak256("VoteData(address voter, uint256 electionId, uint256 candidateId, uint256 nonce, uint256 deadline)"),
-            voteData.voter,
-            voteData.electionId,
-            voteData.candidateId,
-            voteData.nonce,
-            voteData.deadline
-       ));
+    function _signVoteData(
+        VoteStorage.VoteData memory voteData,
+        address signer
+    ) internal view returns (bytes memory) {
+        bytes32 structHash = keccak256(
+            abi.encode(
+                keccak256(
+                    "VoteData(address voter,uint256 electionId,uint256 candidateId,uint256 nonce,uint256 deadline)"
+                ),
+                voteData.voter,
+                voteData.electionId,
+                voteData.candidateId,
+                voteData.nonce,
+                voteData.deadline
+            )
+        );
 
-       bytes32 hash = keccak256(abi.encodePacked("\x19\x01", DOMAIN_SEPARATOR, structHash));
+        bytes32 hash = keccak256(
+            abi.encodePacked("\x19\x01", DOMAIN_SEPARATOR, structHash)
+        );
 
-       (uint8 v, bytes32 r, bytes32 s) = vm.sign(
+        uint256 signerPrivateKey = uint256(keccak256(abi.encodePacked(signer)));
+
+        (uint8 v, bytes32 r, bytes32 s) = vm.sign(
             uint256(keccak256(abi.encodePacked(signer))),
             hash
-       );
+        );
 
-       return abi.encodePacked(r, s, v);
+        return abi.encodePacked(r, s, v);
     }
 }
