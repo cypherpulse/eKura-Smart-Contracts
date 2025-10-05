@@ -303,4 +303,8 @@ contract VoteStorageTest is Test {
         assertEq(counts[1], 1); //Bob: 1 vote
         assertEq(counts[2], 0); //Carol: 0 votes
     }
+
+    function test_VerifyVoteHash() public {
+        
+    }
 }
