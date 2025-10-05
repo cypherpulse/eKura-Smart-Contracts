@@ -300,6 +300,7 @@ contract VoteStorageTest is Test {
 
         assertEq(counts.length, 3); //3 candidates
         assertEq(counts[0], 1); //Alice: 1 Vote
-        
+        assertEq(counts[1], 1); //Bob: 1 vote
+        assertEq(counts[2], 0); //Carol: 0 votes
     }
 }
