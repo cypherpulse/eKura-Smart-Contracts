@@ -49,9 +49,9 @@ eKura is a decentralized voting platform with multi-chain support. The system co
 
 | Contract | Address | Type | Verified |
 |----------|---------|------|----------|
-| **ElectionFactory** | [`0x33F5e3b399f66f1934c7A2496Ad98eD3C5f18032`](https://sepolia.basescan.org/address/0x33F5e3b399f66f1934c7A2496Ad98eD3C5f18032) | Implementation | ⏳ Pending |
+| **ElectionFactory** | [`0x33F5e3b399f66f1934c7A2496Ad98eD3C5f18032`](https://sepolia.basescan.org/address/0x33F5e3b399f66f1934c7A2496Ad98eD3C5f18032) | Implementation |  ✅ Verified |
 | **VoteStorage Proxy** | [`0xf3948ACFa07BdDF81200d4A143ADeA1815f5Bf22`](https://sepolia.basescan.org/address/0xf3948ACFa07BdDF81200d4A143ADeA1815f5Bf22) | ERC1967 Proxy | ⏳ Pending |
-| **VoteStorage Implementation** | [`0xaDCA0f4Da058A637aeb4B8146C98b83f8355795e`](https://sepolia.basescan.org/address/0xaDCA0f4Da058A637aeb4B8146C98b83f8355795e) | Implementation | ⏳ Pending |
+| **VoteStorage Implementation** | [`0xaDCA0f4Da058A637aeb4B8146C98b83f8355795e`](https://sepolia.basescan.org/address/0xaDCA0f4Da058A637aeb4B8146C98b83f8355795e) | Implementation |  ✅ Verified  |
 
 ### Transaction Hashes
 - **ElectionFactory**: `0x98e50bc5eb256facb4ae274d3879c37b9cdbd05d5ffefcfdfb756c88226c5eeb`
@@ -79,8 +79,8 @@ eKura is a decentralized voting platform with multi-chain support. The system co
 
 | Contract | Address | Type | Verified |
 |----------|---------|------|----------|
-| **ElectionFactory** | [`0x2cd2a92088FC452526aE0ac2eB73Fa212866178F`](https://sepolia.etherscan.io/address/0x2cd2a92088FC452526aE0ac2eB73Fa212866178F) | Implementation | ⏳ Pending |
-| **VoteStorage Proxy** | [`0x5c1EE6918b48f148A4B88E8B9Ca258da44f2f764`](https://sepolia.etherscan.io/address/0x5c1EE6918b48f148A4B88E8B9Ca258da44f2f764) | ERC1967 Proxy | ⏳ Pending |
+| **ElectionFactory** | [`0x2cd2a92088FC452526aE0ac2eB73Fa212866178F`](https://sepolia.etherscan.io/address/0x2cd2a92088FC452526aE0ac2eB73Fa212866178F) | Implementation |  ✅ Verified  |
+| **VoteStorage Proxy** | [`0x5c1EE6918b48f148A4B88E8B9Ca258da44f2f764`](https://sepolia.etherscan.io/address/0x5c1EE6918b48f148A4B88E8B9Ca258da44f2f764) | ERC1967 Proxy |  ✅ Verified  |
 | **VoteStorage Implementation** | [`0x218b73a84d9D463696Ccf39D926B724d774c184D`](https://sepolia.etherscan.io/address/0x218b73a84d9D463696Ccf39D926B724d774c184D) | Implementation | ⏳ Pending |
 
 ### Transaction Hashes
