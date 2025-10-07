@@ -7,7 +7,7 @@ eKura is a decentralized platform for managing university elections, built on Et
 ## Features
 
 - **Election Factory:** Deploy and manage multiple elections for different organizations.
-- **Role-Based Access:** Platform admin and organization admins with granular permissions.
+- **Role-Based Access:**  Platform admin and organization admins with granular permissions.
 - **Candidate Management:** Flexible candidate lists per election.
 - **Event Logging:** Emits events for key actions (election creation, admin management).
 - **Upgradeable Architecture:** Uses OpenZeppelin contracts for future proofing.
