@@ -2,7 +2,7 @@
 
 ## Overview
 
-eKura is a decentralized platform for managing university elections, built on Ethereum using Solidity and Foundry. It provides secure, transparent, and auditable election processes for student councils and other university organizations.
+eKura is a decentralized platform for managing university elections, built on Ethereum using Solidity and Foundry. It provides secure, transparent, and auditable election processes for student council, university  and organizations.
 
 ## Features
 
